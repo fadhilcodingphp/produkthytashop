@@ -169,20 +169,7 @@ if (isset($_POST["submit"])) {
               </div>
             </form>
         </div>
-        <div class="col-md-5 ml-auto">
-
-          <div class="p-4 border mb-3">
-            <span class="d-block text-primary h5">Syarat dan Ketentuan Pembayaran</span>
-            <ul type="disc">
-              <li>Pembayaran uang muka 50% dibayar saat pemesanan.</li>
-              <li>Pesanan diproses saat pelanggan sudah membayar pesanan (baik itu uang muka ataupun dibayar lunas)</li>
-              <li>Pelunasan dibayar paling lambat 1-2 hari sebelum acara atau saat pengiriman.</li>
-              <li>Pembayaran dilakukan setelah tagihan diberikan oleh Pode Food Makassar. Kami tidak akan meminta deposit dalam bentuk apapun bilamana pemesanan Anda belum dikonfirmasi.</li>
-              <li>Pembatalan yang dilakukan pada H-1 akan dikenai denda 25%. Dan pembatalan yang dilakukan pada hari pengiriman dikenai denda 50%.</li>
-            </ul>
-          </div>
-        <?php } ?>
-        </div>
+      <?php } ?>
       </div>
     </div>
   </div>

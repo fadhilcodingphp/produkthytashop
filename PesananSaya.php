@@ -121,7 +121,7 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                     </div>
                     <div class="col-7">
                       <p class="d-block text mb-0"><?php echo $prodit['Nama_Produk']; ?></p>
-                      <p class="d-block text mb-0"><?= $prodit['Jumlah_Barang'] . ' Porsi' ?></p>
+                      <p class="d-block text mb-0"><?= $prodit['Jumlah_Barang'] . ' Pcs' ?></p>
                       <p class="d-block text mb-0"><?= 'Total: Rp. ' . number_format($prodit['Total_Prodit'], 2, ',', '.'); ?></p>
                     </div>
                   </div>

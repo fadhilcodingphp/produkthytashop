@@ -12,26 +12,26 @@
 <link href="assets/css/quill.bubble.css" rel="stylesheet">
 <link href="assets/css/remixicon.css" rel="stylesheet">
 <link href="assets/css/simple-datatables.css" rel="stylesheet">
-<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/sadmin.css" rel="stylesheet">
 </head>
 
 <body>
-    <header id="header" class="header fixed-top d-flex align-items-center">
-        <!-- logo di header -->
-        <div class="d-flex align-items-center justify-content-between"> <a href="Dashboard.php" class="logo d-flex align-items-center"> <img src="assets/img/logo.png" alt=""> <span class="d-none d-lg-block">Admin</span> </a> <i class="bi bi-list toggle-sidebar-btn"></i></div>
-        <div class="header-nav ms-auto"> <a href="Profile.php" class="nav-link d-flex"></a></div>
-        <div class="d-flex justify-content-end"> <a href="adminlogout.php" class="nav-link d-flex"> <button type="button" class="btn btn-outline-danger">Logout</button> </a></div>
-    </header>
-    <!-- sidebar -->
-    <aside id="sidebar" class="sidebar">
-        <ul class="sidebar-nav" id="sidebar-nav">
-            <li class="nav-item"> <a class="nav-link collapsed" href=" Dashboard.php"> <i class="bi bi-grid"></i> <span>Dashboard</span> </a></li>
-            <li class="nav-item"> <a class="nav-link collapsed" href="Kategori.php"> <i class="bi bi-card-list"></i> <span>Kategori Produk</span> </a></li>
-            <li class="nav-item"> <a class="nav-link collapsed" href="Produk.php"> <i class="bi bi-cart-fill"></i> <span>Produk</span> </a></li>
-            <li class="nav-item"> <a class="nav-link collapsed" href="Pesanan.php"> <i class="bi bi-cart-check-fill"></i> <span>Pesanan</span> </a></li>
-            <li class="nav-item"> <a class="nav-link collapsed" href="Pembayaran.php"> <i class="bi bi-cash"></i> <span>Pembayaran</span> </a></li>
-            <li class="nav-item"> <a class="nav-link collapsed" href="Pelanggan.php"> <i class="bi bi-person-fill"></i> <span>Pelanggan</span> </a></li>
-            <li class="nav-item"> <a class="nav-link collapsed" href="Rekening.php"> <i class="bi bi-credit-card"></i> <span>Rekening</span> </a></li>
-            <li class="nav-item"> <a class="nav-link collapsed" href="Laporan.php"> <i class="bi bi-graph-up"></i> <span>Laporan</span> </a></li>
-        </ul>
-    </aside>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-3 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="Dashboard.php" class="navbar-brand p-0">
+            <h1 class="m-0"><b>Admin Thytashop</b></h1>
+        </a>
+        <div class="collapse navbar-collapse py-4 " id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <a href="Dashboard.php" class="nav-item nav-link">Dashboard</a>
+                <a href="Kategori.php" class="nav-item nav-link">Kategori</a>
+                <a href="Produk.php" class="nav-item nav-link">Produk</a>
+                <a href="Pesanan.php" class="nav-item nav-link">Pesanan</a>
+                <a href="Pembayaran.php" class="nav-item nav-link">Pembayaran</a>
+                <a href="Rekening.php" class="nav-item nav-link">Rekening</a>
+                <a href="Laporan.php" class="nav-item nav-link">Laporan</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <a href="AdminLogout.php" class="btn btn-outline-primary mx-2">Logout</a>
+            </div>
+        </div>
+    </nav>

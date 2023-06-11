@@ -133,7 +133,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                     </div>
                                     <div class="row mb-3">
                                         <label for="Biaya_pengiriman" class="col-md-4 col-lg-3 col-form-label">Biaya Pengiriman</label>
-                                        <div class="col-md-8 col-lg-9"> <input name="Biaya_pengiriman" type="text" class="form-control" id="Biaya_pengiriman" value="<?= $pesanan['Biaya_pengiriman'] ?>" readonly></div>
+                                        <div class="col-md-8 col-lg-9"> <input name="Biaya_pengiriman" type="text" class="form-control" id="Biaya_pengiriman" value="<?= $pesanan['Biaya_pengiriman'] ?>"></div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="Total_Order" class="col-md-4 col-lg-3 col-form-label">Total Harga yang Harus Dibayar</label>

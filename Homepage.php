@@ -52,7 +52,7 @@ if (!isset($_SESSION["login"]) && !isset($_SESSION["ID_Pelanggan"])) {
           <p><span class="text-primary me-2">#</span>Panduan Pemesanan</p>
           <h1 class="display-5 mb-0">
             Cara memesan lewat website
-            <span class="text-primary">Thytashop</span>
+            <span class="text-danger">Thytashop</span>
           </h1>
         </div>
       </div>

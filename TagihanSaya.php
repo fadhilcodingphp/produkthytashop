@@ -35,7 +35,6 @@ require "custFunction.php";
                 <tr>
                   <th class="product-thumbnail">ID Pesanan</th>
                   <th class="product-name">Tanggal Pesan</th>
-                  <th class="product-name">Jumlah Paket</th>
                   <th class="product-price">Diskon Pemesanan</th>
                   <th class="product-quantity">Total Harga</th>
                   <th class="product-price">Status Pembayaran</th>
@@ -55,9 +54,6 @@ require "custFunction.php";
                     </td>
                     <td class="product-name">
                       <p class="text-black"><?php echo $pecah['Tgl_Pesan']; ?></p>
-                    </td>
-                    <td class="product-name">
-                      <p class="text-black">pcs</p>
                     </td>
                     <td>
                       <?php echo $pecah['Diskon_Pesanan']; ?>%

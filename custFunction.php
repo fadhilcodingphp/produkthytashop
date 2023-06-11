@@ -137,22 +137,16 @@ function TambahPesanan($tambahPesanan)
     //ambil data dari tiap elemen form
     $ID_Pelanggan = htmlspecialchars($tambahPesanan["ID_Pelanggan"]);
     $Tgl_Kirim = htmlspecialchars($tambahPesanan["Tgl_Kirim"]);
-    $Waktu_Kirim = htmlspecialchars($tambahPesanan["Waktu_Kirim"]);
     $Nama_Penerima = htmlspecialchars($tambahPesanan["Nama_Penerima"]);
     $NoTelp_Penerima = htmlspecialchars($tambahPesanan["NoTelp_Penerima"]);
     $Alamat = htmlspecialchars($tambahPesanan["Alamat"]);
     $link_Lokasi = htmlspecialchars($tambahPesanan["link_Lokasi"]);
     $Catatan = htmlspecialchars($tambahPesanan["Catatan"]);
-    $Jarak = htmlspecialchars($tambahPesanan["jarak"]);
-    $Biaya_Pengiriman = $Jarak * 2600;
-
-
     //query insert data
     $input = "INSERT INTO pesanan VALUES ( '', 
                                            '$ID_Pelanggan', 
                                            NOW(), 
                                            '$Tgl_Kirim', 
-                                           '$Waktu_Kirim', 
                                            '$Nama_Penerima', 
                                            '$NoTelp_Penerima', 
                                            '$Alamat', 
@@ -161,8 +155,7 @@ function TambahPesanan($tambahPesanan)
                                            $total, 
                                            '', 
                                            'Menunggu Pembayaran',
-                                           '$Jarak', 
-                                           '$Biaya_Pengiriman',
+                                           '',
                                            '' )";
     mysqli_query($conn, $input);
 

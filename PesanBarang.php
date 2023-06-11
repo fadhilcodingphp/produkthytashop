@@ -114,12 +114,6 @@ if (isset($_POST["submit"])) {
               </div>
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
-                  <label for="Waktu_Kirim" class="text-black mb-1">Waktu Pesanan Sampai Di Tangan Pemesan <span class="text-danger">*</span></label>
-                  <input type="time" class="form-control" id="Waktu_Kirim" name="Waktu_Kirim">
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-md-12 mb-3">
                   <label for="Nama_Penerima" class="text-black mb-1">Nama Penerima Pesanan<span class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="Nama_Penerima" name="Nama_Penerima">
                 </div>
@@ -144,18 +138,8 @@ if (isset($_POST["submit"])) {
               </div>
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
-                  <label for="link_Lokasi" class="text-black mb-1">Jarak Pengantaran
-                    <a href="https://www.google.com/maps/place/Pode+Food/@-5.1766959,119.4534077,17z/data=!3m1!4b1!4m6!3m5!1s0x2dbee3c052a5ff39:0xab2cfbde14421cdb!8m2!3d-5.1766959!4d119.4534077!16s%2Fg%2F11qlxxfxh9?entry=ttu" class="btn btn-danger">Cek Jarak</a>
-                  </label>
-                  <div class="col-7">
-                    <input type="textarea" class="form-control" id="jarak" name="jarak" placeholder="Masukkan Jarak Dengan Satuan KM">
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-md-12 mb-3">
                   <label for="Catatan" class="text-black mb-1">Catatan</label>
-                  <input type="text" class="form-control" id="Catatan" name="Catatan" placeholder="Masukkan catatan seperti bentuk cap nasi yang diinginkan atau pilihan lauk">
+                  <input type="text" class="form-control" id="Catatan" name="Catatan" placeholder="Masukkan catatan seperti ukuran pakaian (M/L/XL/XXL)">
                 </div>
               </div>
               <div class="form-group row">

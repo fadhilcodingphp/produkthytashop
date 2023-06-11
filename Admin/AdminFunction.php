@@ -254,7 +254,6 @@ function ubahPesanan($pesanan)
     $ID_Pesanan = htmlspecialchars($pesanan["ID_Pesanan"]);
     $Tgl_Kirim = htmlspecialchars($pesanan["Tgl_Kirim"]);
     $Tgl_Pesan = htmlspecialchars($pesanan["Tgl_Pesan"]);
-    $Waktu_Kirim = htmlspecialchars($pesanan["Waktu_Kirim"]);
     $Catatan = htmlspecialchars($pesanan["Catatan"]);
     $Status = htmlspecialchars($pesanan["status"]);
     $Biaya_pengiriman = htmlspecialchars($pesanan["Biaya_pengiriman"]);
@@ -266,7 +265,6 @@ function ubahPesanan($pesanan)
     $ubahproduk = "UPDATE pesanan SET
                     Tgl_Kirim = '$Tgl_Kirim',
                     Tgl_Pesan = '$Tgl_Pesan',
-                    Waktu_Kirim = '$Waktu_Kirim',
                     Catatan = '$Catatan', 
                     Diskon_Pesanan = '$Diskon_Pesanan', 
                     status = '$Status',

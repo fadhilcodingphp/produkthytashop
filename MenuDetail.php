@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
 
 <head>
   <meta charset="utf-8" />
-  <title>Detail Menu | Thytashop</title>
+  <title>Detail Produk | Thytashop</title>
   <?php
   include 'header.php';
   ?>
@@ -42,15 +42,10 @@ if (isset($_POST["submit"])) {
         <h2>Detail Produk</h2>
       </div>
       <div class="row align-items-center">
-        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-          <div class="img-border2">
-            <img class="img-fluid" src="assets/img/<?php echo $ubahProduk['Gambar']; ?>" alt="" />
-          </div>
+        <div class="col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
+          <img class="img-fluid" src="assets/img/<?php echo $ubahProduk['Gambar']; ?>" style="width:100%; max-height:300px;" alt="" />
         </div>
         <div class="col-md-6 col-lg-5 ms-3 mt-5 ">
-          <div class="fs-6">
-            <?= $ubahProduk['Nama_Kategori'] ?>
-          </div>
           <h1 class="display-5 fw-bolder">
             <?= $ubahProduk['Nama_Produk'] ?>
           </h1>

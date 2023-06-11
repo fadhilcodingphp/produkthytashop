@@ -85,7 +85,7 @@ $total_Menu = mysqli_num_rows($get_Menu);
                <div class="col-xxl-3 col-md-6">
                   <div class="card info-card menu-card">
                      <div class="card-body">
-                        <h5 class="card-title">Menu</h5>
+                        <h5 class="card-title">Produk</h5>
                         <div class="d-flex align-items-center">
                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i class="bi bi-card-list"></i> </div>
                            <div class="ps-3">
