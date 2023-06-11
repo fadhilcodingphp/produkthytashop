@@ -11,15 +11,14 @@
                     <i class="fa fa-phone-alt me-3"></i>+62 822-9203-0561
                 </h5>
                 <div class="text-light d-flex justify-content-center pt-2">
-                    <a class="btn btn-outline-light btn-social me-2" href="https://instagram.com/podefoodmakassar?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://wa.me/6282188289569"><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://wa.me/6282292030561"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Footer End -->
-
+<div class="hero" style="background-image: url('img/tes.jpg');"></div>
 <!-- Back to Top -->
 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 

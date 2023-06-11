@@ -67,6 +67,9 @@ if (isset($_POST['loginadmin'])) {
                                  <div class="invalid-feedback">Tolong input password anda</div>
                               </div>
                               <div class="col-12"> <button class="btn btn-primary w-100" type="submit" name='loginadmin'>Login</button></div>
+                              <div class="col-12">
+                                 <a href="../Pemilik/PemilikLogin.php" class="btn btn-danger w-100"> Login Sebagai Pemilik</a>
+                              </div>
                            </form>
                         </div>
                      </div>

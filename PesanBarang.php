@@ -95,7 +95,7 @@ if (isset($_POST["submit"])) {
           </div>
         </div>
 
-        <div class="col-md-7">
+        <div class="col-md-12">
           <form action="" method="post">
             <?php $ID_Pelanggan = $_SESSION["ID_Pelanggan"] ?>
             <?php $ambil = mysqli_query($conn, "SELECT * FROM produk, keranjang, pelanggan WHERE produk.ID_Produk = keranjang.ID_Produk AND pelanggan.ID_Pelanggan = '$ID_Pelanggan'"); ?>
@@ -178,18 +178,6 @@ if (isset($_POST["submit"])) {
               </div>
             </div>
           </form>
-        </div>
-        <div class="col-md-5 ml-auto">
-          <div class="p-4 border mb-3">
-            <span class="d-block text-primary h6 text-uppercase">Syarat dan Ketentuan Pemesanan</span>
-            <ul type="disc">
-              <li>Pemesanan dan pembayaran dilakukan pada H-2 selambat-lambatnya jam 12.00 siang.</li>
-              <li>Untuk pesanan nasi box bila pelanggan tidak menuliskan pilihan cetakan nasi (dicetak dengan bentuk tumpeng/bulat dan lainnya) maka nasi akan dicetak dengan bentuk bulat</li>
-              <li>Pembatalan pesanan selambat-lambatnya dilakukan pada H-2 pesanan.</li>
-              <li>Pembatalan pesanan dapat dilakukan sebelum pesanan dibayar.</li>
-              <li>Pembatalan yang dilakukan pada H-1 akan dikenai denda 25%. Dan pembatalan yang dilakukan pada hari pengiriman dikenai denda 50%.</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>

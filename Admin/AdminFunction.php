@@ -103,6 +103,30 @@ function tambahProduk($produk)
 
     return mysqli_affected_rows($conn);
 }
+
+
+//Promosi
+function tambahPromosi($promosi)
+{
+    global $conn;
+    //ambil data dari tiap elemen form
+    $Nama_produk = htmlspecialchars($promosi["Nama_Produk"]);
+    $Harga = htmlspecialchars($promosi["Harga"]);
+    $Harga_Promosi = htmlspecialchars($promosi["Harga_Promosi"]);
+    //upload gambar
+    $Gambar = uploadGambar();
+    if (!$Gambar) {
+        return false;
+    }
+
+    //query insert data
+    $inputPromosi = "INSERT INTO promosi VALUES ('','$Nama_produk','$Harga','$Harga_Promosi', '$Gambar')";
+    mysqli_query($conn, $inputPromosi);
+
+    return mysqli_affected_rows($conn);
+}
+
+
 function ubahProduk($produk)
 {
     global $conn;

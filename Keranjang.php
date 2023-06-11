@@ -55,7 +55,7 @@ if (isset($_POST["submit"])) {
               <thead>
                 <tr>
                   <th class="product-thumbnail" style="width:30%">Gambar</th>
-                  <th class="product-name">Menu</th>
+                  <th class="product-name">Produk</th>
                   <th class="product-price">Harga</th>
                   <th class="product-quantity">Jumlah</th>
                   <th class="product-total">Total</th>
@@ -70,7 +70,7 @@ if (isset($_POST["submit"])) {
                   $total += $pecah['Harga'] * $pecah['Jumlah_Barang'] ?>
                   <tr>
                     <td class="product-thumbnail" style="width:30%">
-                      <img src="assets/img/<?php echo $pecah['Gambar']; ?>" width="95%" alt="Image">
+                      <img src="assets/img/<?php echo $pecah['Gambar']; ?>" width="50%" alt="Image">
                     </td>
                     <td class="product-name">
                       <h2 class="h5 text-black"><?php echo $pecah['Nama_Produk']; ?></h2>

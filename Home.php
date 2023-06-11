@@ -12,89 +12,36 @@ require 'custFunction.php';
   <?php
   include 'header.php';
   ?>
-  <!-- Header Start -->
-  <div style="width:60%;" class="container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/car1.png" class="d-block w-100">
-        </div>
-        <div class="carousel-item">
-          <img src="img/car2.png" class="d-block w-100">
-        </div>
-        <div class="carousel-item">
-          <img src="img/car3.png" class="d-block w-100">
-        </div>
-        <div class="carousel-item">
-          <img src="img/car4.png" class="d-block w-100">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-  <!-- Header End -->
 
-  <!-- Contact Start -->
-  <div id="kontak" class="container-xxl py-4">
+  <!-- Cara Pesan -->
+  <div id="caraPesan" class="container-xxl py-5">
     <div class="container">
-      <div class="row g-4 mb-5">
-        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-          <div class="h-100 bg-dark d-flex align-items-center p-5">
-            <div class="btn-lg-square bg-black flex-shrink-0">
-              <i class="fa fa-phone-alt text-primary"></i>
-            </div>
-            <div class="ms-4">
-              <p class="mb-2 text-light">
-                <span class="text-primary me-2">#</span>Telepon
-              </p>
-              <h5 class="text-light mb-0">082188289569</h5>
+      <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+        <div class="col-lg-8">
+          <h1 class="display-5 mb-0">
+            Promo Produk
+            <span class="text-danger">Thytashop</span>
+          </h1>
+        </div>
+      </div>
+      <div class="row g-4">
+        <?php
+        $ambil = mysqli_query($conn, "SELECT * FROM promosi");
+        ?>
+        <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="membership-item position-relative" style="background: red;">
+              <h4 class=" text-black"><?php echo $pecah['Nama_Produk']; ?></h4>
+              <img src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width:50%; max-height:200px;" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
+              <h5 class="coret" style="color: black;"><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></h5>
+              <h4 style="color: white;">Sekarang Hanya : <br> <?php echo 'Rp. ' . number_format($pecah['Harga_Promosi'], 2, ',', '.'); ?></h4>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-          <div class="h-100 bg-dark d-flex align-items-center p-5">
-            <div class="btn-lg-square bg-black flex-shrink-0">
-              <i class="fa fa-whatsapp text-primary"></i>
-            </div>
-            <div class="ms-4">
-              <p class="mb-2 text-light">
-                <span class="text-primary me-2">#</span>Whatsapp
-              </p>
-              <h5 class="text-light mb-0">082188289569</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-          <div class="h-100 bg-dark d-flex align-items-center p-5">
-            <div class="btn-lg-square bg-black flex-shrink-0">
-              <i class="fa fa-instagram text-primary"></i>
-            </div>
-            <div class="ms-4">
-              <p class="mb-2 text-light">
-                <span class="text-primary me-2">#</span>Instagram
-              </p>
-              <h5 class="text-light mb-0">podefood</h5>
-            </div>
-          </div>
-        </div>
+        <?php } ?>
       </div>
     </div>
   </div>
-  <!-- Contact End -->
-
+  <!-- Cara Pesan -->
   <!-- Cara Pesan -->
   <div id="caraPesan" class="container-xxl py-5">
     <div class="container">

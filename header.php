@@ -23,7 +23,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 
 <!-- Template Stylesheet -->
-<link href="css/style.css" rel="stylesheet" />
+<link href="css/scss.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -34,42 +34,12 @@
         </div>
     </div>
     <!-- Spinner End -->
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                    <small>Belau, Kecamatan Masanda, Tana Toraja</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center py-3">
-                    <small class="far fa-clock text-primary me-2"></small>
-                    <small>Pesanan Dapat Dilakukan 24 Jam</small>
-                </div>
-            </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>+62 822-9203-0561</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href="https://wa.me/6282188289569"><i class="fab fa-whatsapp"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href="https://instagram.com/podefoodmakassar?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-
-
     <!-- Navbar Start -->
     <?php
     if (!isset($_SESSION["login"])) { ?>
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="Home.php" class="navbar-brand p-0">
-                <h1 class="m-0 text-primary">Thytashop</h1>
+                <h1 class="m-0 text-danger">Thytashop</h1>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -79,11 +49,9 @@
                     <a href="Home.php#home" class="nav-item nav-link">Home</a>
                     <a href="MenuLogin.php" class="nav-item nav-link">Produk</a>
                     <a href="Home.php#caraPesan" class="nav-item nav-link">Panduan Pemesanan</a>
-                    <a href="Home.php#kontak" class="nav-item nav-link">Kontak</a>
                 </div>
                 <a href="Login.php" class="btn btn-primary">User<i class="fa fa-arrow-right ms-3"></i></a>&nbsp &nbsp
                 <a href="Admin/AdminLogin.php" class="btn btn-danger">Admin<i class="fa fa-arrow-right ms-3"></i></a>&nbsp &nbsp
-                <a href="Pemilik/PemilikLogin.php" class="btn btn-dark">Pemilik<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
     <?php } else { ?>
@@ -99,9 +67,8 @@
                 <div class="navbar-nav ms-auto">
                     <a href="Homepage.php#home" class="nav-item nav-link">Home</a>
                     <a href="Homepage.php#about" class="nav-item nav-link">About</a>
-                    <a href="Menu.php" class="nav-item nav-link">Menu</a>
+                    <a href="Menu.php" class="nav-item nav-link">Produk</a>
                     <a href="Homepage.php#caraPesan" class="nav-item nav-link">Panduan Pemesanan</a>
-                    <a href="Homepage.php#kontak" class="nav-item nav-link">Kontak</a>
                 </div>
 
                 <div class="navbar-nav ms-auto">
