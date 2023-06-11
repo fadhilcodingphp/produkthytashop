@@ -120,10 +120,6 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                         <div class="col-md-8 col-lg-9"> <input name="Tgl_Kirim" type="date" class="form-control" id="Tgl_Kirim" value="<?= $pesanan['Tgl_Kirim'] ?>" readonly></div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="Waktu_Kirim" class="col-md-4 col-lg-3 col-form-label">Waktu Pengiriman</label>
-                                        <div class="col-md-8 col-lg-9"> <input name="Waktu_Kirim" type="time" class="form-control" id="Waktu_Kirim" value="<?= $pesanan['Waktu_Kirim'] ?>" readonly></div>
-                                    </div>
-                                    <div class="row mb-3">
                                         <label for="Catatan" class="col-md-4 col-lg-3 col-form-label">Catatan</label>
                                         <div class="col-md-8 col-lg-9"> <input name="Catatan" type="text" class="form-control" id="Catatan" value="<?= $pesanan['Catatan'] ?>" readonly></div>
                                     </div>

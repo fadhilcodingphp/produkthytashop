@@ -599,12 +599,12 @@
   }
   
   .hero {
-    height: 227vh;
+    height: 255vh;
     width: 100%;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    margin-top: -1690px;
+    margin-top: -1870px;
   }
   
   .coret{
