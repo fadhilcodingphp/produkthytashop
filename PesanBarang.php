@@ -120,7 +120,7 @@ if (isset($_POST["submit"])) {
               </div>
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
-                  <label for="NoTelp_Penerima" class="text-black mb-1">Nomor Telefon Penerima<span class="text-danger">*</span></label>
+                  <label for="NoTelp_Penerima" class="text-black mb-1">Nomor Telepon Penerima<span class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="NoTelp_Penerima" name="NoTelp_Penerima">
                 </div>
               </div>

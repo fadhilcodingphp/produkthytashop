@@ -86,10 +86,6 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                         <div class="col-lg-9 col-md-8"><?= $pesanan['Tgl_Kirim'] ?></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Waktu Pengiriman</div>
-                                        <div class="col-lg-9 col-md-8"><?= $pesanan['Waktu_Kirim'] ?></div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Catatan</div>
                                         <div class="col-lg-9 col-md-8"><?= $pesanan['Catatan'] ?></div>
                                     </div>
