@@ -21,12 +21,10 @@
             <h1 class="m-0"><b>Pemilik Thytashop</b></h1>
         </a>
         <div class="collapse navbar-collapse py-4 " id="navbarCollapse">
+            <a href="Dashboard.php" class="nav-item nav-link">Dashboard</a>
+            <a href="Laporan.php" class="nav-item nav-link">Laporan</a>
             <div class="navbar-nav ms-auto">
-                <a href="Dashboard.php" class="nav-item nav-link">Dashboard</a>
-                <a href="Laporan.php" class="nav-item nav-link">Laporan</a>
-            </div>
-            <div class="navbar-nav ms-auto">
-                <a href="AdminLogout.php" class="btn btn-outline-primary mx-2">Logout</a>
+                <a href="PemilikLogout.php" class="btn btn-outline-primary mx-2">Logout</a>
             </div>
         </div>
     </nav>
