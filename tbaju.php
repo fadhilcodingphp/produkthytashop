@@ -7,7 +7,7 @@ require "custFunction.php";
 
 <head>
   <meta charset="utf-8" />
-  <title>Menu | Thytashop</title>
+  <title>Produk | Thytashop</title>
   <?php
   include 'header.php';
   ?>
@@ -16,7 +16,7 @@ require "custFunction.php";
     <div class="container">
       <div class="row">
         <div class="col-md-12 mb-0">
-          <p class="my-0"><a href="Homepage.php" class="text-primary">Home</a><span class="mx-2">/</span> <strong class="text-black">Menu</strong></p>
+          <p class="my-0"><a href="Homepage.php" class="text-primary">Home</a><span class="mx-2">/</span> <strong class="text-black">Produk</strong></p>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@ require "custFunction.php";
         </div>
         <div class="col-5">
           <form class="d-flex" action="" method="POST">
-            <input class="form-control me-2" type="search" placeholder="Cari Menu" aria-label="Search" name="keyword" autocomplete="off">
+            <input class="form-control me-2" type="search" placeholder="Cari Produk" aria-label="Search" name="keyword" autocomplete="off">
             <button class="btn btn-outline-success" type="submit" name="cari"><i class="fa fa-search"></i></button>
           </form>
         </div>
@@ -45,7 +45,7 @@ require "custFunction.php";
           $keyword = $_POST["keyword"];
           $ambil = mysqli_query($conn, "SELECT * FROM produk INNER JOIN kategori_produk ON produk.ID_Kategori = kategori_produk.ID_Kategori WHERE produk.Nama_produk LIKE '%$keyword%' OR kategori_produk.Nama_Kategori LIKE '%$keyword%' ORDER BY produk.Nama_Produk ASC");
         } else {
-          $ambil = mysqli_query($conn, "SELECT * FROM produk, kategori_produk WHERE produk.ID_Kategori = kategori_produk.ID_Kategori ORDER BY produk.Nama_Produk ASC ");
+          $ambil = mysqli_query($conn, "SELECT * FROM produk WHERE produk.ID_Kategori = 'THY001'");
         }
         ?>
         <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
@@ -55,9 +55,6 @@ require "custFunction.php";
               <div class="card-body ">
                 <div class="text-center position-relative mb-2" style="width:100%; height:200px;"> <a href="MenuDetail.php?id=<?= $pecah['ID_Produk']; ?>">
                     <img src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width:100%; max-height:200px;" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
-                </div>
-                <div class="text-small mb-0">
-                  <a href="MenuDetail.php?id=<?= $pecah['ID_Produk']; ?>" class="text-decoration-none text-muted"><small><?php echo $pecah['Nama_Kategori']; ?></small></a>
                 </div>
                 <h3 class="fs-5">
                   <a href="MenuDetail.php?id=<?= $pecah['ID_Produk']; ?>" class="text-inherit text-primary text-decoration-none"><?php echo $pecah['Nama_Produk']; ?></a>

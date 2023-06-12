@@ -101,7 +101,7 @@ if (isset($_POST["submit"])) {
         <div class="col-md-6">
           <div class="row mt-0">
             <div class="col-md-4">
-              <a href="Menu.php" class="btn btn-outline-primary py-1 btn-block">Lanjutkan Belanja</a>
+              <a href="tbaju.php" class="btn btn-outline-primary py-1 btn-block">Lanjutkan Belanja</a>
             </div>
           </div>
         </div>

@@ -47,7 +47,17 @@
             <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
                     <a href="Home.php#home" class="nav-item nav-link">Home</a>
-                    <a href="MenuLogin.php" class="nav-item nav-link">Produk</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" data-bs-toggle="dropdown">
+                            <a href="#" class="nav-item nav-link">Produk</a>
+                        </a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                            <a href="tbaju.php" class="dropdown-item">Baju</a>
+                            <a href="tgamis.php" class="dropdown-item">Gamis</a>
+                            <a href="tsarung.php" class="dropdown-item">Sarung</a>
+                            <a href="tsepuk.php" class="dropdown-item">Sepuk</a>
+                        </div>
+                    </div>
                     <a href="Home.php#caraPesan" class="nav-item nav-link">Panduan Pemesanan</a>
                 </div>
                 <a href="Login.php" class="btn btn-primary">User<i class="fa fa-arrow-right ms-3"></i></a>&nbsp &nbsp
@@ -65,8 +75,17 @@
             <div class="collapse navbar-collapse py-4 " id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
                     <a href="Homepage.php#home" class="nav-item nav-link">Home</a>
-                    <a href="Homepage.php#about" class="nav-item nav-link">About</a>
-                    <a href="Menu.php" class="nav-item nav-link">Produk</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" data-bs-toggle="dropdown">
+                            <a href="#" class="nav-item nav-link">Produk</a>
+                        </a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                            <a href="tbaju.php" class="dropdown-item">Baju</a>
+                            <a href="tgamis.php" class="dropdown-item">Gamis</a>
+                            <a href="tsarung.php" class="dropdown-item">Sarung</a>
+                            <a href="tsepuk.php" class="dropdown-item">Sepuk</a>
+                        </div>
+                    </div>
                     <a href="Homepage.php#caraPesan" class="nav-item nav-link">Panduan Pemesanan</a>
                 </div>
 

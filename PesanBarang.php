@@ -143,19 +143,6 @@ if (isset($_POST["submit"])) {
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-lg-12 mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                    <label class="form-check-label" for="invalidCheck">
-                      Saya setuju dengan syarat dan ketentuan pemesanan yang tertera di bagian kanan form pembelian
-                    </label>
-                    <div class="invalid-feedback">
-                      Anda harus setuju dengan syarat dan ketentuan yang berlaku.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
                 <div class="col-lg-12">
                   <button type="submit" name="submit" id="submit" class="btn btn-primary btn-lg btn-block">Pesan Sekarang</button>
                 </div>
