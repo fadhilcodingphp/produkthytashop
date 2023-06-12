@@ -1,7 +1,7 @@
 <?php
 require 'PemilikFunction.php';
 
-if (!isset($_SESSION['pemilik'])) {
+if (!isset($_SESSION['admin'])) {
    header("Location: PemilikLogin.php");
    exit;
 }
@@ -19,38 +19,10 @@ $total_Menu = mysqli_num_rows($get_Menu);
 <head>
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-   <title>Dashboard Pemilik</title>
-   <meta name="robots" content="noindex, nofollow">
-   <meta content="" name="description">
-   <meta content="" name="keywords">
-   <link href="assets/img/favicon.png" rel="icon">
-   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-   <link href="https://fonts.gstatic.com" rel="preconnect">
-   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-   <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
-   <link href="assets/css/boxicons.min.css" rel="stylesheet">
-   <link href="assets/css/quill.snow.css" rel="stylesheet">
-   <link href="assets/css/quill.bubble.css" rel="stylesheet">
-   <link href="assets/css/remixicon.css" rel="stylesheet">
-   <link href="assets/css/simple-datatables.css" rel="stylesheet">
-   <link href="assets/css/style.css" rel="stylesheet">
-</head>
-
-<body>
-   <header id="header" class="header fixed-top d-flex align-items-center">
-      <!-- logo di header -->
-      <div class="d-flex align-items-center justify-content-between"> <a href="Dashboard.php" class="logo d-flex align-items-center"> <img src="assets/img/logo.png" alt=""> <span class="d-none d-lg-block">Pemilik</span> </a> <i class="bi bi-list toggle-sidebar-btn"></i></div>
-      <div class="header-nav ms-auto"> <a href="Profile.php" class="nav-link d-flex"></a></div>
-      <div class="d-flex justify-content-end"> <a href="Pemiliklogout.php" class="nav-link d-flex"> <button type="button" class="btn btn-outline-danger">Logout</button> </a></div>
-   </header>
-   <!-- sidebar -->
-   <aside id="sidebar" class="sidebar">
-      <ul class="sidebar-nav" id="sidebar-nav">
-         <li class="nav-item"> <a class="nav-link" href="Dashboard.php"> <i class="bi bi-grid"></i> <span>Dashboard</span> </a></li>
-         <li class="nav-item"> <a class="nav-link collapsed" href="Laporan.php"> <i class="bi bi-graph-up"></i> <span>Laporan</span> </a></li>
-      </ul>
-   </aside>
+   <title>Dashboard Admin | Thytashop</title>
+   <?php
+   include 'header.php';
+   ?>
    <main id="main" class="main">
       <div class="pagetitle">
          <h1>Dashboard</h1>
@@ -113,7 +85,7 @@ $total_Menu = mysqli_num_rows($get_Menu);
                <div class="col-xxl-3 col-md-6">
                   <div class="card info-card menu-card">
                      <div class="card-body">
-                        <h5 class="card-title">Menu</h5>
+                        <h5 class="card-title">Produk</h5>
                         <div class="d-flex align-items-center">
                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i class="bi bi-card-list"></i> </div>
                            <div class="ps-3">
@@ -154,10 +126,8 @@ $total_Menu = mysqli_num_rows($get_Menu);
                                        <?php
                                        $bayar = $pecah['status_Pembayaran'];
                                        $status = $pecah['status'];
-                                       if ($status == "Menunggu Tagihan") {
+                                       if ($status == "Menunggu Pembayaran") {
                                           echo "<span class='badge bg-danger'> <h6><b> $status </b></h6> </span>";
-                                       } elseif ($status == "Menunggu Pembayaran") {
-                                          echo "<span class='badge bg-warning'> <h6><b> $status </b></h6> </span>";
                                        } elseif ($status == "Menunggu Konfirmasi Pembayaran") {
                                           echo "<span class='badge bg-danger'> <h6><b> $status </b></h6> </span>";
                                        } elseif ($status == "Diproses") {
@@ -241,18 +211,6 @@ $total_Menu = mysqli_num_rows($get_Menu);
       </section>
       <thead>
    </main>
-   <footer id="footer" class="footer">
-      <div class="copyright"> &copy; Copyright <strong><span>Pode Food Makassar</span></strong>. All Rights Reserved</div>
-   </footer>
-   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-   <script src="assets/js/apexcharts.min.js"></script>
-   <script src="assets/js/bootstrap.bundle.min.js"></script>
-   <script src="assets/js/chart.min.js"></script>
-   <script src="assets/js/echarts.min.js"></script>
-   <script src="assets/js/quill.min.js"></script>
-   <script src="assets/js/simple-datatables.js"></script>
-   <script src="assets/js/tinymce.min.js"></script>
-   <script src="assets/js/validate.js"></script>
-   <script src="assets/js/main.js"></script>
-
-</body>
+   <?php
+   include 'footer.php';
+   ?>

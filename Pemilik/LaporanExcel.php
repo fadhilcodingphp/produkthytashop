@@ -1,6 +1,6 @@
 <?php
 require 'PemilikFunction.php';
-if (!isset($_SESSION['pemilik'])) {
+if (!isset($_SESSION['admin'])) {
    header("Location: PemilikLogin.php");
    exit;
 }
