@@ -60,7 +60,6 @@ function daftar($daftar)
     $password2 = mysqli_real_escape_string($conn, $daftar["Password2"]);
     $Telepon = mysqli_real_escape_string($conn, $daftar["Telepon"]);
     $Email = mysqli_real_escape_string($conn, $daftar["Email"]);
-    $Institusi = mysqli_real_escape_string($conn, $daftar["Institusi"]);
     //cek konfirmasi pessword
     if ($password !== $password2) {
         echo "<script>alert('Konfirmasi password tidak sesuai')</script>";
@@ -75,7 +74,7 @@ function daftar($daftar)
     //enkripsi password
     $password = password_hash($password, PASSWORD_DEFAULT);
     //tambah user baru ke database
-    mysqli_query($conn, "INSERT INTO pelanggan VALUES ('', '$username', '$Nama_Pelanggan', '$password' , '$password2', '$Telepon', '$Email', '$Institusi', '')");
+    mysqli_query($conn, "INSERT INTO pelanggan VALUES ('', '$username', '$Nama_Pelanggan', '$password' , '$password2', '$Telepon', '$Email', '')");
     return mysqli_affected_rows($conn);
 }
 

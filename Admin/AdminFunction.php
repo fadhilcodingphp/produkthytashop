@@ -86,7 +86,7 @@ function tambahProduk($produk)
     global $conn;
     //ambil data dari tiap elemen form
     $ID_Kategori = htmlspecialchars($produk["ID_Kategori"]);
-    $Nama_produk = htmlspecialchars($produk["Nama_Produk"]);
+    $Nama_Produk = htmlspecialchars($produk["Nama_Produk"]);
     $Harga = htmlspecialchars($produk["Harga"]);
     $Ukuran = htmlspecialchars($produk["Ukuran"]);
     $Jenis_Kain = htmlspecialchars($produk["Jenis_Kain"]);
@@ -98,7 +98,7 @@ function tambahProduk($produk)
     }
 
     //query insert data
-    $inputProduk = "INSERT INTO produk VALUES ('', '$ID_Kategori','$Nama_produk', '$Harga', '$Ukuran', '$Jenis_Kain', '$Keterangan', '$Gambar')";
+    $inputProduk = "INSERT INTO produk VALUES ('', '$ID_Kategori','$Nama_Produk', '$Harga', '$Ukuran', '$Jenis_Kain', '$Keterangan', '$Gambar')";
     mysqli_query($conn, $inputProduk);
 
     return mysqli_affected_rows($conn);
@@ -110,7 +110,7 @@ function tambahPromosi($promosi)
 {
     global $conn;
     //ambil data dari tiap elemen form
-    $Nama_produk = htmlspecialchars($promosi["Nama_Produk"]);
+    $Nama_Produk = htmlspecialchars($promosi["Nama_Produk"]);
     $Harga = htmlspecialchars($promosi["Harga"]);
     $Harga_Promosi = htmlspecialchars($promosi["Harga_Promosi"]);
     //upload gambar
@@ -120,7 +120,7 @@ function tambahPromosi($promosi)
     }
 
     //query insert data
-    $inputPromosi = "INSERT INTO promosi VALUES ('','$Nama_produk','$Harga','$Harga_Promosi', '$Gambar')";
+    $inputPromosi = "INSERT INTO promosi VALUES ('','$Nama_Produk','$Harga','$Harga_Promosi', '$Gambar')";
     mysqli_query($conn, $inputPromosi);
 
     return mysqli_affected_rows($conn);
@@ -133,10 +133,10 @@ function ubahProduk($produk)
     //ambil data dari tiap elemen form
     $ID_Produk = htmlspecialchars($produk["ID_Produk"]);
     $ID_Kategori = htmlspecialchars($produk["ID_Kategori"]);
-    $Nama_produk = htmlspecialchars($produk["Nama_produk"]);
-    $Harga = htmlspecialchars($produk["Harga"]);
+    $Nama_produk = htmlspecialchars($produk["Nama_Produk"]);
     $Ukuran = htmlspecialchars($produk["Ukuran"]);
     $Jenis_Kain = htmlspecialchars($produk["Jenis_Kain"]);
+    $Harga = htmlspecialchars($produk["Harga"]);
     $Keterangan = htmlspecialchars($produk["Keterangan"]);
     // $Gambar = htmlspecialchars($produk["Gambar"]);
     $gambarLama = htmlspecialchars($produk["gambarLama"]);
@@ -150,18 +150,18 @@ function ubahProduk($produk)
     }
     //query ubah data
     $ubahproduk = "UPDATE produk, kategori_produk SET
-                    kategori_produk.ID_Kategori = '$ID_Kategori',
-                    produk.Nama_produk = '$Nama_produk', 
+                    produk.Nama_Produk = '$Nama_produk', 
                     produk.Gambar = '$Gambar', 
+                    produk.Ukuran = '$Ukuran',
+                    produk.Jenis_Kain = '$Jenis_Kain',
                     produk.Harga = $Harga, 
-                    produk.Ukuran = $Ukuran, 
-                    produk.Jenis_Kain = $Jenis_Kain, 
                     produk.Keterangan = '$Keterangan' 
                     WHERE  produk.ID_Kategori = kategori_produk.ID_Kategori
                     AND produk.ID_Produk = $ID_Produk";
     mysqli_query($conn, $ubahproduk);
     return mysqli_affected_rows($conn);
 }
+
 // Rekening
 function tambahRekening($rek)
 {

@@ -33,7 +33,7 @@ $ubahProduk = query("SELECT * FROM produk, kategori_produk WHERE ID_Produk = '$I
 <head>
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-   <title>Ubah Produk | Thytashop</title>
+   <title>Ubah Produk | Pode Food</title>
    <?php
    include 'header.php';
    ?>
@@ -90,7 +90,7 @@ $ubahProduk = query("SELECT * FROM produk, kategori_produk WHERE ID_Produk = '$I
                               <div class="col-md-8 col-lg-9"> <input name="Nama_Produk" type="text" class="form-control" id="Nama_Produk" value="<?= $ubahProduk['Nama_Produk'] ?>"></div>
                            </div>
                            <div class="row mb-3">
-                              <label for="Harga" class="col-md-4 col-lg-3 col-form-label">Harga Produk</label>
+                              <label for="Harga" class="col-md-4 col-lg-3 col-form-label">Ketahanan Produk</label>
                               <div class="col-md-8 col-lg-9"> <input name="Harga" type="text" class="form-control" id="Harga" value="<?= $ubahProduk['Harga'] ?>"></div>
                            </div>
                            <div class="row mb-3">
@@ -98,11 +98,11 @@ $ubahProduk = query("SELECT * FROM produk, kategori_produk WHERE ID_Produk = '$I
                               <div class="col-md-8 col-lg-9"> <input name="Ukuran" type="text" class="form-control" id="Ukuran" value="<?= $ubahProduk['Ukuran'] ?>"></div>
                            </div>
                            <div class="row mb-3">
-                              <label for="Jenis_Kain" class="col-md-4 col-lg-3 col-form-label">Jenis Kain</label>
+                              <label for="Jenis_Kain" class="col-md-4 col-lg-3 col-form-label">Jenis Kain Produk</label>
                               <div class="col-md-8 col-lg-9"> <input name="Jenis_Kain" type="text" class="form-control" id="Jenis_Kain" value="<?= $ubahProduk['Jenis_Kain'] ?>"></div>
                            </div>
                            <div class="row mb-3">
-                              <label for="Keterangan" class="col-md-4 col-lg-3 col-form-label">Keterangan Produk</label>
+                              <label for="Keterangan" class="col-md-4 col-lg-3 col-form-label">Jenis Kain Produk</label>
                               <div class="col-md-8 col-lg-9"> <input name="Keterangan" type="text" class="form-control" id="Keterangan" value="<?= $ubahProduk['Keterangan'] ?>"></div>
                            </div>
                            <div class="row mb-3">
