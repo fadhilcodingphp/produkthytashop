@@ -32,7 +32,6 @@ if (!isset($_SESSION['admin'])) {
                   <div class="card-body">
                      <h5 class="card-title">Produk</h5>
                      <a class="btn btn-primary" href="ProdukPromosi.php" role="button">Tambah Promosi</a>
-                     <a class="btn btn-danger" href="ProdukPromosi1.php" role="button">Produk Promosi</a>
                      <table class="table datatable">
                         <thead>
                            <tr>
