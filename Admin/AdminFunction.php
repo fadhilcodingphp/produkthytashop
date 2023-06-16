@@ -126,6 +126,26 @@ function tambahPromosi($promosi)
     return mysqli_affected_rows($conn);
 }
 
+//Best Seller
+function tambahSeller($Seller)
+{
+    global $conn;
+    //ambil data dari tiap elemen form
+    $Nama_Produk = htmlspecialchars($Seller["Nama_Produk"]);
+    $Harga = htmlspecialchars($Seller["Harga"]);
+    //upload gambar
+    $Gambar = uploadGambar();
+    if (!$Gambar) {
+        return false;
+    }
+
+    //query insert data
+    $inputSeller = "INSERT INTO bestseller VALUES ('', '$Nama_Produk','$Harga', '$Gambar')";
+    mysqli_query($conn, $inputSeller);
+
+    return mysqli_affected_rows($conn);
+}
+
 
 function ubahProduk($produk)
 {

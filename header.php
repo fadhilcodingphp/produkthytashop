@@ -23,7 +23,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 
 <!-- Template Stylesheet -->
-<link href="css/sphp.css" rel="stylesheet" />
+<link href="css/style1.css" rel="stylesheet" />
 </head>
 
 <body>
