@@ -28,7 +28,7 @@ require "custFunction.php";
       <div class="row">
         <div class="col-6 mb-6">
           <h3 class=" mb-4">
-            Produk <span class="text-primary">Thytashop</span>
+            Produk Baju <span class="text-primary">Thytashop</span>
           </h3>
         </div>
         <div class="col-5">
