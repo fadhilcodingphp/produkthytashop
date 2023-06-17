@@ -61,7 +61,7 @@
                     <a href="Home.php#caraPesan" class="nav-item nav-link">Panduan Pemesanan</a>
                 </div>
                 <a href="Login.php" class="btn btn-primary">User<i class="fa fa-arrow-right ms-3"></i></a>&nbsp &nbsp
-                <a href="Admin/AdminLogin.php" class="btn btn-danger">Admin<i class="fa fa-arrow-right ms-3"></i></a>&nbsp &nbsp
+                <a href="AdminLogin.php" class="btn btn-danger">Admin<i class="fa fa-arrow-right ms-3"></i></a>&nbsp &nbsp
             </div>
         </nav>
     <?php } else { ?>
