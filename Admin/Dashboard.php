@@ -1,11 +1,6 @@
 <?php
 require 'AdminFunction.php';
 
-if (!isset($_SESSION['admin'])) {
-   header("Location: AdminLogin.php");
-   exit;
-}
-
 $get_Pelanggan = mysqli_query($conn, "SELECT * FROM pelanggan");
 $total_Pelanggan = mysqli_num_rows($get_Pelanggan);
 

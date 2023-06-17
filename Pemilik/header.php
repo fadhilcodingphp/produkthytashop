@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION['rolepemilik'])) {
+    header("Location: ../AdminLogin.php");
+    exit;
+}
+?>
 <meta name="robots" content="noindex, nofollow">
 <meta content="" name="description">
 <meta content="" name="keywords">

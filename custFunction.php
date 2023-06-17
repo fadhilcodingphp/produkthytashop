@@ -290,3 +290,30 @@ function BeriNilai($data)
     mysqli_query($conn, $StatusPesan);
     return mysqli_affected_rows($conn);
 }
+
+// login
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $cekuser = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' AND password='$password'");
+    $hitung = mysqli_num_rows($cekuser);
+
+    if ($hitung > 0) {
+        // kalau data ditemukan
+        $ambildatarole = mysqli_fetch_array($cekuser);
+        $role = $ambildatarole['role'];
+
+        if ($role == 'admin') {
+            $_SESSION['log'] = 'Logged';
+            $_SESSION['roleadmin'] = 'Admin';
+            header('location:Admin/Dashboard.php');
+        } else {
+            $_SESSION['log'] = 'Logged';
+            $_SESSION['rolepemilik'] = 'Pemilik';
+            header('location:Pemilik/Dashboard.php');
+        }
+    } else {
+        echo 'Data tidak ditemukan';
+    }
+}

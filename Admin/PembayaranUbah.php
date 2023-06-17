@@ -1,9 +1,6 @@
 <?php
 require 'AdminFunction.php';
-if (!isset($_SESSION['admin'])) {
-    header("Location: AdminLogin.php");
-    exit;
-}
+
 //ambil data di URL
 $id = $_GET["id"];
 // query data mhs berdasarkan id

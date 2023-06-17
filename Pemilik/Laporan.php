@@ -1,9 +1,6 @@
 <?php
 require 'PemilikFunction.php';
-if (!isset($_SESSION['pemilik'])) {
-   header("Location: PemilikLogin.php");
-   exit;
-}
+
 $conn = new mysqli("localhost", "root", "", "thytashop");
 $awalTgl = "";
 $akhirTgl = "";

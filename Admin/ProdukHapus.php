@@ -1,8 +1,8 @@
 <?php
 require 'AdminFunction.php';
-if ( !isset($_SESSION['admin']) ) {
-   header("Location: AdminLogin.php");
-   exit;
+if (!isset($_SESSION['roleadmin'])) {
+    header("Location: ../AdminLogin.php");
+    exit;
 }
 $conn->query("DELETE FROM produk WHERE ID_Produk='$_GET[id]'");
 if (hapus() > 0) {
@@ -12,7 +12,7 @@ if (hapus() > 0) {
         document.location.href='Produk.php';
         </script>
         ";
-}else {
+} else {
     echo "
         <script>
         alert('Data Gagal Dihapus');
@@ -20,4 +20,3 @@ if (hapus() > 0) {
         </script>
         ";
 }
-?>

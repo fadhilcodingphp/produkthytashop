@@ -1,9 +1,6 @@
 <?php
 require 'AdminFunction.php';
-if (!isset($_SESSION['admin'])) {
-   header("Location: AdminLogin.php");
-   exit;
-}
+
 //cek apakah tombol submir sudah ditekan atau belum
 if (isset($_POST["submit"])) {
    //cek apakah data berhasil ditambahkan atau tidak

@@ -1,11 +1,6 @@
 <?php
 require 'PemilikFunction.php';
 
-if (!isset($_SESSION['pemilik'])) {
-   header("Location: PemilikLogin.php");
-   exit;
-}
-
 $get_Pelanggan = mysqli_query($conn, "SELECT * FROM pelanggan");
 $total_Pelanggan = mysqli_num_rows($get_Pelanggan);
 
@@ -19,7 +14,7 @@ $total_Menu = mysqli_num_rows($get_Menu);
 <head>
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-   <title>Dashboard Admin | Thytashop</title>
+   <title>Dashboard Pemilik | Thytashop</title>
    <?php
    include 'header.php';
    ?>

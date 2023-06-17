@@ -1,7 +1,7 @@
 <?php
 require 'AdminFunction.php';
-if (!isset($_SESSION['admin'])) {
-    header("Location: AdminLogin.php");
+if (!isset($_SESSION['roleadmin'])) {
+    header("Location: ../AdminLogin.php");
     exit;
 }
 $conn->query("DELETE FROM promosi WHERE ID_Promosi='$_GET[id]'");
