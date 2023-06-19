@@ -15,6 +15,46 @@ if (!isset($_SESSION["login"]) && !isset($_SESSION["ID_Pelanggan"])) {
   <?php
   include 'header.php';
   ?>
+  <!-- Produk Best Seller -->
+  <div id="caraPesan" class="container-xxl py-5">
+    <div class="container">
+      <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+        <div class="col-lg-8">
+          <h1 class="display-5 mb-0">
+            Produk Best Seller
+            <span class="text-danger">Thytashop</span>
+          </h1>
+        </div>
+      </div>
+      <div class="row g-4 row-cols-lg-5 row-cols-2 row-cols-md-3">
+        <?php
+        $ambil = mysqli_query($conn, "SELECT * FROM bestseller");
+        ?>
+        <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
+          <!-- produk -->
+          <div class="col">
+            <div class="card card-product">
+              <div class="card-body ">
+                <div class="text-center position-relative mb-2" style="width:100%; height:200px;">
+                  <img src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width:100%; max-height:200px;" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
+                </div>
+                <h3 class="fs-5">
+                  <?php echo $pecah['Nama_Produk']; ?></a>
+                </h3>
+                <div class="d-flex justify-content-between align-items-center mt-2 mb-1">
+                  <div>
+                    <h4 class="text-dark"><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <?php } ?>
+      </div>
+    </div>
+  </div>
+  <!-- Produk Best Seller -->
+
   <!-- Cara Pesan -->
   <div id="caraPesan" class="container-xxl py-5">
     <div class="container">
