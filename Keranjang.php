@@ -74,6 +74,7 @@ if (isset($_POST["submit"])) {
                     </td>
                     <td class="product-name">
                       <h2 class="h5 text-black"><?php echo $pecah['Nama_Produk']; ?></h2>
+                      <h6 style="font-size: 14px;">Ukuran : <?php echo $pecah['Ukuran']; ?></h6 style="font-size: 14px;">
                     </td>
                     <td><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></td>
                     <td>

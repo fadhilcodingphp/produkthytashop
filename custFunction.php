@@ -84,6 +84,7 @@ function tambahKeranjang()
     $id_Produk = $_GET["id"];
     $ID_Pelanggan = $_SESSION["ID_Pelanggan"];
     $Jumlah_Barang = $_POST["Jumlah_Barang"];
+    $Ukuran = $_POST["Ukuran"];
 
     $result = mysqli_query($conn, "SELECT * FROM keranjang WHERE keranjang.ID_Produk=$id_Produk");
     if ($pecah = mysqli_fetch_assoc($result)) {
@@ -92,16 +93,16 @@ function tambahKeranjang()
         $queryDelete = "DELETE FROM keranjang WHERE keranjang.ID_Produk=$id_Produk";
         mysqli_query($conn, $queryDelete);
 
-        $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$ID_Pelanggan', '$Jumlah_Barang' )";
+        $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$Ukuran', '$ID_Pelanggan', '$Jumlah_Barang' )";
         mysqli_query($conn, $queryinput);
     } elseif ($Jumlah_Barang > 0) {
         $Jumlah_Barang = $Jumlah_Barang;
         //query insert data
-        $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$ID_Pelanggan', '$Jumlah_Barang' )";
+        $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$Ukuran', '$ID_Pelanggan', '$Jumlah_Barang' )";
         mysqli_query($conn, $queryinput);
     } else {
         //query insert data
-        $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$ID_Pelanggan', '1' )";
+        $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$Ukuran', '$ID_Pelanggan', '1' )";
         mysqli_query($conn, $queryinput);
     }
     return mysqli_affected_rows($conn);
@@ -165,12 +166,13 @@ function TambahPesanan($tambahPesanan)
     while ($prodit = mysqli_fetch_assoc($ambil)) {
         $ID_Produk = $prodit["ID_Produk"];
         $Nama_Produk = $prodit["Nama_Produk"];
+        $Ukuran = $prodit["Ukuran"];
         $Gambar = $prodit["Gambar"];
         $Jumlah_Barang = $prodit["Jumlah_Barang"];
         $Harga = $prodit["Harga"];
         $Total_Prodit = $Harga * $Jumlah_Barang;
 
-        $input = "INSERT INTO produk_item VALUES ( '', '$ID_Pesanan', '$ID_Produk', '$Nama_Produk', '$Gambar', $Jumlah_Barang, $Total_Prodit)";
+        $input = "INSERT INTO produk_item VALUES ( '', '$ID_Pesanan', '$ID_Produk', '$Nama_Produk', '$Ukuran', '$Gambar', $Jumlah_Barang, $Total_Prodit)";
         mysqli_query($conn, $input);
     }
 

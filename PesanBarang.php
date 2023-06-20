@@ -68,6 +68,7 @@ if (isset($_POST["submit"])) {
                       <th scope="col">No.</th>
                       <th scope="col">Gambar Produk</th>
                       <th scope="col">Produk</th>
+                      <th scope="col">Ukuran</th>
                       <th scope="col">Jumlah</th>
                       <th scope="col">Harga Satuan</th>
                       <th scope="col">Total</th>
@@ -82,6 +83,7 @@ if (isset($_POST["submit"])) {
                         <td><?= $i ?></td>
                         <td scope="row"><img width="150px" src="assets/img/<?php echo $pecah['Gambar']; ?>"></td>
                         <td scope="row"><?php echo $pecah['Nama_Produk']; ?></td>
+                        <td scope="row"><?php echo $pecah['Ukuran']; ?></td>
                         <td scope="row"><?php echo $pecah['Jumlah_Barang']; ?></td>
                         <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></td>
                         <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Harga'] * $pecah['Jumlah_Barang'], 2, ',', '.'); ?></td>
@@ -103,6 +105,7 @@ if (isset($_POST["submit"])) {
               <input type="hidden" class="form-control" id="ID_Pelanggan" name="ID_Pelanggan" value="<?php echo $pecah['ID_Pelanggan']; ?>">
               <input type="hidden" class="form-control" id="ID_Produk" name="ID_Produk" value="<?php echo $pecah['ID_Produk']; ?>">
               <input type="hidden" class="form-control" id="Jumlah_Barang" name="Jumlah_Barang" value="<?php echo $pecah['Jumlah_Barang']; ?>">
+              <input type="hidden" class="form-control" id="Ukuran" name="Ukuran" value="<?php echo $pecah['Ukuran']; ?>">
             <?php } ?>
             <div class="p-3 p-lg-5 border">
               <div class="form-group row">

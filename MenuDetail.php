@@ -49,21 +49,21 @@ if (isset($_POST["submit"])) {
           <h1 class="display-5 fw-bolder">
             <?= $ubahProduk['Nama_Produk'] ?>
           </h1>
-          <div class="fs-5 mt-3 mb-3">
-            <span>Ukuran
-              <select name="Ukuran" id="Ukuran">
-                <option value="">--Pilih--</option>
-                <option value="">M</option>
-                <option value="">L</option>
-                <option value="">XL</option>
-              </select>
-            </span>
-          </div>
           <div class="fs-5 mb-3">
             <span><?= 'Rp. ' . number_format($ubahProduk['Harga'], 2, ',', '.'); ?></span>
           </div>
           <div class="d-flex">
             <form action="" method="post">
+              <div class="fs-5 mt-3 mb-3">
+                <span>Ukuran
+                  <select name="Ukuran" id="Ukuran">
+                    <option value="disable">--Pilih--</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                  </select>
+                </span>
+              </div>
               <div class="input-group mb-3" style="max-width: 120px;">
                 <div class="">
                   <button class="btn btn-outline-primary" onclick="countMinus()" type="button">&minus;</button>
