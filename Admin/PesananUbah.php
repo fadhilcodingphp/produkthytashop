@@ -90,10 +90,6 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                         <div class="col-lg-3 col-md-4 label">Email Pelanggan</div>
                                         <div class="col-lg-9 col-md-8"><?= $pesanan['Email'] ?></div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Institusi Pelanggan</div>
-                                        <div class="col-lg-9 col-md-8"><?= $pesanan['Institusi'] ?></div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

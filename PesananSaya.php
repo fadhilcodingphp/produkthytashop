@@ -69,11 +69,21 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                     </span>
                     <span class="d-block text h6">Tanggal: <?php echo $pecah['Tgl_Pesan']; ?></span>
                   </div>
+                  <hr style="border-top: 1px solid #8c8b8b;">
                   <?php
                   $bayar = $pecah['status_Pembayaran'];
                   if ($bayar == "Belum Bayar") { ?>
-                    <div class="col-2">
-                      <a href="PesananBatal.php?id=<?= $pecah['ID_Pesanan']; ?>" class="btn btn-outline-danger" onclick="return confirm('Yakin ingin membatalkan pesanan?')">Batalkan Pesanan</a>
+                    <div class="col-7">
+                      <button class="btn btn-primary">Menunggu Tagihan</button>
+                      <a href="PesananBatal.php?id=<?= $pecah['ID_Pesanan']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin membatalkan pesanan?')">Batalkan Pesanan</a>
+                    </div>
+                  <?php } ?>
+                  <?php
+                  $bayar = $pecah['status_Pembayaran'];
+                  if ($bayar == "Menunggu Pembayaran") { ?>
+                    <div class="col-7">
+                      <a href="TagihanSaya.php?id=<?= $pecah['ID_Pesanan']; ?>" class="btn btn-primary">Bayar Tagihan</a>
+                      <a href="PesananBatal.php?id=<?= $pecah['ID_Pesanan']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin membatalkan pesanan?')">Batalkan Pesanan</a>
                     </div>
                   <?php } ?>
                   <?php
@@ -83,30 +93,29 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                       <a href="PesananDiterima.php?id=<?= $pecah['ID_Pesanan']; ?>" type="submit" name="submit" id="submit" class="btn btn-primary">Pesanan Diterima</a>
                     </div>
                   <?php } ?>
-
-
                 </div>
 
                 <hr style="border-top: 1px solid #8c8b8b;">
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                   <p class="d-block text-primary mb-1">Kontak Penerima</p>
-                  <p class="d-block text mb-0"><?php echo $pecah['Nama_Penerima']; ?></p>
-                  <p class="d-block text mb-0"><?php echo $pecah['NoTelp_Penerima']; ?></p>
+                  <p class="d-block text mb-0">Penerima : <?php echo $pecah['Nama_Penerima']; ?></p>
+                  <p class="d-block text mb-0">No. Penerima : <?php echo $pecah['NoTelp_Penerima']; ?></p>
                 </div>
                 <div class="col-md-7">
                   <p class="d-block text-primary mb-1">Detail Pengiriman</p>
-                  <p class="d-block text mb-0"><?php echo $pecah['Alamat']; ?></p>
-                  <p class="d-block text mb-0"><?php echo $pecah['link_Lokasi']; ?></p>
+                  <p class="d-block text mb-0">Alamat : <?php echo $pecah['Alamat']; ?></p>
+                  <p class="d-block text mb-0">Link Maps : <?php echo $pecah['link_Lokasi']; ?></p>
                 </div>
-                <div class="col-md-3 mb-3">
-                  <p class="d-block text-primary mb-1">Pembayaran</p>
-                  <p class="d-block text mb-0"><?php echo $pecah['Nama_Rek']; ?></p>
-                  <p class="d-block text mb-0"><?php echo $pecah['Total_Order']; ?></p>
+                <div class="col-md-5 mt-3 mb-3">
+                  <p class="d-block text-primary mb-1">Detail Pembayaran</p>
+                  <p class="d-block text mb-0">Total Pesanan : <?php echo $pecah['Total_pesanan']; ?></p>
+                  <p class="d-block text mb-0">Nama Rekening : <?php echo $pecah['Nama_Rek']; ?></p>
+                  <p class="d-block text mb-0">Total Pembayaran : <?php echo $pecah['Total_Order']; ?></p>
                 </div>
                 <hr style="border-top: 1px solid #8c8b8b;">
 
-                <p class="d-block text mb-0"><?php echo $pecah['ID_Pesanan']; ?></p>
+                <p class="d-block text mb-2">THY00<?php echo $pecah['ID_Pesanan']; ?></p>
                 <?php $ID_Pesanan = $pecah['ID_Pesanan']; ?>
                 <?php $produk = mysqli_query($conn, "SELECT * FROM pesanan
                                                 INNER JOIN pelanggan ON pesanan.ID_Pelanggan = pelanggan.ID_Pelanggan 

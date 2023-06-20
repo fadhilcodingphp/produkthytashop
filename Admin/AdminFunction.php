@@ -113,12 +113,7 @@ function tambahPromosi($promosi)
     $Nama_Produk = htmlspecialchars($promosi["Nama_Produk"]);
     $Harga = htmlspecialchars($promosi["Harga"]);
     $Harga_Promosi = htmlspecialchars($promosi["Harga_Promosi"]);
-    //upload gambar
-    $Gambar = uploadGambar();
-    if (!$Gambar) {
-        return false;
-    }
-
+    $Gambar = htmlspecialchars($promosi["Gambar"]);
     //query insert data
     $inputPromosi = "INSERT INTO promosi VALUES ('','$Nama_Produk','$Harga','$Harga_Promosi', '$Gambar')";
     mysqli_query($conn, $inputPromosi);
@@ -294,6 +289,7 @@ function ubahPesanan($pesanan)
     mysqli_query($conn, $ubahproduk);
     $ubahbayar = "UPDATE pembayaran SET
                     status = '$Status',
+                    status_Pembayaran = 'Menunggu Pembayaran',
                     Total_Order = '$Total_order'
                     WHERE  ID_Pesanan = $ID_Pesanan";
     mysqli_query($conn, $ubahbayar);

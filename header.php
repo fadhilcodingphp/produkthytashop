@@ -90,7 +90,13 @@
                 </div>
 
                 <div class="navbar-nav ms-auto">
-                    <a href="Keranjang.php" class="btn btn-primary mx-1"><i class="fa fa-shopping-cart mt-1" aria-hidden="true"></i></a>
+                    <a href="Keranjang.php" class="btn btn-primary mx-1"><i class="fa fa-shopping-cart mt-1" aria-hidden="true"></i>
+                        <?php $ID_Pelanggan = $_SESSION["ID_Pelanggan"] ?>
+                        <?php $get1 = mysqli_query($conn, "SELECT*FROM keranjang WHERE ID_Pelanggan ='$ID_Pelanggan'");
+                        $count1 = mysqli_num_rows($get1);
+                        ?>
+                        <?= $count1; ?>
+                    </a>
                     <div class="nav-item dropdown">
                         <a href="#" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-user" aria-hidden="true" style="width: 10px; height: 10px"></i>

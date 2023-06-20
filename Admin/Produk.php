@@ -55,7 +55,7 @@ require 'AdminFunction.php';
                                     <a class="btn btn-info" href="ProdukDetail.php?id=<?= $pecah['ID_Produk']; ?>">Detail</a>
                                     &nbsp <a class="btn btn-warning" href="ProdukUbah.php?id=<?= $pecah['ID_Produk']; ?>">Edit</a>
                                     <br> <br>
-                                    <a class="btn btn-primary" href="ProdukPromosi.php">Promosikan</a>
+                                    <a class="btn btn-primary" href="ProdukPromosi.php?id=<?= $pecah['ID_Produk']; ?>">Promosikan</a>
                                     <br><br>
                                     <a class="btn btn-danger" href="ProdukHapus.php?id=<?= $pecah['ID_Produk']; ?>" onclick="return confirm('Yakin ingin menghapus?')">Delete</a>
                                  </td>

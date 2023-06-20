@@ -37,7 +37,6 @@ require "custFunction.php";
                   <th class="product-name">Tanggal Pesan</th>
                   <th class="product-price">Diskon Pemesanan</th>
                   <th class="product-quantity">Total Harga</th>
-                  <th class="product-price">Status Pembayaran</th>
                   <th class="product-quantity" style="width:20%">Aksi</th>
                 </tr>
               </thead>
@@ -64,27 +63,13 @@ require "custFunction.php";
                     <td>
                       <?php
                       $bayar = $pecah['status_Pembayaran'];
-                      $status = $pecah['status'];
-                      if ($bayar == "LUNAS") {
-                        echo "<span class='badge bg-success'> <h6><b> $bayar </b></h6> </span>";
-                      } elseif ($bayar == "DP 50% dan COD") {
-                        echo "<span class='badge bg-warning'> <h6><b> $bayar </b></h6> </span>";
-                      } elseif ($bayar == "Belum Bayar") {
-                        echo "<span class='badge bg-danger'> <h6><b> $bayar </b></h6> </span>";
-                      } elseif ($status == "Menunggu Pembayaran") {
-                        echo "<span class='badge bg-danger'> <h6><b> $status </b></h6> </span>";
-                      }
-                      ?>
-                    </td>
-                    <td>
-                      <?php
-                      $bayar = $pecah['status_Pembayaran'];
-                      if ($bayar == "Menunggu Pembayaran") { ?>
+                      if ($bayar == "Belum Bayar") { ?>
                         <p>Tagihan belum dikirim. Harap tunggu beberapa saat lagi</p>
-                      <?php } else { ?>
+                      <?php } elseif ($bayar == "Menunggu Pembayaran") { ?>
                         <a href="TagihanBayar.php?id=<?= $pecah['ID_Pembayaran']; ?>" class="btn btn-primary btn-sm">Bayar Tagihan</a>
+                      <?php } elseif ($bayar == "LUNAS") { ?>
+                        Pembayaran Selesai
                       <?php } ?>
-
                     </td>
                   </tr>
                 <?php } ?>

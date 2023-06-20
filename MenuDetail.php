@@ -49,6 +49,16 @@ if (isset($_POST["submit"])) {
           <h1 class="display-5 fw-bolder">
             <?= $ubahProduk['Nama_Produk'] ?>
           </h1>
+          <div class="fs-5 mt-3 mb-3">
+            <span>Ukuran
+              <select name="Ukuran" id="Ukuran">
+                <option value="">--Pilih--</option>
+                <option value="">M</option>
+                <option value="">L</option>
+                <option value="">XL</option>
+              </select>
+            </span>
+          </div>
           <div class="fs-5 mb-3">
             <span><?= 'Rp. ' . number_format($ubahProduk['Harga'], 2, ',', '.'); ?></span>
           </div>
@@ -72,12 +82,8 @@ if (isset($_POST["submit"])) {
           <p class="lead">
           <h4>Deskripsi Produk :</h4>
           <div class="row">
-            <div class="col-lg-3 col-md-4 label">Ukuran</div>
-            <div class="col-lg-9 col-md-8"><?= $ubahProduk['Ukuran'] ?></div>
-          </div>
-          <div class="row">
             <div class="col-lg-3 col-md-4 label">Jenis Kain</div>
-            <div class="col-lg-9 col-md-8"><?= $ubahProduk['Jenis_Kain'] ?></div>
+            <div class="col-lg-9 col-md-8">: <?= $ubahProduk['Jenis_Kain'] ?></div>
           </div>
           <?= $ubahProduk['Keterangan'] ?>
           </p>

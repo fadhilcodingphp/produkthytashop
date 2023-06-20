@@ -83,7 +83,6 @@ if (isset($_POST["submit"])) {
                           <input type="text" name="Jumlah_Barang" class="form-control text-center" id="Jumlah_Barang" value="<?php echo $pecah['Jumlah_Barang']; ?>" placeholder="">
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary btn-sm btn-block">Edit Jumlah</button>
-
                       </form>
                     </td>
                     <td><?php echo 'Rp. ' . number_format($pecah['Harga'] * $pecah['Jumlah_Barang'], 2, ',', '.'); ?></td>
