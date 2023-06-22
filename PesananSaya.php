@@ -74,15 +74,7 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                   $bayar = $pecah['status_Pembayaran'];
                   if ($bayar == "Belum Bayar") { ?>
                     <div class="col-7">
-                      <button class="btn btn-primary">Menunggu Tagihan</button>
-                      <a href="PesananBatal.php?id=<?= $pecah['ID_Pesanan']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin membatalkan pesanan?')">Batalkan Pesanan</a>
-                    </div>
-                  <?php } ?>
-                  <?php
-                  $bayar = $pecah['status_Pembayaran'];
-                  if ($bayar == "Menunggu Pembayaran") { ?>
-                    <div class="col-7">
-                      <a href="TagihanSaya.php?id=<?= $pecah['ID_Pesanan']; ?>" class="btn btn-primary">Bayar Tagihan</a>
+                      <a href="TagihanBayar.php?id=<?= $pecah['ID_Pesanan']; ?>" class="btn btn-primary">Bayar Tagihan</a>
                       <a href="PesananBatal.php?id=<?= $pecah['ID_Pesanan']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin membatalkan pesanan?')">Batalkan Pesanan</a>
                     </div>
                   <?php } ?>

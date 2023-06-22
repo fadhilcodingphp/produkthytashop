@@ -63,13 +63,12 @@ require "custFunction.php";
                     <td>
                       <?php
                       $bayar = $pecah['status_Pembayaran'];
-                      if ($bayar == "Belum Bayar") { ?>
-                        <p>Tagihan belum dikirim. Harap tunggu beberapa saat lagi</p>
-                      <?php } elseif ($bayar == "Menunggu Pembayaran") { ?>
+                      if ($bayar == "LUNAS") { ?>
+                        <p>Pembayaran Selesai</p>
+                      <?php } else { ?>
                         <a href="TagihanBayar.php?id=<?= $pecah['ID_Pembayaran']; ?>" class="btn btn-primary btn-sm">Bayar Tagihan</a>
-                      <?php } elseif ($bayar == "LUNAS") { ?>
-                        Pembayaran Selesai
                       <?php } ?>
+
                     </td>
                   </tr>
                 <?php } ?>

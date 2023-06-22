@@ -289,7 +289,6 @@ function ubahPesanan($pesanan)
     mysqli_query($conn, $ubahproduk);
     $ubahbayar = "UPDATE pembayaran SET
                     status = '$Status',
-                    status_Pembayaran = 'Menunggu Pembayaran',
                     Total_Order = '$Total_order'
                     WHERE  ID_Pesanan = $ID_Pesanan";
     mysqli_query($conn, $ubahbayar);
