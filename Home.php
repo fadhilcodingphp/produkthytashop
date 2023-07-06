@@ -66,15 +66,16 @@ require 'custFunction.php';
       </div>
       <div class="row g-4">
         <?php
-        $ambil = mysqli_query($conn, "SELECT * FROM promosi");
+        $ambil = mysqli_query($conn, "SELECT * FROM produk WHERE produk.ID_Kategori = 'THY005'");
         ?>
         <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="membership-item position-relative" style="background: red;">
               <h4 class=" text-black"><?php echo $pecah['Nama_Produk']; ?></h4>
               <img src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width:50%; max-height:200px;" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
-              <h5 class="coret" style="color: black;"><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></h5>
-              <h4 style="color: white;">Sekarang Hanya : <br> <?php echo 'Rp. ' . number_format($pecah['Harga_Promosi'], 2, ',', '.'); ?></h4>
+              <h5 class="coret" style="color: black;"><?php echo 'Rp. ' . number_format($pecah['Promo'], 2, ',', '.'); ?></h5>
+              <h4 style="color: white;">Sekarang Hanya : <br> <?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></h4>
+              <h6 style="color: white;">Berlaku sampai<br><?php echo $pecah['Tgl_Promo']; ?> </h6>
             </div>
           </div>
         <?php } ?>

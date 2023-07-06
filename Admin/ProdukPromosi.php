@@ -2,20 +2,20 @@
 require 'AdminFunction.php';
 
 //cek apakah tombol submit sudah ditekan atau belum
-if (isset($_POST["tambahPromosi"])) {
-   //cek apakah data berhasil ditambahkan atau tidak
-   if (tambahPromosi($_POST) > 0) {
+if (isset($_POST["ubahProduk"])) {
+   //cek apakah data berhasil diubah atau tidak
+   if (promosiProduk($_POST) > 0) {
       echo "
         <script>
-        alert('Produk berhasil dipromosikan');
-        document.location.href='ProdukPromosi1.php';
+        alert('Data berhasil diubah');
+        document.location.href='Produk.php';
         </script>
         ";
    } else {
       echo "
         <script>
-        alert('Produk gagal dipromosikan');
-        document.location.href='ProdukPromosi.php';
+        alert('Data Gagal Diubah');
+        document.location.href='Produk.php';
         </script>
         ";
    }
@@ -30,13 +30,13 @@ $ubahProduk = query("SELECT * FROM produk, kategori_produk WHERE ID_Produk = '$I
 <head>
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-   <title>Ubah Produk | Pode Food</title>
+   <title>Promosi Produk | Pode Food</title>
    <?php
    include 'header.php';
    ?>
    <main id="main" class="main">
       <div class="pagetitle">
-         <h1>Promosi</h1>
+         <h1>Profile</h1>
          <nav>
             <ol class="breadcrumb">
                <li class="breadcrumb-item"><a href="Dashboard.php">Home</a></li>
@@ -62,22 +62,45 @@ $ubahProduk = query("SELECT * FROM produk, kategori_produk WHERE ID_Produk = '$I
                      <div class="tab-pane fade show active profile-overview" id="ubahProduk">
                         <h5 class="card-title">Promosi Produk</h5>
                         <form action="" method="post" enctype="multipart/form-data">
-                           <input type="hidden" name="Gambar" value="<?= $ubahProduk["Gambar"] ?>">
+                           <input type="hidden" name="gambarLama" value="<?= $ubahProduk["Gambar"] ?>">
                            <input type="hidden" name="ID_Produk" value="<?= $ubahProduk['ID_Produk'] ?>">
+                           <!-- <div class="row mb-3">
+                                    <label for="ID_Produk" class="col-md-4 col-lg-3 col-form-label">ID Produk</label>
+                                    <div class="col-md-8 col-lg-9"> <input  type="text" class="form-control" id="ID_Produk" ></div>
+                                 </div> -->
+                           <div class="row mb-3">
+                              <label for="company" class="col-md-4 col-lg-3 col-form-label">Kategori Produk</label>
+                              <div class="col-md-8 col-lg-9">
+                                 <select class="form-select" aria-label="Default select example" name="ID_Kategori">
+                                    <option selected><?= $ubahProduk['Nama_Kategori'] ?></option>
+                                    <?php
+                                    $ambil = mysqli_query($conn, "SELECT * FROM kategori_produk");
+                                    while ($pecah = mysqli_fetch_assoc($ambil)) {
+                                       echo "<option value=$pecah[ID_Kategori]> $pecah[Nama_Kategori]</option>";
+                                    }
+                                    ?>
+                                 </select>
+                              </div>
+                           </div>
                            <div class="row mb-3">
                               <label for="Nama_Produk" class="col-md-4 col-lg-3 col-form-label">Nama Produk</label>
                               <div class="col-md-8 col-lg-9"> <input name="Nama_Produk" type="text" class="form-control" id="Nama_Produk" value="<?= $ubahProduk['Nama_Produk'] ?>"></div>
                            </div>
                            <div class="row mb-3">
-                              <label for="Harga" class="col-md-4 col-lg-3 col-form-label">Harga Asli</label>
-                              <div class="col-md-8 col-lg-9"> <input name="Harga" type="text" class="form-control" id="Harga" value="<?= $ubahProduk['Harga'] ?>"></div>
+                              <label for="Promo" class="col-md-4 col-lg-3 col-form-label">Harga Sebelumnya</label>
+                              <div class="col-md-8 col-lg-9"> <input name="Promo" type="text" class="form-control" id="Promo" value="<?= $ubahProduk['Harga'] ?>"></div>
                            </div>
                            <div class="row mb-3">
-                              <label for="Harga_Promosi" class="col-md-4 col-lg-3 col-form-label">Harga Promo</label>
-                              <div class="col-md-8 col-lg-9"> <input name="Harga_Promosi" type="text" class="form-control" id="Harga_Promosi" value="--"></div>
+                              <label for="Harga" class="col-md-4 col-lg-3 col-form-label">Harga Promo</label>
+                              <div class="col-md-8 col-lg-9"> <input name="Harga" type="text" class="form-control" id="Harga" value="<?= $ubahProduk['Promo'] ?>"></div>
                            </div>
+                           <div class="row mb-3">
+                              <label for="Tgl_Promo" class="col-md-4 col-lg-3 col-form-label">Masa Berlaku</label>
+                              <div class="col-md-8 col-lg-9"> <input name="Tgl_Promo" type="date" class="form-control" id="Tgl_Promo" value="<?= $ubahProduk['Tgl_Promo'] ?>"></div>
+                           </div>
+
                            <div class="text-center">
-                              <button type="submit" name="tambahPromosi" class="btn btn-primary">Promosikan Produk</button>
+                              <button type="submit" name="ubahProduk" class="btn btn-primary">Promosikan Produk</button>
                            </div>
                         </form>
                      </div>

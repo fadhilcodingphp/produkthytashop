@@ -88,7 +88,6 @@ function tambahProduk($produk)
     $ID_Kategori = htmlspecialchars($produk["ID_Kategori"]);
     $Nama_Produk = htmlspecialchars($produk["Nama_Produk"]);
     $Harga = htmlspecialchars($produk["Harga"]);
-    $Ukuran = htmlspecialchars($produk["Ukuran"]);
     $Jenis_Kain = htmlspecialchars($produk["Jenis_Kain"]);
     $Keterangan = htmlspecialchars($produk["Keterangan"]);
     //upload gambar
@@ -98,7 +97,7 @@ function tambahProduk($produk)
     }
 
     //query insert data
-    $inputProduk = "INSERT INTO produk VALUES ('', '$ID_Kategori','$Nama_Produk', '$Harga', '$Ukuran', '$Jenis_Kain', '$Keterangan', '$Gambar')";
+    $inputProduk = "INSERT INTO produk VALUES ('', '$ID_Kategori','$Nama_Produk', '$Harga', '', '$Jenis_Kain', '$Keterangan', '$Gambar')";
     mysqli_query($conn, $inputProduk);
 
     return mysqli_affected_rows($conn);
@@ -171,6 +170,30 @@ function ubahProduk($produk)
                     produk.Jenis_Kain = '$Jenis_Kain',
                     produk.Harga = $Harga, 
                     produk.Keterangan = '$Keterangan' 
+                    WHERE  produk.ID_Kategori = kategori_produk.ID_Kategori
+                    AND produk.ID_Produk = $ID_Produk";
+    mysqli_query($conn, $ubahproduk);
+    return mysqli_affected_rows($conn);
+}
+
+function promosiProduk($produk)
+{
+    global $conn;
+    //ambil data dari tiap elemen form
+    $ID_Produk = htmlspecialchars($produk["ID_Produk"]);
+    $ID_Kategori = htmlspecialchars($produk["ID_Kategori"]);
+    $Nama_produk = htmlspecialchars($produk["Nama_Produk"]);
+    $Harga = htmlspecialchars($produk["Harga"]);
+    $Promo = htmlspecialchars($produk["Promo"]);
+    $Tgl_Promo = htmlspecialchars($produk["Tgl_Promo"]);
+
+    //query ubah data
+    $ubahproduk = "UPDATE produk, kategori_produk SET
+                    produk.ID_Kategori = '$ID_Kategori', 
+                    produk.Nama_Produk = '$Nama_produk', 
+                    produk.Harga = $Harga, 
+                    produk.Promo = '$Promo', 
+                    produk.Tgl_Promo = '$Tgl_Promo' 
                     WHERE  produk.ID_Kategori = kategori_produk.ID_Kategori
                     AND produk.ID_Produk = $ID_Produk";
     mysqli_query($conn, $ubahproduk);

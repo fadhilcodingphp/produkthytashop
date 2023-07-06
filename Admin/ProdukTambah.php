@@ -68,10 +68,6 @@ if (isset($_POST["tambahProduk"])) {
                      <input type="text" name="Harga" class="form-control" id="Harga" required>
                   </div>
                   <div class="col-12">
-                     <label for="Ukuran" class="form-label">Ukuran Produk</label>
-                     <input type="text" name="Ukuran" class="form-control" id="Ukuran" required>
-                  </div>
-                  <div class="col-12">
                      <label for="Jenis_Kain" class="form-label">Jenis Kain</label>
                      <input type="text" name="Jenis_Kain" class="form-control" id="Jenis_Kain" required>
                   </div>

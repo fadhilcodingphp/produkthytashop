@@ -91,10 +91,6 @@ $ubahProduk = query("SELECT * FROM produk, kategori_produk WHERE ID_Produk = '$I
                               <div class="col-md-8 col-lg-9"> <input name="Harga" type="text" class="form-control" id="Harga" value="<?= $ubahProduk['Harga'] ?>"></div>
                            </div>
                            <div class="row mb-3">
-                              <label for="Ukuran" class="col-md-4 col-lg-3 col-form-label">Ukuran Produk</label>
-                              <div class="col-md-8 col-lg-9"> <input name="Ukuran" type="text" class="form-control" id="Ukuran" value="<?= $ubahProduk['Ukuran'] ?>"></div>
-                           </div>
-                           <div class="row mb-3">
                               <label for="Jenis_Kain" class="col-md-4 col-lg-3 col-form-label">Jenis Kain Produk</label>
                               <div class="col-md-8 col-lg-9"> <input name="Jenis_Kain" type="text" class="form-control" id="Jenis_Kain" value="<?= $ubahProduk['Jenis_Kain'] ?>"></div>
                            </div>
