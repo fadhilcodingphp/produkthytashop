@@ -110,6 +110,10 @@ if (isset($_POST['btnTampil'])) {
                            <?php } ?>
                         </tbody>
                      </table>
+                     <?php $total_Penjualan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(Total_Prodit) AS total FROM produk_item"))["total"]; ?>
+                     <h6>
+                        Total Penjualan Thytashop : Rp.<?php echo number_format($total_Penjualan, 2, ',', '.') ?>
+                     </h6>
                   </div>
                </div>
             </div>

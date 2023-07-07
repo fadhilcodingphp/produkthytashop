@@ -86,11 +86,11 @@ function tambahKeranjang()
     $Jumlah_Barang = $_POST["Jumlah_Barang"];
     $Ukuran = $_POST["Ukuran"];
 
-    $result = mysqli_query($conn, "SELECT * FROM keranjang WHERE keranjang.ID_Produk=$id_Produk");
+    $result = mysqli_query($conn, "SELECT * FROM keranjang WHERE keranjang.Ukuran=$Ukuran");
     if ($pecah = mysqli_fetch_assoc($result)) {
         $Jumlah_Barang = $pecah['Jumlah_Barang'] + $Jumlah_Barang;
         //query insert data
-        $queryDelete = "DELETE FROM keranjang WHERE keranjang.ID_Produk=$id_Produk";
+        $queryDelete = "DELETE FROM keranjang WHERE keranjang.Ukuran=$Ukuran";
         mysqli_query($conn, $queryDelete);
 
         $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$Ukuran', '$ID_Pelanggan', '$Jumlah_Barang' )";

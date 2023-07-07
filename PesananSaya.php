@@ -52,7 +52,7 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                 <div class="row col-md-12 mb-3">
                   <div class="col-10">
                     <span class="d-block h5">
-                      ID Pesanan: <?php echo $pecah['ID_Pesanan']; ?> |
+                      ID Pesanan: THYP0<?php echo $pecah['ID_Pesanan']; ?> |
                       <?php
                       $status = $pecah['status'];
                       if ($status == "Menunggu Pembayaran") {
@@ -93,21 +93,21 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                   <p class="d-block text-primary mb-1">Kontak Penerima</p>
                   <p class="d-block text mb-0">Penerima : <?php echo $pecah['Nama_Penerima']; ?></p>
                   <p class="d-block text mb-0">No. Penerima : <?php echo $pecah['NoTelp_Penerima']; ?></p>
+                  <p class="d-block text mb-0">Tanggal Pemesanan : <?php echo $pecah['Tgl_Pesan']; ?></p>
                 </div>
                 <div class="col-md-7">
                   <p class="d-block text-primary mb-1">Detail Pengiriman</p>
                   <p class="d-block text mb-0">Alamat : <?php echo $pecah['Alamat']; ?></p>
                   <p class="d-block text mb-0">Link Maps : <?php echo $pecah['link_Lokasi']; ?></p>
+                  <p class="d-block text mb-0">Tanggal Kirim : <?php echo $pecah['Tgl_Kirim']; ?></p>
                 </div>
                 <div class="col-md-5 mt-3 mb-3">
                   <p class="d-block text-primary mb-1">Detail Pembayaran</p>
-                  <p class="d-block text mb-0">Total Pesanan : <?php echo $pecah['Total_pesanan']; ?></p>
+                  <p class="d-block text mb-0">Total Pesanan : <?= 'Rp. ' . number_format($pecah['Total_pesanan'] + $pecah['ID_Pesanan'], 2, ',', '.'); ?></p>
                   <p class="d-block text mb-0">Nama Rekening : <?php echo $pecah['Nama_Rek']; ?></p>
-                  <p class="d-block text mb-0">Total Pembayaran : <?php echo $pecah['Total_Order']; ?></p>
+                  <p class="d-block text mb-0">Total Pembayaran : <?= 'Rp. ' . number_format($pecah['Total_Order'], 2, ',', '.'); ?></p>
                 </div>
                 <hr style="border-top: 1px solid #8c8b8b;">
-
-                <p class="d-block text mb-2">THY00<?php echo $pecah['ID_Pesanan']; ?></p>
                 <?php $ID_Pesanan = $pecah['ID_Pesanan']; ?>
                 <?php $produk = mysqli_query($conn, "SELECT * FROM pesanan
                                                 INNER JOIN pelanggan ON pesanan.ID_Pelanggan = pelanggan.ID_Pelanggan 
