@@ -89,10 +89,6 @@ if (isset($_POST["ubahPembayaran"])) {
                                         <div class="col-lg-4 col-md-5 label">Email Pelanggan</div>
                                         <div class="col-lg-8 col-md-7"><?= $pesanan['Email'] ?></div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-5 label">Institusi Pelanggan</div>
-                                        <div class="col-lg-8 col-md-7"><?= $pesanan['Institusi'] ?></div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -112,10 +108,6 @@ if (isset($_POST["ubahPembayaran"])) {
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Tanggal Pengiriman</div>
                                         <div class="col-lg-9 col-md-8"><?= $pesanan['Tgl_Kirim'] ?></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Waktu Pengiriman</div>
-                                        <div class="col-lg-9 col-md-8"><?= $pesanan['Waktu_Kirim'] ?></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Total Pesanan</div>

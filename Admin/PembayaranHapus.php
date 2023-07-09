@@ -5,12 +5,12 @@ if (!isset($_SESSION['roleadmin'])) {
     exit;
 }
 $conn->query("UPDATE pembayaran SET
-            ID_Rekening = 'Belum Bayar',
-            Nama_Rek = 'Masih Menunggu Tagihan', 
-            Nominal = 0,
+            Status = 'Menunggu Pembayaran', 
+            Total_Order = 0,
+            Nama_Rek = '',
+            Tgl_bayar = '',
             Bukti_bayar = '',
-            Bukti_bayar = '',
-            status_Pembayaran = 'Pembayaran Ditolak' 
+            status_Pembayaran = 'Belum Bayar' 
             WHERE ID_Pesanan='$_GET[id]'");
 if (hapus() > 0) {
     echo "
@@ -23,7 +23,7 @@ if (hapus() > 0) {
     echo "
         <script>
         alert('Data Gagal Dihapus');
-        document.location.href='Pembayaran.php';
+        document.location.href='PembayaranUbah.php';
         </script>
         ";
 }
