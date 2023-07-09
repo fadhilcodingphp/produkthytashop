@@ -189,7 +189,7 @@ function promosiProduk($produk)
 
     //query ubah data
     $ubahproduk = "UPDATE produk, kategori_produk SET
-                    produk.ID_Kategori = '$ID_Kategori', 
+                    produk.ID_Kategori = 'THY005', 
                     produk.Nama_Produk = '$Nama_produk', 
                     produk.Harga = $Harga, 
                     produk.Promo = '$Promo', 

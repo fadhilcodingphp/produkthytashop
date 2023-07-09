@@ -69,18 +69,8 @@ $ubahProduk = query("SELECT * FROM produk, kategori_produk WHERE ID_Produk = '$I
                                     <div class="col-md-8 col-lg-9"> <input  type="text" class="form-control" id="ID_Produk" ></div>
                                  </div> -->
                            <div class="row mb-3">
-                              <label for="company" class="col-md-4 col-lg-3 col-form-label">Kategori Produk</label>
-                              <div class="col-md-8 col-lg-9">
-                                 <select class="form-select" aria-label="Default select example" name="ID_Kategori">
-                                    <option selected><?= $ubahProduk['Nama_Kategori'] ?></option>
-                                    <?php
-                                    $ambil = mysqli_query($conn, "SELECT * FROM kategori_produk");
-                                    while ($pecah = mysqli_fetch_assoc($ambil)) {
-                                       echo "<option value=$pecah[ID_Kategori]> $pecah[Nama_Kategori]</option>";
-                                    }
-                                    ?>
-                                 </select>
-                              </div>
+                              <label for="ID_Kategori" class="col-md-4 col-lg-3 col-form-label">Kategori Produk</label>
+                              <div class="col-md-8 col-lg-9"> <input name="ID_Kategori" type="text" class="form-control" id="ID_Kategori" value="Promosi" readonly></div>
                            </div>
                            <div class="row mb-3">
                               <label for="Nama_Produk" class="col-md-4 col-lg-3 col-form-label">Nama Produk</label>
