@@ -85,6 +85,13 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                       <a href="PesananDiterima.php?id=<?= $pecah['ID_Pesanan']; ?>" type="submit" name="submit" id="submit" class="btn btn-primary">Pesanan Diterima</a>
                     </div>
                   <?php } ?>
+                  <?php
+                  $bayar = $pecah['status_Pembayaran'];
+                  if ($bayar == "Pembayaran Selesai") { ?>
+                    <div class="col-2">
+                      <h6>Pesanan Selesai</h6>
+                    </div>
+                  <?php } ?>
                 </div>
 
                 <hr style="border-top: 1px solid #8c8b8b;">

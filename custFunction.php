@@ -227,7 +227,8 @@ function Terima($Pesanan)
     $ID_Pesanan = htmlspecialchars($Pesanan["ID_Pesanan"]);
 
     $inputPembayaran = "UPDATE pembayaran SET
-                    status = 'Pesanan Selesai','
+                    status = 'Pesanan Selesai',
+                    status_Pembayaran = 'Pembayaran Selesai'
                     WHERE ID_Pesanan= '$ID_Pesanan'";
     mysqli_query($conn, $inputPembayaran);
 
@@ -276,12 +277,7 @@ function BeriNilai($data)
     $ID_Pesanan = htmlspecialchars($data["ID_Pesanan"]);
     $Nama_Penerima = htmlspecialchars($data["Nama_Penerima"]);
     $Testimoni = htmlspecialchars($data["Testimoni"]);
-    //upload gambar
-    $Gambar = uploadGambar();
-    if (!$Gambar) {
-        return false;
-    }
-
+    $Gambar = htmlspecialchars($data["Gambar"]);
     $input = "INSERT INTO penilaian VALUES ('$Nama_Penerima', '$Gambar', '$Testimoni')";
     mysqli_query($conn, $input);
 

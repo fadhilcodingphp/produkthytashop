@@ -17,7 +17,7 @@ if (isset($_POST["submit"])) {
         echo "
         <script>
         alert('Penilaian Gagal');
-        document.location.href='PesananSaya.php';
+        document.location.href='PesananDiterima.php';
         </script>
         ";
     }
@@ -28,7 +28,7 @@ if (isset($_POST["submit"])) {
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Penilaian | Thytashop</title>
+    <title>Testimoni Produk | Thytashop</title>
     <?php
     include 'header.php';
     ?>
