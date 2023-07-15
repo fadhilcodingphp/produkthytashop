@@ -103,23 +103,6 @@ function tambahProduk($produk)
     return mysqli_affected_rows($conn);
 }
 
-
-//Promosi
-function tambahPromosi($promosi)
-{
-    global $conn;
-    //ambil data dari tiap elemen form
-    $Nama_Produk = htmlspecialchars($promosi["Nama_Produk"]);
-    $Harga = htmlspecialchars($promosi["Harga"]);
-    $Harga_Promosi = htmlspecialchars($promosi["Harga_Promosi"]);
-    $Gambar = htmlspecialchars($promosi["Gambar"]);
-    //query insert data
-    $inputPromosi = "INSERT INTO promosi VALUES ('','$Nama_Produk','$Harga','$Harga_Promosi', '$Gambar')";
-    mysqli_query($conn, $inputPromosi);
-
-    return mysqli_affected_rows($conn);
-}
-
 //Best Seller
 function tambahSeller($Seller)
 {
@@ -197,6 +180,24 @@ function promosiProduk($produk)
                     WHERE  produk.ID_Kategori = kategori_produk.ID_Kategori
                     AND produk.ID_Produk = $ID_Produk";
     mysqli_query($conn, $ubahproduk);
+    return mysqli_affected_rows($conn);
+}
+
+function sellerProduk($produk)
+{
+    global $conn;
+    //ambil data dari tiap elemen form
+    $ID_Produk = htmlspecialchars($produk["ID_Produk"]);
+    $ID_Kategori = htmlspecialchars($produk["ID_Kategori"]);
+    $Nama_produk = htmlspecialchars($produk["Nama_Produk"]);
+
+    //query ubah data
+    $sellerProduk = "UPDATE produk, kategori_produk SET
+                    produk.ID_Kategori = 'THY006', 
+                    produk.Nama_Produk = '$Nama_produk'
+                    WHERE  produk.ID_Kategori = kategori_produk.ID_Kategori
+                    AND produk.ID_Produk = $ID_Produk";
+    mysqli_query($conn, $sellerProduk);
     return mysqli_affected_rows($conn);
 }
 
@@ -374,4 +375,31 @@ function ubahPembayaran($pembayaran)
     }
 
     return mysqli_affected_rows($conn);
+}
+
+// login
+if (isset($_POST['loginadmin'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $cekuser = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' AND password='$password'");
+    $hitung = mysqli_num_rows($cekuser);
+
+    if ($hitung > 0) {
+        // kalau data ditemukan
+        $ambildatarole = mysqli_fetch_array($cekuser);
+        $role = $ambildatarole['role'];
+
+        if ($role == 'admin') {
+            $_SESSION['log'] = 'Logged';
+            $_SESSION['roleadmin'] = 'Admin';
+            header('location:Admin/Dashboard.php');
+        } else {
+            $_SESSION['log'] = 'Logged';
+            $_SESSION['rolepemilik'] = 'Pemilik';
+            header('location:Pemilik/Dashboard.php');
+        }
+    } else {
+        $error = true;
+    }
 }

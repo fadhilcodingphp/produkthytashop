@@ -56,6 +56,9 @@ if (isset($_POST["login"])) {
             <div class="form-group">
               <input type="password" class="form-input" name="Password" id="Password" placeholder="Password" />
             </div>
+            <?php if (isset($error)) : ?>
+              <p class="text-danger">Username/Password salah</p>
+            <?php endif; ?>
             <div class="form-group">
               <input type="submit" name="login" id="login" class="form-submit" value="Login" />
             </div>

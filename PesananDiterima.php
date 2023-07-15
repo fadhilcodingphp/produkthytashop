@@ -51,8 +51,8 @@ if (isset($_POST["submit"])) {
                                         <div class="col-12">
                                             <h5 class="card-title">Silahkan berikan penilaian anda terhadap produk kami!</h5>
                                             <input type="hidden" name="ID_Pesanan" value="<?php echo $pecah['ID_Pesanan']; ?>">
-                                            <label for="Nama_Penerima" class="text-black mb-1">Nama Penerima<span class="text-danger">*</span></label>
-                                            <input type="text" name="Nama_Penerima" class="form-control" id="Nama_Penerima" required>
+                                            <label for="Nama_Penerima" class="text-black mb-1">Nama Penerima<span class="text-danger"></span></label>
+                                            <input type="text" name="Nama_Penerima" class="form-control" id="Nama_Penerima" value="<?php echo $pecah['Nama_Penerima']; ?>" readonly>
                                             <label for="Testimoni" class="text-black mb-1">Testimoni<span class="text-danger">*</span></label>
                                             <input type="text" name="Testimoni" class="form-control" id="Testimoni" required>
                                             <label for="Gambar" class="text-black mb-1">Foto Produk<span class="text-danger">*</span></label>

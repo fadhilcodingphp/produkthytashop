@@ -8,14 +8,14 @@ if (isset($_POST["ubahProduk"])) {
       echo "
         <script>
         alert('Data berhasil diubah');
-        document.location.href='Produk.php';
+        document.location.href='ProdukPromosi1.php';
         </script>
         ";
    } else {
       echo "
         <script>
         alert('Data Gagal Diubah');
-        document.location.href='Produk.php';
+        document.location.href='ProdukPromosi.php';
         </script>
         ";
    }

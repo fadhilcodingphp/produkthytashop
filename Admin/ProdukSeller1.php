@@ -7,17 +7,17 @@ require 'AdminFunction.php';
 <head>
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-   <title>Produk Yang Best Seller | Thytashop</title>
+   <title>Produk Best Seller | Thytashop</title>
    <?php
    include 'header.php';
    ?>
    <main id="main" class="main">
       <div class="pagetitle">
-         <h1>Produk Yang Best Seller</h1>
+         <h1>Produk Best Seller</h1>
          <nav>
             <ol class="breadcrumb">
                <li class="breadcrumb-item"><a href="Dashboard.php">Home</a></li>
-               <li class="breadcrumb-item active">Produk Yang Best Seller</li>
+               <li class="breadcrumb-item active">Produk Best Seller</li>
             </ol>
          </nav>
       </div>
@@ -28,7 +28,6 @@ require 'AdminFunction.php';
                <div class="card">
                   <div class="card-body">
                      <h5 class="card-title">Produk</h5>
-                     <a class="btn btn-primary" href="ProdukSeller.php" role="button">Tambah Produk Best Seller</a>
                      <table class="table datatable">
                         <thead>
                            <tr>
@@ -40,7 +39,7 @@ require 'AdminFunction.php';
                            </tr>
                         </thead>
                         <tbody>
-                           <?php $ambil = mysqli_query($conn, "SELECT * FROM bestseller ORDER BY bestseller.Nama_Produk ASC"); ?>
+                           <?php $ambil = mysqli_query($conn, "SELECT * FROM produk WHERE produk.ID_Kategori = 'THY006'"); ?>
                            <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
                               <tr>
                                  <td><?= $i ?></td>
@@ -48,7 +47,7 @@ require 'AdminFunction.php';
                                  <td scope="row"><?php echo $pecah['Nama_Produk']; ?></td>
                                  <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></td>
                                  <td>
-                                    <a class="btn btn-danger" href="ProdukSellerHapus.php?id=<?= $pecah['ID_Seller']; ?>" onclick="return confirm('Yakin ingin menghapus?')">Delete</a>
+                                    <a class="btn btn-danger" href="ProdukHapus.php?id=<?= $pecah['ID_Produk']; ?>" onclick="return confirm('Yakin ingin menghapus?')">Delete</a>
                                  </td>
                               </tr>
                               <?php $i++; ?>

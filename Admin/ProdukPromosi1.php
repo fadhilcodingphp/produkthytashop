@@ -28,7 +28,6 @@ require 'AdminFunction.php';
                <div class="card">
                   <div class="card-body">
                      <h5 class="card-title">Produk</h5>
-                     <a class="btn btn-primary" href="ProdukPromosi.php" role="button">Tambah Promosi</a>
                      <table class="table datatable">
                         <thead>
                            <tr>
@@ -41,16 +40,16 @@ require 'AdminFunction.php';
                            </tr>
                         </thead>
                         <tbody>
-                           <?php $ambil = mysqli_query($conn, "SELECT * FROM promosi ORDER BY promosi.Nama_Produk ASC"); ?>
+                           <?php $ambil = mysqli_query($conn, "SELECT * FROM produk WHERE produk.ID_Kategori = 'THY005'"); ?>
                            <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
                               <tr>
                                  <td><?= $i ?></td>
                                  <td scope="row"><img width="150px" src="../assets/img/<?php echo $pecah['Gambar']; ?>"></td>
                                  <td scope="row"><?php echo $pecah['Nama_Produk']; ?></td>
+                                 <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Promo'], 2, ',', '.'); ?></td>
                                  <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></td>
-                                 <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Harga_Promosi'], 2, ',', '.'); ?></td>
                                  <td>
-                                    <a class="btn btn-danger" href="ProdukPromosiHapus.php?id=<?= $pecah['ID_Promosi']; ?>" onclick="return confirm('Yakin ingin menghapus?')">Delete</a>
+                                    <a class="btn btn-danger" href="ProdukHapus.php?id=<?= $pecah['ID_Produk']; ?>" onclick="return confirm('Yakin ingin menghapus?')">Delete</a>
                                  </td>
                               </tr>
                               <?php $i++; ?>

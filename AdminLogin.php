@@ -1,5 +1,5 @@
 <?php
-require 'custFunction.php';
+require 'Admin/AdminFunction.php';
 ?>
 <html lang="en">
 
@@ -37,9 +37,7 @@ require 'custFunction.php';
                               <h5 class="card-title text-center pb-0 fs-4">LOGIN</h5>
                               <p class="text-center small">Silahkan masukkan username & password untuk melihat web admin</p>
                            </div>
-                           <?php if (isset($error)) : ?>
-                              <p class="text-danger">Username/Password salah</p>
-                           <?php endif; ?>
+
                            <form class="row g-3 needs-validation" method="post" role="form">
                               <div class="col-12">
                                  <label for="username" class="form-label">Username</label>
@@ -51,7 +49,10 @@ require 'custFunction.php';
                                  <input type="password" name="password" class="form-control" id="password" required>
                                  <div class="invalid-feedback">Tolong input password anda</div>
                               </div>
-                              <div class="col-12"> <button class="btn btn-primary w-100" type="submit" name='login'>Login</button></div>
+                              <?php if (isset($error)) : ?>
+                                 <p class="text-danger">Username/Password salah</p>
+                              <?php endif; ?>
+                              <div class="col-12"> <button class="btn btn-primary w-100" type="submit" name='loginadmin'>Login</button></div>
                            </form>
                         </div>
                      </div>
