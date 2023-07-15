@@ -97,7 +97,7 @@ function tambahProduk($produk)
     }
 
     //query insert data
-    $inputProduk = "INSERT INTO produk VALUES ('', '$ID_Kategori','$Nama_Produk', '$Harga', '', '$Jenis_Kain', '$Keterangan', '$Gambar')";
+    $inputProduk = "INSERT INTO produk VALUES ('', '$ID_Kategori','$Nama_Produk', '$Harga', '', '', '$Jenis_Kain', '$Keterangan', '$Gambar')";
     mysqli_query($conn, $inputProduk);
 
     return mysqli_affected_rows($conn);
