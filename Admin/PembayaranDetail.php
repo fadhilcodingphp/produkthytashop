@@ -116,6 +116,8 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                                 echo "<span class='badge bg-warning'> <h6><b> $status </b></h6> </span> &ensp;";
                                             } elseif ($bayar == "sudah bayar" and $status == "Dikirim") {
                                                 echo "<span class='badge bg-warning'> <h6><b> $status </b></h6> </span> &ensp;";
+                                            } elseif ($bayar == "sudah bayar" and $status == "Pembayaran Selesai") {
+                                                echo "<span class='badge bg-success'> <h6><b> $status </b></h6> </span> &ensp;";
                                             } elseif ($bayar == "sudah bayar" and $status == "Pesanan Selesai") {
                                                 echo "<span class='badge bg-success'> <h6><b> $status </b></h6> </span> &ensp;";
                                             }

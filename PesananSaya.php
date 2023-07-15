@@ -88,8 +88,8 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                   <?php
                   $bayar = $pecah['status_Pembayaran'];
                   if ($bayar == "Pembayaran Selesai") { ?>
-                    <div class="col-2">
-                      <h6>Pesanan Selesai</h6>
+                    <div class="col-5">
+                      <h6>Paket Telah Diterima</h6>
                     </div>
                   <?php } ?>
                 </div>

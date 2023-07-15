@@ -220,26 +220,6 @@ function BayarTagihan($bayar)
     return mysqli_affected_rows($conn);
 }
 
-function Terima($Pesanan)
-{
-    global $conn;
-    //ambil data dari tiap elemen form
-    $ID_Pesanan = htmlspecialchars($Pesanan["ID_Pesanan"]);
-
-    $inputPembayaran = "UPDATE pembayaran SET
-                    status = 'Pesanan Selesai',
-                    status_Pembayaran = 'Pembayaran Selesai'
-                    WHERE ID_Pesanan= '$ID_Pesanan'";
-    mysqli_query($conn, $inputPembayaran);
-
-    $StatusPesan = "UPDATE pesanan SET
-                    status = 'Pesanan Selesai'
-                    WHERE ID_Pesanan= '$ID_Pesanan'";
-    mysqli_query($conn, $StatusPesan);
-
-    return mysqli_affected_rows($conn);
-}
-
 function ubahProfil($custProfile)
 {
     global $conn;
@@ -282,7 +262,8 @@ function BeriNilai($data)
     mysqli_query($conn, $input);
 
     $inputPembayaran = "UPDATE pembayaran SET
-                    status = 'Pesanan Selesai'
+                    status = 'Pesanan Selesai',
+                    status_Pembayaran = 'Pembayaran Selesai'
                     WHERE ID_Pesanan= '$ID_Pesanan'";
     mysqli_query($conn, $inputPembayaran);
 

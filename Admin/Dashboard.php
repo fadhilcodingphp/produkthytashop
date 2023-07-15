@@ -136,12 +136,15 @@ $total_Menu = mysqli_num_rows($get_Menu);
                                        ?></td>
                                     <td scope="row">
                                        <?php
+                                       $bayar = $pecah['status_Pembayaran'];
                                        if ($bayar == "LUNAS") {
                                           echo "<span class='badge bg-success'> <h6><b> $bayar </b></h6> </span>";
                                        } elseif ($bayar == "DP 50% dan COD") {
                                           echo "<span class='badge bg-warning'> <h6><b> $bayar </b></h6> </span>";
                                        } elseif ($bayar == "Belum Bayar") {
                                           echo "<span class='badge bg-danger'> <h6><b> $bayar </b></h6> </span>";
+                                       } elseif ($bayar == "Pembayaran Selesai") {
+                                          echo "<span class='badge bg-success'> <h6><b> $bayar </b></h6> </span>";
                                        }
                                        ?>
                                     </td>
@@ -196,6 +199,8 @@ $total_Menu = mysqli_num_rows($get_Menu);
                                           echo "<span class='badge bg-warning'> <h6><b> $bayar </b></h6> </span>";
                                        } elseif ($bayar == "Belum Bayar") {
                                           echo "<span class='badge bg-danger'> <h6><b> $bayar </b></h6> </span>";
+                                       } elseif ($bayar == "Pembayaran Selesai") {
+                                          echo "<span class='badge bg-success'> <h6><b> $bayar </b></h6> </span>";
                                        }
                                        ?>
                                     </td>

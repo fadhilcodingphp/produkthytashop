@@ -59,6 +59,8 @@ require 'AdminFunction.php';
                                        echo "<span class='badge bg-warning'> <h6><b> $bayar </b></h6> </span>";
                                     } elseif ($bayar == "Belum Bayar") {
                                        echo "<span class='badge bg-danger'> <h6><b> $bayar </b></h6> </span>";
+                                    } elseif ($bayar == "Pembayaran Selesai") {
+                                       echo "<span class='badge bg-success'> <h6><b> $bayar </b></h6> </span>";
                                     }
                                     ?>
                                  </td>
