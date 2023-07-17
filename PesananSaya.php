@@ -112,7 +112,7 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                   <p class="d-block text-primary mb-1">Detail Pembayaran</p>
                   <p class="d-block text mb-0">Total Pesanan : <?= 'Rp. ' . number_format($pecah['Total_pesanan'] + $pecah['ID_Pesanan'], 2, ',', '.'); ?></p>
                   <p class="d-block text mb-0">Nama Rekening : <?php echo $pecah['Nama_Rek']; ?></p>
-                  <p class="d-block text mb-0">Total Pembayaran : <?= 'Rp. ' . number_format($pecah['Total_Order'] + $pecah['ID_Pesanan'], 2, ',', '.'); ?></p>
+                  <p class="d-block text mb-0">Total Pembayaran : <?= 'Rp. ' . number_format($pecah['Total_Order'], 2, ',', '.'); ?></p>
                 </div>
                 <hr style="border-top: 1px solid #8c8b8b;">
                 <?php $ID_Pesanan = $pecah['ID_Pesanan']; ?>

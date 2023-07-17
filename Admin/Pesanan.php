@@ -80,7 +80,7 @@ require 'AdminFunction.php';
                                     }
                                     ?>
                                  </td>
-                                 <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_pesanan'], 2, ',', '.'); ?></td>
+                                 <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_pesanan'] + $pecah['ID_Pesanan'], 2, ',', '.'); ?></td>
                                  <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Biaya_pengiriman'], 2, ',', '.'); ?></td>
                                  <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_Order'], 2, ',', '.'); ?></td>
                                  <td>

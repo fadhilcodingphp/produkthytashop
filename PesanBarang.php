@@ -111,8 +111,6 @@ if (isset($_POST["submit"])) {
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
                   <h2 class="h5 mb-3 text-black">Form Pemesanan</h2>
-                  <label for="Tgl_Kirim" class="text-black mb-1">Tanggal Pengiriman <span class="text-danger">*</span></label>
-                  <input type="date" class="form-control" id="Tgl_Kirim" name="Tgl_Kirim">
                 </div>
               </div>
               <div class="form-group row">

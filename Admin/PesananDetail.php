@@ -84,7 +84,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Total Pesanan</div>
-                                        <div class="col-lg-9 col-md-8"><?= 'Rp. ' . number_format($pesanan['Total_pesanan'], 2, ',', '.'); ?></div>
+                                        <div class="col-lg-9 col-md-8"><?= 'Rp. ' . number_format($pesanan['Total_pesanan'] + $pesanan['ID_Pesanan'], 2, ',', '.'); ?></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Diskon Pemesanan</div>
@@ -146,6 +146,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                                 <th scope="col">No.</th>
                                                 <th scope="col">Gambar Produk</th>
                                                 <th scope="col">Produk</th>
+                                                <th scope="col">Ukuran</th>
                                                 <th scope="col">Jumlah</th>
                                                 <th scope="col">Harga Satuan</th>
                                             </tr>
@@ -158,6 +159,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                                     <td><?= $i ?></td>
                                                     <td scope="row"><img width="150px" src="../assets/img/<?php echo $pecah['Gambar']; ?>"></td>
                                                     <td scope="row"><?php echo $pecah['Nama_Produk']; ?></td>
+                                                    <td scope="row"><?php echo $pecah['Ukuran']; ?></td>
                                                     <td scope="row"><?php echo $pecah['Jumlah_Barang']; ?></td>
                                                     <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></td>
                                                 </tr>

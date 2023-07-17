@@ -118,7 +118,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                     </div>
                                     <div class="row mb-3">
                                         <label for="Total_pesanan" class="col-md-4 col-lg-3 col-form-label">Total Pesanan</label>
-                                        <div class="col-md-8 col-lg-9"> <input name="Total_pesanan" type="text" class="form-control" id="Total_pesanan" value="<?= $pesanan['Total_pesanan'] ?>" readonly></div>
+                                        <div class="col-md-8 col-lg-9"> <input name="Total_pesanan" type="text" class="form-control" id="Total_pesanan" value="<?= 'Rp. ' . number_format($pesanan['Total_pesanan'] + $pesanan['ID_Pesanan'], 2, ',', '.'); ?>" readonly></div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="Biaya_pengiriman" class="col-md-4 col-lg-3 col-form-label">Biaya Pengiriman</label>
@@ -185,6 +185,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                                 <th scope="col">No.</th>
                                                 <th scope="col">Gambar Produk</th>
                                                 <th scope="col">Produk</th>
+                                                <th scope="col">Ukuran</th>
                                                 <th scope="col">Jumlah</th>
                                                 <th scope="col">Harga Satuan</th>
                                             </tr>
@@ -197,6 +198,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                                     <td><?= $i ?></td>
                                                     <td scope="row"><img width="150px" src="../assets/img/<?php echo $pecah['Gambar']; ?>"></td>
                                                     <td scope="row"><?php echo $pecah['Nama_Produk']; ?></td>
+                                                    <td scope="row"><?php echo $pecah['Ukuran']; ?></td>
                                                     <td scope="row"><?php echo $pecah['Jumlah_Barang']; ?></td>
                                                     <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></td>
                                                 </tr>

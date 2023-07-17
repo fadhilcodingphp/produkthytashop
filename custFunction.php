@@ -136,7 +136,6 @@ function TambahPesanan($tambahPesanan)
 
     //ambil data dari tiap elemen form
     $ID_Pelanggan = htmlspecialchars($tambahPesanan["ID_Pelanggan"]);
-    $Tgl_Kirim = htmlspecialchars($tambahPesanan["Tgl_Kirim"]);
     $Nama_Penerima = htmlspecialchars($tambahPesanan["Nama_Penerima"]);
     $NoTelp_Penerima = htmlspecialchars($tambahPesanan["NoTelp_Penerima"]);
     $Alamat = htmlspecialchars($tambahPesanan["Alamat"]);
@@ -146,7 +145,7 @@ function TambahPesanan($tambahPesanan)
     $input = "INSERT INTO pesanan VALUES ( '', 
                                            '$ID_Pelanggan', 
                                            NOW(), 
-                                           '$Tgl_Kirim', 
+                                           NOW(), 
                                            '$Nama_Penerima', 
                                            '$NoTelp_Penerima', 
                                            '$Alamat', 
