@@ -96,7 +96,7 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
 
                 <hr style="border-top: 1px solid #8c8b8b;">
 
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <p class="d-block text-primary mb-1">Kontak Penerima</p>
                   <p class="d-block text mb-0">Penerima : <?php echo $pecah['Nama_Penerima']; ?></p>
                   <p class="d-block text mb-0">No. Penerima : <?php echo $pecah['NoTelp_Penerima']; ?></p>
@@ -108,11 +108,18 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                   <p class="d-block text mb-0">Link Maps : <?php echo $pecah['link_Lokasi']; ?></p>
                   <p class="d-block text mb-0">Tanggal Kirim : <?php echo $pecah['Tgl_Kirim']; ?></p>
                 </div>
-                <div class="col-md-5 mt-3 mb-3">
+                <div class="col-md-4 mt-3 mb-3">
                   <p class="d-block text-primary mb-1">Detail Pembayaran</p>
                   <p class="d-block text mb-0">Total Pesanan : <?= 'Rp. ' . number_format($pecah['Total_pesanan'] + $pecah['ID_Pesanan'], 2, ',', '.'); ?></p>
                   <p class="d-block text mb-0">Nama Rekening : <?php echo $pecah['Nama_Rek']; ?></p>
                   <p class="d-block text mb-0">Total Pembayaran : <?= 'Rp. ' . number_format($pecah['Total_Order'], 2, ',', '.'); ?></p>
+                </div>
+                <div class="col-md-5 mt-3 mb-3">
+                  <p class="d-block text-primary mb-1">Rekening Tujuan</p>
+                  <?php $produk = mysqli_query($conn, "SELECT * FROM rekening") ?>
+                  <?php while ($rekening = mysqli_fetch_assoc($produk)) { ?>
+                    <p class="d-block text mb-0"><?php echo $rekening['Nama_Platform']; ?> : (<?php echo $rekening['No_Rek']; ?> a/n <?php echo $rekening['Nama_Rek']; ?>)</p>
+                  <?php } ?>
                 </div>
                 <hr style="border-top: 1px solid #8c8b8b;">
                 <?php $ID_Pesanan = $pecah['ID_Pesanan']; ?>

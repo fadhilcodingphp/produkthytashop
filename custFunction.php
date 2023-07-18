@@ -191,7 +191,6 @@ function BayarTagihan($bayar)
     $ID_Rekening = htmlspecialchars($bayar["ID_Rekening"]);
     $Nama_Rek = htmlspecialchars($bayar["Nama_Rek"]);
     $Total_Order = htmlspecialchars($bayar["Total_Order"]);
-    $Tgl_bayar = htmlspecialchars($bayar["Tgl_bayar"]);
     //upload gambar
     $Gambar = uploadGambar();
     if (!$Gambar) {
@@ -205,7 +204,7 @@ function BayarTagihan($bayar)
                     Nama_Rek        = '$Nama_Rek', 
                     Total_Order     = '$Total_Order', 
                     Bukti_bayar     = '$Gambar', 
-                    Tgl_bayar       = '$Tgl_bayar', 
+                    Tgl_bayar       = NOW(), 
                     status = 'Diproses',
                     status_Pembayaran = 'LUNAS'
                     WHERE ID_Pesanan= '$ID_Pesanan'";

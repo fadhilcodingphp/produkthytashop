@@ -138,12 +138,6 @@ if (isset($_POST["submit"])) {
                 </div>
                 <div class="form-group row">
                   <div class="col-md-12 mb-3">
-                    <label for="Tgl_bayar" class="text-black mb-1">Pembayaran Dilakukan Pada Tanggal<span class="text-danger">*</span></label>
-                    <input type="date" name="Tgl_bayar" id="Tgl_bayar" class="form-control">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12 mb-3">
                     <label for="Gambar" class="text-black mb-1">Bukti Pembayaran<span class="text-danger">*</span></label>
                     <input type="file" name="Gambar" id="Gambar" class="form-control">
                   </div>
