@@ -255,7 +255,11 @@ function BeriNilai($data)
     $ID_Pesanan = htmlspecialchars($data["ID_Pesanan"]);
     $Nama_Penerima = htmlspecialchars($data["Nama_Penerima"]);
     $Testimoni = htmlspecialchars($data["Testimoni"]);
-    $Gambar = htmlspecialchars($data["Gambar"]);
+
+    $Gambar = uploadGambar();
+    if (!$Gambar) {
+        return false;
+    }
     $input = "INSERT INTO penilaian VALUES ('$Nama_Penerima', '$Gambar', '$Testimoni')";
     mysqli_query($conn, $input);
 
@@ -269,5 +273,24 @@ function BeriNilai($data)
                     status = 'Pesanan Selesai'
                     WHERE ID_Pesanan= '$ID_Pesanan'";
     mysqli_query($conn, $StatusPesan);
+    return mysqli_affected_rows($conn);
+}
+
+function tambahProduk($produk)
+{
+    global $conn;
+    //ambil data dari tiap elemen form
+    $Namapenerima = htmlspecialchars($produk["Nama_Produk"]);
+    $Testimoni = htmlspecialchars($produk["Keterangan"]);
+    //upload gambar
+    $Gambar = uploadGambar();
+    if (!$Gambar) {
+        return false;
+    }
+
+    //query insert data
+    $inputProduk = "INSERT INTO penilaian VALUES ('$Namapenerima', '$Gambar', '$Testimoni')";
+    mysqli_query($conn, $inputProduk);
+
     return mysqli_affected_rows($conn);
 }

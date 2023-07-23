@@ -163,23 +163,24 @@ if (!isset($_SESSION["login"]) && !isset($_SESSION["ID_Pelanggan"])) {
       <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
         Testimoni
       </h1>
-      <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-
-        <?php
-        $ambil = mysqli_query($conn, "SELECT * FROM penilaian");
-        ?>
-        <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
-          <div class="testimonial-item text-center">
-            <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/<?php echo $pecah['Foto_Produk']; ?>" style="width: 100px; height: 100px" />
-            <div class="testimonial-text rounded text-center p-4">
-              <p>
+      <?php
+      $ambil = mysqli_query($conn, "SELECT * FROM penilaian");
+      ?>
+      <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
+        <div class="card mb-3" style="max-width: 400px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width:70%; max-height:70%;" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $pecah['Nama_Penerima']; ?></h5>
                 <?php echo $pecah['Testimoni']; ?></a>
-              </p>
-              <h5 class="mb-1"><?php echo $pecah['Nama_Penerima']; ?></a></h5>
+              </div>
             </div>
           </div>
-        <?php } ?>
-      </div>
+        </div>
+      <?php } ?>
     </div>
   </div>
   <!-- Testimonial End -->

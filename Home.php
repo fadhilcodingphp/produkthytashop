@@ -168,7 +168,7 @@ require 'custFunction.php';
         <div class="card mb-3" style="max-width: 400px;">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <img src="assets/img/<?php echo $pecah['Foto_Produk']; ?>" style="width:100%; max-height:200px;" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
+              <img src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width:70%; max-height:70%;" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
             </div>
             <div class="col-md-8">
               <div class="card-body">

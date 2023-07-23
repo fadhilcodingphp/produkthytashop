@@ -47,7 +47,7 @@ if (isset($_POST["submit"])) {
                                                 INNER JOIN pelanggan ON pesanan.ID_Pelanggan = pelanggan.ID_Pelanggan 
                                                 WHERE pesanan.ID_Pesanan = '$id'") ?>
                                 <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
-                                    <form class="row g-3" action="" method="post">
+                                    <form class="row g-3" action="" method="post" enctype="multipart/form-data">
                                         <div class="col-12">
                                             <h5 class="card-title">Silahkan berikan penilaian anda terhadap produk kami!</h5>
                                             <input type="hidden" name="ID_Pesanan" value="<?php echo $pecah['ID_Pesanan']; ?>">
