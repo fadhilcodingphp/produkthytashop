@@ -105,30 +105,39 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                             $bayar = $pesanan['status_Pembayaran'];
                                             $status = $pesanan['status'];
                                             if ($status == "Menunggu Pembayaran") {
-                                                echo "<span class='badge bg-warning'> <h6><b> $status </b></h6> </span>";
+                                                echo "<span class='badge bg-danger'> <h6><b> $status </b></h6> </span>";
                                             } elseif ($status == "Menunggu Konfirmasi Pembayaran") {
-                                                echo "<span class='badge bg-info'> <h6><b> $status </b></h6> </span>";
+                                                echo "<span class='badge bg-danger'> <h6><b> $status </b></h6> </span>";
                                             } elseif ($status == "Diproses") {
-                                                echo "<span class='badge bg-info'> <h6><b> $status </b></h6> </span>";
+                                                echo "<span class='badge bg-warning'> <h6><b> $status </b></h6> </span>";
                                             } elseif ($status == "Pesanan Selesai") {
-                                                echo "<span class='badge bg-info'> <h6><b> $status </b></h6> </span>";
+                                                echo "<span class='badge bg-success'> <h6><b> $status </b></h6> </span>";
                                             } else {
                                                 echo "<span class='badge bg-info'> <h6><b> $status </b></h6> </span>";
                                             }
-                                            ?></div>
+                                            ?>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Status Pembayaran</div>
                                         <div class="col-lg-9 col-md-8">
                                             <?php
+                                            $bayar = $pesanan['status_Pembayaran'];
                                             if ($bayar == "LUNAS") {
                                                 echo "<span class='badge bg-success'> <h6><b> $bayar </b></h6> </span>";
                                             } elseif ($bayar == "DP 50% dan COD") {
                                                 echo "<span class='badge bg-warning'> <h6><b> $bayar </b></h6> </span>";
                                             } elseif ($bayar == "Belum Bayar") {
                                                 echo "<span class='badge bg-danger'> <h6><b> $bayar </b></h6> </span>";
+                                            } elseif ($bayar == "Pembayaran Selesai") {
+                                                echo "<span class='badge bg-success'> <h6><b> $bayar </b></h6> </span>";
                                             }
-                                            ?></div>
+                                            ?>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Testimoni</div>
+                                        <div class="col-lg-9 col-md-8"><?= $pesanan['Testimoni']; ?></div>
                                     </div>
                                 </div>
                             </div>

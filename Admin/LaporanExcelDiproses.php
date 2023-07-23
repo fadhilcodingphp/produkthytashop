@@ -17,7 +17,7 @@ header("Content-Disposition: attachment; filename=Laporan Penjualan Thytashop.xl
       <div class="col-lg-12">
          <div class="card">
             <div class="card-body">
-               <h4>Laporan Penjualan Toko Thytashop</h4>
+               <h4>Laporan Penjualan Toko Thytashop Status Diproses</h4>
                <table class="table datatable">
                   <thead>
                      <tr>
@@ -37,7 +37,7 @@ header("Content-Disposition: attachment; filename=Laporan Penjualan Thytashop.xl
                              INNER JOIN pembayaran ON pesanan.ID_Pesanan = pembayaran.ID_Pesanan
                              INNER JOIN produk_item ON pesanan.ID_Pesanan = produk_item.ID_Pesanan 
                              INNER JOIN produk ON produk_item.ID_Produk = produk.ID_Produk
-                             INNER JOIN pelanggan ON pesanan.ID_Pelanggan = pelanggan.ID_Pelanggan $sqlPeriode ORDER BY pesanan.Tgl_Pesan ASC") ?>
+                             INNER JOIN pelanggan ON pesanan.ID_Pelanggan = pelanggan.ID_Pelanggan WHERE pesanan.status='Diproses'") ?>
                      <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
                         <tr>
                            <td><?= $i ?></td>

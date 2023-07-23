@@ -163,10 +163,12 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                                 echo "<span class='badge bg-warning'> <h6><b> $bayar </b></h6> </span>";
                                             } elseif ($bayar == "Belum Bayar") {
                                                 echo "<span class='badge bg-danger'> <h6><b> $bayar </b></h6> </span>";
+                                            } elseif ($bayar == "Pembayaran Selesai") {
+                                                echo "<span class='badge bg-success'> <h6><b> $bayar </b></h6> </span>";
                                             }
                                             ?></div>
                                     </div>
-                                    <div class="text-center">
+                                    <div class="text-center mt-1">
                                         <button type="submit" name="ubahPesanan" class="btn btn-primary">Ubah Detail Pesanan</button>
                                     </div>
                                 </form>
