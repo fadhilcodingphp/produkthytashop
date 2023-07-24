@@ -36,6 +36,7 @@ if (!isset($_SESSION['roleadmin'])) {
                 <a href="Pembayaran.php" class="nav-item nav-link">Pembayaran</a>
                 <a href="Rekening.php" class="nav-item nav-link">Rekening</a>
                 <a href="Laporan.php" class="nav-item nav-link">Laporan</a>
+                <a href="Testimoni.php" class="nav-item nav-link">Testimoni</a>
             </div>
             <div class="navbar-nav ms-auto">
                 <a href="AdminLogout.php" class="btn btn-outline-primary mx-2">Logout</a>
