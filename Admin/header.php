@@ -28,12 +28,22 @@ if (!isset($_SESSION['roleadmin'])) {
             <h1 class="m-0"><b>Admin Thytashop</b></h1>
         </a>
         <div class="collapse navbar-collapse py-4 " id="navbarCollapse">
-            <div class="navbar-nav ms-auto">
+            <div class="navbar-nav ms-auto" style="margin-top: 13px;">
                 <a href="Dashboard.php" class="nav-item nav-link">Dashboard</a>
                 <a href="Kategori.php" class="nav-item nav-link">Kategori</a>
                 <a href="Produk.php" class="nav-item nav-link">Produk</a>
                 <a href="Pesanan.php" class="nav-item nav-link">Pesanan</a>
-                <a href="Pembayaran.php" class="nav-item nav-link">Pembayaran</a>
+                <?php $get1 = mysqli_query($conn, "SELECT*FROM Pesanan");
+                $count1 = mysqli_num_rows($get1);
+                ?>
+                <b class="btn btn-danger" style="
+                           border-radius: 40px; 
+                           font-size: 10px; 
+                           margin-left: -35px;
+                           margin-top: 35px;
+                           margin-bottom : 20px;
+                           "><?= $count1; ?></b>
+                <a href="Pembayaran.php" class="nav-item nav-link" style="padding-left: 20px;">Pembayaran</a>
                 <a href="Rekening.php" class="nav-item nav-link">Rekening</a>
                 <a href="Laporan.php" class="nav-item nav-link">Laporan</a>
                 <a href="Testimoni.php" class="nav-item nav-link">Testimoni</a>
