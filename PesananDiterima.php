@@ -22,7 +22,7 @@ if (!isset($_SESSION['ID_Pelanggan'])) {
             <div class="row">
                 <div class="col-12">
                     <div class="pagetitle">
-                        <h3>Penilaian Produk</h3>
+                        <h3 class="mt-3">Penilaian Produk</h3>
                     </div>
                     <section class="section">
                         <?php $id = $_GET["id"]; ?>
