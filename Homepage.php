@@ -164,23 +164,8 @@ if (!isset($_SESSION["login"]) && !isset($_SESSION["ID_Pelanggan"])) {
         Testimoni
       </h1>
       <?php
-      $ambil = mysqli_query($conn, "SELECT * FROM penilaian");
+      include 'admin/rating.php';
       ?>
-      <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
-        <div class="card mb-3" style="max-width: 400px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width:70%; max-height:70%;" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo $pecah['Nama_Penerima']; ?></h5>
-                <?php echo $pecah['Testimoni']; ?></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      <?php } ?>
     </div>
   </div>
   <!-- Testimonial End -->

@@ -104,7 +104,7 @@
                 return false;
             } else {
                 $.ajax({
-                    url: "submit_rating.php",
+                    url: "../submit_rating.php",
                     method: "POST",
                     data: {
                         rating_data: rating_data,
@@ -127,7 +127,7 @@
 
         function load_rating_data() {
             $.ajax({
-                url: "submit_rating.php",
+                url: "../submit_rating.php",
                 method: "POST",
                 data: {
                     action: 'load_data'

@@ -2,7 +2,7 @@
 
 //submit_rating.php
 
-$connect = new PDO("mysql:host=localhost;dbname=testing", "root", "");
+$connect = new PDO("mysql:host=localhost;dbname=thytashop", "root", "");
 
 if (isset($_POST["rating_data"])) {
 
@@ -10,20 +10,19 @@ if (isset($_POST["rating_data"])) {
 		':user_name'		=>	$_POST["user_name"],
 		':user_rating'		=>	$_POST["rating_data"],
 		':user_review'		=>	$_POST["user_review"],
-		':datetime'			=>	time()
 	);
 
 	$query = "
 	INSERT INTO review_table 
-	(user_name, user_rating, user_review, datetime) 
-	VALUES (:user_name, :user_rating, :user_review, :datetime)
+	(user_name, user_rating, user_review) 
+	VALUES (:user_name, :user_rating, :user_review)
 	";
 
 	$statement = $connect->prepare($query);
 
 	$statement->execute($data);
 
-	echo "Your Review & Rating Successfully Submitted";
+	echo "Terimakasih atas penilaian anda";
 }
 
 if (isset($_POST["action"])) {
@@ -49,7 +48,6 @@ if (isset($_POST["action"])) {
 			'user_name'		=>	$row["user_name"],
 			'user_review'	=>	$row["user_review"],
 			'rating'		=>	$row["user_rating"],
-			'datetime'		=>	date('l jS, F Y h:i:s A', $row["datetime"])
 		);
 
 		if ($row["user_rating"] == '5') {

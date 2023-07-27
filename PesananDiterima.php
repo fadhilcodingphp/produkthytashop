@@ -4,25 +4,10 @@ if (!isset($_SESSION['ID_Pelanggan'])) {
     header("Location: Login.php");
     exit;
 }
-//cek apakah tombol submit sudah ditekan atau belum
-if (isset($_POST["submit"])) {
-    //cek apakah data berhasil ditambahkan atau tidak
-    if (BeriNilai($_POST) > 0) {
-        echo "
-        <script>
-        document.location.href='PesananSaya.php';
-        </script>
-        ";
-    } else {
-        echo "
-        <script>
-        alert('Penilaian Gagal');
-        document.location.href='PesananDiterima.php';
-        </script>
-        ";
-    }
-}
 ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <html lang="en">
 
 <head>
@@ -58,15 +43,15 @@ if (isset($_POST["submit"])) {
                                                 <i class="fas fa-star star-light submit_star mr-1" id="submit_star_4" data-rating="4"></i>
                                                 <i class="fas fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
                                             </h4>
-                                            <label for="Nama_Penerima" class="text-black mb-1">Nama Penerima<span class="text-danger"></span></label>
-                                            <input type="text" name="Nama_Penerima" class="form-control" id="Nama_Penerima" value="<?php echo $pecah['Nama_Penerima']; ?>" readonly>
-                                            <label for="Testimoni" class="text-black mb-1">Testimoni<span class="text-danger">*</span></label>
-                                            <input type="text" name="Testimoni" class="form-control" id="Testimoni" required>
-                                            <label for="Gambar" class="text-black mb-1">Foto Produk<span class="text-danger">*</span></label>
-                                            <input type="file" name="Gambar" id="Gambar" class="form-control">
+                                            <label for="user_name" class="text-black mb-1">Nama Penerima<span class="text-danger"></span></label>
+                                            <input type="text" name="user_name" class="form-control" id="user_name" value="<?php echo $pecah['Nama_Penerima']; ?>" readonly>
+                                            <label for="user_review" class="text-black mt-2 mb-1">Testimoni<span class="text-danger">*</span></label>
+                                            <input type="text" name="user_review" class="form-control" id="user_review" required>
+                                            <!-- <label for="Gambar" class="text-black mb-1">Foto Produk<span class="text-danger">*</span></label>
+                                            <input type="file" name="Gambar" id="Gambar" class="form-control"> -->
                                         </div>
-                                        <div class="text-center">
-                                            <button type="submit" name="submit" class="btn btn-primary">Kirim Penilaian</button>
+                                        <div class="form-group text-center mt-4">
+                                            <button type="button" class="btn btn-primary" id="save_review">Kirim Penilaian</button>
                                         </div>
                                     </form>
                                 <?php } ?>
