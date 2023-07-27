@@ -169,16 +169,12 @@ function promosiProduk($produk)
     $Harga = htmlspecialchars($produk["Harga"]);
     $Promo = htmlspecialchars($produk["Promo"]);
     $Tgl_Promo = htmlspecialchars($produk["Tgl_Promo"]);
+    $Jenis_Kain = htmlspecialchars($produk["Jenis_Kain"]);
+    $Keterangan = htmlspecialchars($produk["Keterangan"]);
+    $Gambar = htmlspecialchars($produk["gambarLama"]);
 
     //query ubah data
-    $ubahproduk = "UPDATE produk, kategori_produk SET
-                    produk.ID_Kategori = 'THY005', 
-                    produk.Nama_Produk = '$Nama_produk', 
-                    produk.Harga = $Harga, 
-                    produk.Promo = '$Promo', 
-                    produk.Tgl_Promo = '$Tgl_Promo' 
-                    WHERE  produk.ID_Kategori = kategori_produk.ID_Kategori
-                    AND produk.ID_Produk = $ID_Produk";
+    $ubahproduk = "INSERT INTO produk VALUES ('', 'THY005','$Nama_produk', '$Harga', '$Promo', '$Tgl_Promo', '$Jenis_Kain', '$Keterangan', '$Gambar')";
     mysqli_query($conn, $ubahproduk);
     return mysqli_affected_rows($conn);
 }

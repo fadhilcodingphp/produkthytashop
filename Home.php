@@ -77,20 +77,30 @@ require 'custFunction.php';
         ?>
         <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="membership-item position-relative" style="background: red;">
-              <h4 class=" text-black"><?php echo $pecah['Nama_Produk']; ?></h4>
-              <img src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width:50%; max-height:200px;" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
-              <h5 class="coret" style="color: black;"><?php echo 'Rp. ' . number_format($pecah['Promo'], 2, ',', '.'); ?></h5>
-              <h4 style="color: white;">Sekarang Hanya : <br> <?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></h4>
-              <h6 style="color: white;">Berlaku sampai<br><?php echo $pecah['Tgl_Promo']; ?> </h6>
-              <div>
-                <a href="MenuDetail.php?id=<?= $pecah['ID_Produk']; ?>" class="btn btn-primary btn-sm">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>Tambah Ke Keranjang</a>
+            <?php
+            $tgl_now = date("Y-m-d");
+            $tgl_exp = $pecah['Tgl_Promo']; //tanggal expired
+            if ($tgl_now >= $tgl_exp) {
+              $conn->query("DELETE FROM produk WHERE Tgl_Promo = '$tgl_exp'");
+            } else {
+            ?>
+              <div class="membership-item position-relative" style="background: red;">
+                <h4 class=" text-black"><?php echo $pecah['Nama_Produk']; ?></h4>
+                <img src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width:50%; max-height:200px;" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
+                <h5 class="coret" style="color: black;"><?php echo 'Rp. ' . number_format($pecah['Promo'], 2, ',', '.'); ?></h5>
+                <h4 style="color: white;">Sekarang Hanya : <br> <?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></h4>
+                <h6 style="color: white;">Berlaku sampai<br><?php echo $pecah['Tgl_Promo']; ?> </h6>
+                <div>
+                  <a href="MenuDetail.php?id=<?= $pecah['ID_Produk']; ?>" class="btn btn-primary btn-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>Tambah Ke Keranjang</a>
+                </div>
+              <?php
+            }
+              ?>
               </div>
-            </div>
           </div>
         <?php } ?>
       </div>
@@ -162,7 +172,7 @@ require 'custFunction.php';
         Testimoni
       </h1>
       <?php
-      include 'admin/rating.php';
+      include 'rating.php';
       ?>
     </div>
   </div>
