@@ -147,6 +147,12 @@ if (isset($_POST["submit"])) {
               </div>
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
+                  <label for="Alamat" class="text-black mb-1">Alamat (Nama Jalan/Gedung/Sekolah/dll)<span class="text-danger">*</span></label>
+                  <textarea name="Alamat" id="Alamat" cols="30" rows="7" class="form-control"></textarea>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12 mb-3">
                   <label for="ekspedisi" class="text-black mb-1">Ekspedisi<span class="text-danger">*</span></label>
                   <div type="text" id="ekspedisi">
                     <select name="ekspedisi" class="form-select">
@@ -157,8 +163,24 @@ if (isset($_POST["submit"])) {
               </div>
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
+                  <label for="paket" class="text-black mb-1">Paket<span class="text-danger">*</span></label>
+                  <div type="text" id="paket">
+                    <select name="paket" class="form-select">
+
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12 mb-3">
                   <label for="ongkir" class="text-black mb-1">Biaya Pengiriman<span class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="ongkir" name="ongkir">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12 mb-3">
+                  <label for="estimasi" class="text-black mb-1">Estimasi Pengiriman<span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="estimasi" name="estimasi">
                 </div>
               </div>
               <div class="form-group row">
@@ -212,6 +234,39 @@ if (isset($_POST["submit"])) {
             $("select[name=distrik]").html(data_distrik);
           }
         });
+      });
+
+      $.ajax({
+        url: 'data_ekspedisi.php',
+        type: 'post',
+        success: function(data_ekspedisi) {
+          $("select[name=ekspedisi]").html(data_ekspedisi);
+        }
+      });
+
+      $("select[name=ekspedisi]").on("change", function() {
+
+        var nama_ekspedisi = $("select[name=ekspedisi]").val();
+        var datadistrik = $("option:select", "select[name=distrik]").attr("id_distrik");
+
+        $.ajax({
+          url: 'data_paket.php',
+          type: 'post',
+          data: 'ekspedisi=' + nama_ekspedisi + '&distrik=' + datadistrik,
+          success: function(data_paket) {
+            $("select[name=paket]").html(data_paket);
+          }
+        });
+
+      });
+
+      $("select[name=paket]").on("change", function() {
+        var paket = $("option:selected", this).attr("paket");
+        var ongkir = $("option:selected", this).attr("ongkir");
+        var etd = $("option:selected", this).attr("etd");
+        $("input[name=paket]").val(paket);
+        $("input[name=ongkir]").val(ongkir);
+        $("input[name=estimasi]").val(etd);
       });
     });
   </script>
