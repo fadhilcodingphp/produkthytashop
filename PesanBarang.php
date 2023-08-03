@@ -201,6 +201,14 @@ if (isset($_POST["submit"])) {
                 </div>
               </div>
             </div>
+            <input type="text" class="form-control" id="link_lokasi" name="nama_provinsi">
+            <input type="text" class="form-control" id="link_lokasi" name="nama_distrik">
+            <input type="text" class="form-control" id="link_lokasi" name="type_distrik">
+            <input type="text" class="form-control" id="link_lokasi" name="kode_pos">
+            <input type="text" class="form-control" id="link_lokasi" name="nama_ekspedisi">
+            <input type="text" class="form-select" id="link_lokasi" name="paket">
+            <input type="text" class="form-control" id="link_lokasi" name="ongkir">
+            <input type="text" class="form-control" id="link_lokasi" name="estimasi">
           </form>
         </div>
       </div>
@@ -247,17 +255,29 @@ if (isset($_POST["submit"])) {
       $("select[name=ekspedisi]").on("change", function() {
 
         var nama_ekspedisi = $("select[name=ekspedisi]").val();
-        var datadistrik = $("option:select", "select[name=distrik]").attr("id_distrik");
+        var data_distrik = $("option:select", "select[name=distrik]").attr("id_distrik");
 
         $.ajax({
           url: 'data_paket.php',
           type: 'post',
-          data: 'ekspedisi=' + nama_ekspedisi + '&distrik=' + datadistrik,
+          data: 'ekspedisi=' + nama_ekspedisi + '&distrik=' + data_distrik,
           success: function(data_paket) {
             $("select[name=paket]").html(data_paket);
+            $("input[name=nama_ekspedisi]").val(nama_ekspedisi);
           }
         });
 
+      });
+
+      $("select[name=distrik]").on("change", function() {
+        var prov = $("option:selected", this).attr("nama_provinsi");
+        var dist = $("option:selected", this).attr("nama_distrik");
+        var type = $("option:selected", this).attr("type_distrik");
+        var pos = $("option:selected", this).attr("kode_pos");
+        $("input[name=nama_provinsi]").val(prov);
+        $("input[name=nama_distrik]").val(dist);
+        $("input[name=type_distrik]").val(type);
+        $("input[name=kode_pos]").val(pos);
       });
 
       $("select[name=paket]").on("change", function() {

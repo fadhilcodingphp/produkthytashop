@@ -40,6 +40,7 @@ if ($err) {
         id_distrik      ='" . $value["city_id"] . "'
         nama_provinsi   ='" . $value["province"] . "'
         nama_distrik    ='" . $value["city_name"] . "'
+        type_distrik    ='" . $value["type"] . "'
         kode_pos        ='" . $value["postal_code"] . "'
         >";
         echo $value["type"] . " ";
