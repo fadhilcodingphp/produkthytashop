@@ -47,8 +47,8 @@ if (!isset($_SESSION['ID_Pelanggan'])) {
                                             <input type="text" name="user_name" class="form-control" id="user_name" value="<?php echo $pecah['Nama_Penerima']; ?>" readonly>
                                             <label for="user_review" class="text-black mt-2 mb-1">Testimoni<span class="text-danger">*</span></label>
                                             <input type="text" name="user_review" class="form-control" id="user_review" required>
-                                            <!-- <label for="Gambar" class="text-black mb-1">Foto Produk<span class="text-danger">*</span></label>
-                                            <input type="file" name="Gambar" id="Gambar" class="form-control"> -->
+                                            <label for="Gambar" class="text-black mb-1">Foto Produk<span class="text-danger">*</span></label>
+                                            <input type="file" name="Gambar" id="Gambar" class="form-control">
                                         </div>
                                         <div class="form-group text-center mt-4">
                                             <button type="button" class="btn btn-primary" id="save_review">Kirim Penilaian</button>
@@ -125,7 +125,9 @@ if (!isset($_SESSION['ID_Pelanggan'])) {
 
                 var user_review = $('#user_review').val();
 
-                if (user_name == '' || user_review == '') {
+                var Gambar = $('#Gambar').val();
+
+                if (user_name == '' || user_review == '' || Gambar == '') {
                     alert("Please Fill Both Field");
                     return false;
                 } else {
@@ -135,7 +137,8 @@ if (!isset($_SESSION['ID_Pelanggan'])) {
                         data: {
                             rating_data: rating_data,
                             user_name: user_name,
-                            user_review: user_review
+                            user_review: user_review,
+                            Gambar: Gambar
                         },
                         success: function(data) {
                             $('#review_modal').modal('hide');

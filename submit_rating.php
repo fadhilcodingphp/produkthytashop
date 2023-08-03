@@ -10,17 +10,24 @@ if (isset($_POST["rating_data"])) {
 		':user_name'		=>	$_POST["user_name"],
 		':user_rating'		=>	$_POST["rating_data"],
 		':user_review'		=>	$_POST["user_review"],
+		':Gambar'			=>	$_POST["Gambar"],
 	);
 
 	$query = "
 	INSERT INTO review_table 
-	(user_name, user_rating, user_review) 
-	VALUES (:user_name, :user_rating, :user_review)
+	(user_name, user_rating, user_review, Gambar) 
+	VALUES (:user_name, :user_rating, :user_review, :Gambar)
 	";
-
 	$statement = $connect->prepare($query);
 
-	$statement->execute($data);
+	$update = "
+	UPDATE INTO Pesanan 
+	(status, Testimoni) 
+	VALUES (Pesanan Selesai, :user_review)
+	";
+	$statement = $connect->prepare($update);
+
+	$statement->execute();
 
 	echo "Terimakasih atas penilaian anda";
 }
@@ -48,6 +55,7 @@ if (isset($_POST["action"])) {
 			'user_name'		=>	$row["user_name"],
 			'user_review'	=>	$row["user_review"],
 			'rating'		=>	$row["user_rating"],
+			'Gambar'		=>	$row["Gambar"],
 		);
 
 		if ($row["user_rating"] == '5') {

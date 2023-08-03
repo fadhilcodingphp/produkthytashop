@@ -127,8 +127,22 @@ if (isset($_POST["submit"])) {
               </div>
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
-                  <label for="Alamat" class="text-black mb-1">Alamat Lengkap Pengantaran<span class="text-danger">*</span></label>
-                  <textarea name="Alamat" id="Alamat" cols="30" rows="7" class="form-control"></textarea>
+                  <label for="Provinsi" class="text-black mb-1">Provinsi<span class="text-danger">*</span></label>
+                  <div type="text" id="Provinsi">
+                    <select name="provinsi" class="form-select">
+
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12 mb-3">
+                  <label for="distrik" class="text-black mb-1">Kabupaten<span class="text-danger">*</span></label>
+                  <div type="text" id="kabupaten">
+                    <select name="distrik" class="form-select">
+
+                    </select>
+                  </div>
                 </div>
               </div>
               <div class="form-group row">
@@ -160,3 +174,28 @@ if (isset($_POST["submit"])) {
   <?php
   include 'footer.php';
   ?>
+
+  <script>
+    //rajaongkir
+    $(document).ready(function() {
+      $.ajax({
+        url: 'data_provinsi.php',
+        type: 'post',
+        data: {},
+        success: function(data_provinsi) {
+          $("select[name=provinsi]").html(data_provinsi)
+        }
+      });
+      $("select[name=provinsi]").on("change", function() {
+        var id_provinsi = $("option:selected", this).attr("id_provinsi");
+        $.ajax({
+          url: 'data_distrik.php',
+          type: 'post',
+          data: 'id_provinsi=' + id_provinsi,
+          success: function(data_distrik) {
+            $("select[name=distrik]").html(data_distrik);
+          }
+        });
+      });
+    });
+  </script>
