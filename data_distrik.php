@@ -29,18 +29,18 @@ if ($err) {
     $array_response = json_decode($response, true);
     $data_distrik = $array_response["rajaongkir"]["results"];
 
-    // echo "<pre>";
-    // print_r($data_distrik);
-    // echo "</pre>";
+    echo "<pre>";
+    print_r($data_distrik);
+    echo "</pre>";
 
     echo "<option>Pilih Kabupaten</option>";
 
     foreach ($data_provinsi as $key => $value) {
         echo "<option
-        id_distrik='" . $value["city_id"] . "'
-        nama_provinsi='" . $value["province"] . "'
-        nama_distrik='" . $value["city_name"] . "'
-        kode_pos='" . $value["postal_code"] . "'
+        id_distrik      ='" . $value["city_id"] . "'
+        nama_provinsi   ='" . $value["province"] . "'
+        nama_distrik    ='" . $value["city_name"] . "'
+        kode_pos        ='" . $value["postal_code"] . "'
         >";
         echo $value["type"] . " ";
         echo $value["city_name"];

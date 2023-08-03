@@ -138,7 +138,7 @@ if (isset($_POST["submit"])) {
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
                   <label for="distrik" class="text-black mb-1">Kabupaten<span class="text-danger">*</span></label>
-                  <div type="text" id="kabupaten">
+                  <div type="text" id="distrik">
                     <select name="distrik" class="form-select">
 
                     </select>
@@ -147,8 +147,24 @@ if (isset($_POST["submit"])) {
               </div>
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
+                  <label for="ekspedisi" class="text-black mb-1">Ekspedisi<span class="text-danger">*</span></label>
+                  <div type="text" id="ekspedisi">
+                    <select name="ekspedisi" class="form-select">
+
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12 mb-3">
+                  <label for="ongkir" class="text-black mb-1">Biaya Pengiriman<span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="ongkir" name="ongkir">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12 mb-3">
                   <label for="Catatan" class="text-black mb-1">Link Maps</label>
-                  <input type="text" class="form-control" id="link_okasi" name="link_Lokasi">
+                  <input type="text" class="form-control" id="link_lokasi" name="link_Lokasi">
                 </div>
               </div>
               <div class="form-group row">
