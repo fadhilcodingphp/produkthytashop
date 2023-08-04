@@ -133,7 +133,7 @@ if (isset($_POST["submit"])) {
                 <div class="form-group row">
                   <div class="col-md-12 mb-3">
                     <label for="Total_Order" class="text-black mb-1">Besar Nominal yang Harus Dibayar<span class="text-danger">*</span></label>
-                    <div class="col-md-8 col-lg-9"> <input name="Total_Order" type="text" class="form-control" id="Total_Order" value="<?= $pecah['Total_Order'] ?>" readonly></div>
+                    <div class="col-md-12"> <input name="Total_Order" type="text" class="form-control" id="Total_Order" value="<?= $pecah['Total_pesanan'] + $pecah['Ongkir'] ?>" readonly></div>
                   </div>
                 </div>
                 <div class="form-group row">

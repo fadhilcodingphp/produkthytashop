@@ -1,7 +1,7 @@
 <?php
-
 $ekspedisi = $_POST['ekspedisi'];
 $distrik = $_POST['distrik'];
+$berat = $_POST['berat'];
 
 $curl = curl_init();
 
@@ -32,21 +32,22 @@ if ($err) {
     $array_response = json_decode($response, true);
     $data_paket = $array_response["rajaongkir"]["results"]["0"]["costs"];
 
-    echo "<option>Pilih Paket</option>";
-
     // echo "<pre>";
     // print_r($data_paket);
     // echo "</pre>";
 
+    echo "<option>Pilih Paket</option>";
+
     foreach ($data_paket as $key => $value) {
         echo "<option
-        paket       ='" . $value["service"] . "'
+        paket      ='" . $value["service"] . "'
         ongkir      ='" . $value["cost"]["0"]["value"] . "'
-        etd         ='" . $value["cost"]["0"]["etd"] . "'
+        etd      ='" . $value["cost"]["0"]["etd"] . "'
+        
         >";
         echo $value["service"] . " ";
         echo number_format($value["cost"]["0"]["value"]) . " ";
-        echo $value["cost"]["0"]["etd"];
+        echo $value["cost"]["0"]["etd"] . " ";
         echo "</option>";
     }
 }

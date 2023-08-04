@@ -104,15 +104,25 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                 </div>
                 <div class="col-md-7">
                   <p class="d-block text-primary mb-1">Detail Pengiriman</p>
-                  <p class="d-block text mb-0">Alamat : <?php echo $pecah['Alamat']; ?></p>
+                  <p class="d-block text mb-0">Alamat :
+                    <?php echo $pecah['Provinsi']; ?>,
+                    <?php echo $pecah['Distrik']; ?>,
+                    <?php echo $pecah['Alamat']; ?>
+                  </p>
                   <p class="d-block text mb-0">Link Maps : <?php echo $pecah['link_Lokasi']; ?></p>
                   <p class="d-block text mb-0">Tanggal Kirim : <?php echo $pecah['Tgl_Kirim']; ?></p>
                 </div>
                 <div class="col-md-4 mt-3 mb-3">
+                  <p class="d-block text-primary mb-1">Detail Pengiriman</p>
+                  <p class="d-block text mb-0">Ekspedisi Via : <?php echo strtoupper($pecah['Ekspedisi']); ?></p>
+                  <p class="d-block text mb-0">Estimasi : <?php echo $pecah['Estimasi']; ?> hari</p>
+                  <p class="d-block text mb-0">Biaya Pengiriman : <?= 'Rp. ' . number_format($pecah['Ongkir'], 2, ',', '.'); ?></p>
+                </div>
+                <div class="col-md-4 mt-3 mb-3">
                   <p class="d-block text-primary mb-1">Detail Pembayaran</p>
-                  <p class="d-block text mb-0">Total Pesanan : <?= 'Rp. ' . number_format($pecah['Total_pesanan'] + $pecah['ID_Pesanan'], 2, ',', '.'); ?></p>
+                  <p class="d-block text mb-0">Total Pesanan : <?= 'Rp. ' . number_format($pecah['Total_pesanan'], 2, ',', '.'); ?></p>
                   <p class="d-block text mb-0">Nama Rekening : <?php echo $pecah['Nama_Rek']; ?></p>
-                  <p class="d-block text mb-0">Total Pembayaran : <?= 'Rp. ' . number_format($pecah['Total_Order'], 2, ',', '.'); ?></p>
+                  <p class="d-block text mb-0">Total Pembayaran : <?= 'Rp. ' . number_format($pecah['Total_pesanan'] + $pecah['Ongkir'], 2, ',', '.'); ?></p>
                 </div>
                 <div class="col-md-5 mt-3 mb-3">
                   <p class="d-block text-primary mb-1">Rekening Tujuan</p>

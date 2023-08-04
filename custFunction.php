@@ -138,7 +138,12 @@ function TambahPesanan($tambahPesanan)
     $ID_Pelanggan = htmlspecialchars($tambahPesanan["ID_Pelanggan"]);
     $Nama_Penerima = htmlspecialchars($tambahPesanan["Nama_Penerima"]);
     $NoTelp_Penerima = htmlspecialchars($tambahPesanan["NoTelp_Penerima"]);
+    $Provinsi = htmlspecialchars($tambahPesanan["provinsi"]);
+    $Kabupaten = htmlspecialchars($tambahPesanan["distrik"]);
     $Alamat = htmlspecialchars($tambahPesanan["Alamat"]);
+    $Estimasi = htmlspecialchars($tambahPesanan["estimasi"]);
+    $Paket = htmlspecialchars($tambahPesanan["ekspedisi"]);
+    $Ongkir = htmlspecialchars($tambahPesanan["ongkir"]);
     $link_Lokasi = htmlspecialchars($tambahPesanan["link_Lokasi"]);
     $Catatan = htmlspecialchars($tambahPesanan["Catatan"]);
     //query insert data
@@ -148,13 +153,17 @@ function TambahPesanan($tambahPesanan)
                                            NOW(), 
                                            '$Nama_Penerima', 
                                            '$NoTelp_Penerima', 
+                                           '$Provinsi', 
+                                           '$Kabupaten', 
                                            '$Alamat', 
+                                           '$Estimasi', 
+                                           '$Paket', 
+                                           '$Ongkir', 
                                            '$link_Lokasi', 
                                            '$Catatan', 
                                            $total, 
                                            '', 
                                            'Menunggu Pembayaran',
-                                           '',
                                            '',
                                            '' )";
     mysqli_query($conn, $input);

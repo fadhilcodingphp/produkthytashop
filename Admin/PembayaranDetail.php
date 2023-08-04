@@ -96,7 +96,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Biaya Pengiriman</div>
-                                        <div class="col-lg-9 col-md-8"><?= 'Rp. ' . number_format($pesanan['Biaya_pengiriman'], 2, ',', '.'); ?></div>
+                                        <div class="col-lg-9 col-md-8"><?= 'Rp. ' . number_format($pesanan['Ongkir'], 2, ',', '.'); ?></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Total Harga yang Harus Dibayar</div>

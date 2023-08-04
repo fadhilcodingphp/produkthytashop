@@ -121,12 +121,12 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                         <div class="col-md-8 col-lg-9"> <input name="Total_pesanan" type="text" class="form-control" id="Total_pesanan" value="<?= 'Rp. ' . number_format($pesanan['Total_pesanan'] + $pesanan['ID_Pesanan'], 2, ',', '.'); ?>" readonly></div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="Biaya_pengiriman" class="col-md-4 col-lg-3 col-form-label">Biaya Pengiriman</label>
-                                        <div class="col-md-8 col-lg-9"> <input name="Biaya_pengiriman" type="text" class="form-control" id="Biaya_pengiriman" value="<?= $pesanan['Biaya_pengiriman'] ?>"></div>
+                                        <label for="Ongkir" class="col-md-4 col-lg-3 col-form-label">Biaya Pengiriman</label>
+                                        <div class="col-md-8 col-lg-9"> <input name="Ongkir" type="text" class="form-control" id="Ongkir" value="<?= $pesanan['Ongkir'] ?>"></div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="Total_Order" class="col-md-4 col-lg-3 col-form-label">Total Harga yang Harus Dibayar</label>
-                                        <div class="col-md-8 col-lg-9"> <input name="Total_Order" type="text" class="form-control" id="Total_Order" value="<?= $pesanan['Total_Order'] ?>" readonly></div>
+                                        <div class="col-md-8 col-lg-9"> <input name="Total_Order" type="text" class="form-control" id="Total_Order" value="<?= 'Rp. ' . number_format($pesanan['Total_pesanan'] + $pesanan['Ongkir'], 2, ',', '.'); ?>" readonly></div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="company" class="col-md-4 col-lg-3 col-form-label">Diskon Pemesanan</label>
