@@ -126,7 +126,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                     </div>
                                     <div class="row mb-3">
                                         <label for="Total_Order" class="col-md-4 col-lg-3 col-form-label">Total Harga yang Harus Dibayar</label>
-                                        <div class="col-md-8 col-lg-9"> <input name="Total_Order" type="text" class="form-control" id="Total_Order" value="<?= 'Rp. ' . number_format($pesanan['Total_pesanan'] + $pesanan['Ongkir'], 2, ',', '.'); ?>" readonly></div>
+                                        <div class="col-md-8 col-lg-9"> <input name="Total_Order" type="text" class="form-control" id="Total_Order" value="<?= 'Rp. ' . number_format($pesanan['Total_pesanan']  + $pesanan['ID_Pesanan'] + $pesanan['Ongkir'], 2, ',', '.'); ?>" readonly></div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="company" class="col-md-4 col-lg-3 col-form-label">Diskon Pemesanan</label>

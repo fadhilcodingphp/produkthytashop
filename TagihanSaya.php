@@ -58,7 +58,7 @@ require "custFunction.php";
                       <?php echo $pecah['Diskon_Pesanan']; ?>%
                     </td>
                     <td>
-                      <?php echo 'Rp. ' . number_format($pecah['Total_Order'], 2, ',', '.'); ?>
+                      <?php echo 'Rp. ' . number_format($pecah['Total_pesanan'] + $pecah['ID_Pesanan'] + $pecah['Ongkir'], 2, ',', '.'); ?>
                     </td>
                     <td>
                       <?php

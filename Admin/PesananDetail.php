@@ -84,7 +84,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Total Pesanan</div>
-                                        <div class="col-lg-9 col-md-8"><?= 'Rp. ' . number_format($pesanan['Total_pesanan'], 2, ',', '.'); ?></div>
+                                        <div class="col-lg-9 col-md-8"><?= 'Rp. ' . number_format($pesanan['Total_pesanan'] + $pesanan['ID_Pesanan'], 2, ',', '.'); ?></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Diskon Pemesanan</div>
@@ -96,7 +96,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Total Harga yang Harus Dibayar</div>
-                                        <div class="col-lg-9 col-md-8"><?= 'Rp. ' . number_format($pesanan['Total_pesanan'] + $pesanan['Ongkir'], 2, ',', '.'); ?></div>
+                                        <div class="col-lg-9 col-md-8"><?= 'Rp. ' . number_format($pesanan['Total_pesanan']  + $pesanan['ID_Pesanan'] + $pesanan['Ongkir'], 2, ',', '.'); ?></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Status Pesanan</div>

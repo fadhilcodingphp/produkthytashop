@@ -148,7 +148,7 @@ $total_Menu = mysqli_num_rows($get_Menu);
                                        }
                                        ?>
                                     </td>
-                                    <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_pesanan'], 2, ',', '.'); ?></td>
+                                    <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_pesanan'] + $pecah['ID_Pesanan'], 2, ',', '.'); ?></td>
                                     <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Ongkir'], 2, ',', '.'); ?></td>
                                     <td>
                                        <a class="btn btn-info" href="PesananDetail.php?id=<?= $pecah['ID_Pesanan']; ?>">Detail</a>
@@ -204,7 +204,7 @@ $total_Menu = mysqli_num_rows($get_Menu);
                                        }
                                        ?>
                                     </td>
-                                    <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_pesanan'], 2, ',', '.'); ?></td>
+                                    <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_pesanan'] + $pecah['ID_Pesanan'], 2, ',', '.'); ?></td>
                                     <td scope="row"><?php echo $pecah['Nama_Platform']; ?></td>
                                     <td>
                                        <a class="btn btn-info" href="PembayaranDetail.php?id=<?= $pecah['ID_Pesanan']; ?>">Detail</a>

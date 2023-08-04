@@ -96,11 +96,24 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
 
                 <hr style="border-top: 1px solid #8c8b8b;">
 
-                <div class="col-md-4">
+                <div class="col-md-4 mt-3 mb-3">
                   <p class="d-block text-primary mb-1">Kontak Penerima</p>
                   <p class="d-block text mb-0">Penerima : <?php echo $pecah['Nama_Penerima']; ?></p>
                   <p class="d-block text mb-0">No. Penerima : <?php echo $pecah['NoTelp_Penerima']; ?></p>
                   <p class="d-block text mb-0">Tanggal Pemesanan : <?php echo $pecah['Tgl_Pesan']; ?></p>
+                </div>
+                <div class="col-md-4 mt-3 mb-3">
+                  <p class="d-block text-primary mb-1">Detail Pembayaran</p>
+                  <p class="d-block text mb-0">Total Pesanan : <?= 'Rp. ' . number_format($pecah['Total_pesanan']  + $pecah['ID_Pesanan'], 2, ',', '.'); ?></p>
+                  <p class="d-block text mb-0">Biaya Pengiriman : <?= 'Rp. ' . number_format($pecah['Ongkir'], 2, ',', '.'); ?></p>
+                  <p class="d-block text mb-0">Total Pembayaran : <?= 'Rp. ' . number_format($pecah['Total_pesanan']  + $pecah['ID_Pesanan'] + $pecah['Ongkir'], 2, ',', '.'); ?></p>
+                </div>
+                <div class="col-md-4 mt-3 mb-3">
+                  <p class="d-block text-primary mb-1">Rekening Tujuan</p>
+                  <?php $produk = mysqli_query($conn, "SELECT * FROM rekening") ?>
+                  <?php while ($rekening = mysqli_fetch_assoc($produk)) { ?>
+                    <p class="d-block text mb-0"><?php echo $rekening['Nama_Platform']; ?> : (<?php echo $rekening['No_Rek']; ?><br> a/n <?php echo $rekening['Nama_Rek']; ?>)</p>
+                  <?php } ?>
                 </div>
                 <div class="col-md-7">
                   <p class="d-block text-primary mb-1">Detail Pengiriman</p>
@@ -111,25 +124,8 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                   </p>
                   <p class="d-block text mb-0">Link Maps : <?php echo $pecah['link_Lokasi']; ?></p>
                   <p class="d-block text mb-0">Tanggal Kirim : <?php echo $pecah['Tgl_Kirim']; ?></p>
-                </div>
-                <div class="col-md-4 mt-3 mb-3">
-                  <p class="d-block text-primary mb-1">Detail Pengiriman</p>
                   <p class="d-block text mb-0">Ekspedisi Via : <?php echo strtoupper($pecah['Ekspedisi']); ?></p>
                   <p class="d-block text mb-0">Estimasi : <?php echo $pecah['Estimasi']; ?> hari</p>
-                  <p class="d-block text mb-0">Biaya Pengiriman : <?= 'Rp. ' . number_format($pecah['Ongkir'], 2, ',', '.'); ?></p>
-                </div>
-                <div class="col-md-4 mt-3 mb-3">
-                  <p class="d-block text-primary mb-1">Detail Pembayaran</p>
-                  <p class="d-block text mb-0">Total Pesanan : <?= 'Rp. ' . number_format($pecah['Total_pesanan'], 2, ',', '.'); ?></p>
-                  <p class="d-block text mb-0">Nama Rekening : <?php echo $pecah['Nama_Rek']; ?></p>
-                  <p class="d-block text mb-0">Total Pembayaran : <?= 'Rp. ' . number_format($pecah['Total_pesanan'] + $pecah['Ongkir'], 2, ',', '.'); ?></p>
-                </div>
-                <div class="col-md-5 mt-3 mb-3">
-                  <p class="d-block text-primary mb-1">Rekening Tujuan</p>
-                  <?php $produk = mysqli_query($conn, "SELECT * FROM rekening") ?>
-                  <?php while ($rekening = mysqli_fetch_assoc($produk)) { ?>
-                    <p class="d-block text mb-0"><?php echo $rekening['Nama_Platform']; ?> : (<?php echo $rekening['No_Rek']; ?> a/n <?php echo $rekening['Nama_Rek']; ?>)</p>
-                  <?php } ?>
                 </div>
                 <hr style="border-top: 1px solid #8c8b8b;">
                 <?php $ID_Pesanan = $pecah['ID_Pesanan']; ?>
@@ -140,11 +136,11 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                                                 INNER JOIN produk ON produk_item.ID_Produk = produk.ID_Produk
                                                 WHERE pelanggan.ID_Pelanggan = '$ID_Pelanggan' AND pesanan.ID_Pesanan = '$ID_Pesanan'") ?>
                 <?php while ($prodit = mysqli_fetch_assoc($produk)) { ?>
-                  <div class="row col-md-4 mb-3">
+                  <div class="row col-5 mb-3">
                     <div class="col-5">
                       <img class="img-fluid" src="assets/img/<?php echo $prodit['Gambar']; ?>" alt="" style="width:150px;" />
                     </div>
-                    <div class="col-7">
+                    <div class="col-md-7">
                       <p class="d-block text mb-0"><?php echo $prodit['Nama_Produk']; ?></p>
                       <p class="d-block text mb-0"><?= $prodit['Jumlah_Barang'] . ' Pcs' ?></p>
                       <p class="d-block text mb-0">Size : <?= $prodit['Ukuran'] ?></p>

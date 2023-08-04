@@ -64,7 +64,7 @@ require 'AdminFunction.php';
                                     }
                                     ?>
                                  </td>
-                                 <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_Order'], 2, ',', '.'); ?></td>
+                                 <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_Order'] + $pecah['ID_Pesanan'], 2, ',', '.'); ?></td>
                                  <td scope="row"><?php echo $pecah['Nama_Platform']; ?></td>
                                  <td>
                                     <a class="btn btn-info" href="PembayaranDetail.php?id=<?= $pecah['ID_Pesanan']; ?>">Detail</a>

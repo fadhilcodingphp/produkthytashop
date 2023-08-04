@@ -265,12 +265,13 @@ function BeriNilai($data)
     $ID_Pesanan = htmlspecialchars($data["ID_Pesanan"]);
     $Nama_Penerima = htmlspecialchars($data["Nama_Penerima"]);
     $Testimoni = htmlspecialchars($data["Testimoni"]);
+    $Rating = htmlspecialchars($data["rating"]);
 
     $Gambar = uploadGambar();
     if (!$Gambar) {
         return false;
     }
-    $input = "INSERT INTO penilaian VALUES ('$Nama_Penerima', '$Gambar', '$Testimoni')";
+    $input = "INSERT INTO penilaian VALUES ('$Nama_Penerima', '$Gambar', '$Testimoni', $Rating)";
     mysqli_query($conn, $input);
 
     $inputPembayaran = "UPDATE pembayaran SET
