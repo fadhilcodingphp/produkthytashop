@@ -29,7 +29,6 @@ header("Content-Disposition: attachment; filename=Laporan Penjualan Thytashop.xl
                         <th scope="col">Harga Produk</th>
                         <th scope="col">Jumlah</th>
                         <th scope="col">Total</th>
-                        <th scope="col">Testimoni</th>
                      </tr>
                   </thead>
                   <tbody>
@@ -64,7 +63,6 @@ header("Content-Disposition: attachment; filename=Laporan Penjualan Thytashop.xl
                            <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></td>
                            <td scope="row"><?php echo $pecah['Jumlah_Barang']; ?></td>
                            <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_Order'], 2, ',', '.'); ?></td>
-                           <td scope="row"><?php echo $pecah['Testimoni']; ?></td>
                         </tr>
                         <?php $i++; ?>
                      <?php } ?>

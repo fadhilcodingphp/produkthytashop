@@ -51,7 +51,6 @@ if (isset($_POST['btnTampil'])) {
                               <th scope="col">Harga Produk</th>
                               <th scope="col">Jumlah</th>
                               <th scope="col">Total</th>
-                              <th scope="col">Testimoni</th>
                               <th scope="col">Aksi</th>
                            </tr>
                         </thead>
@@ -87,7 +86,6 @@ if (isset($_POST['btnTampil'])) {
                                  <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></td>
                                  <td scope="row"><?php echo $pecah['Jumlah_Barang']; ?></td>
                                  <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_Order'], 2, ',', '.'); ?></td>
-                                 <td scope="row"><?php echo $pecah['Testimoni']; ?></td>
                                  <td>
                                     <a class="btn btn-info" href="PesananDetail.php?id=<?= $pecah['ID_Pesanan']; ?>">Detail</a>
                                  </td>
