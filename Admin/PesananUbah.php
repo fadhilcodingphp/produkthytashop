@@ -132,7 +132,7 @@ WHERE pesanan.ID_Pesanan = $id")[0];
                                         <label for="company" class="col-md-4 col-lg-3 col-form-label">Diskon Pemesanan</label>
                                         <div class="col-md-8 col-lg-3">
                                             <select class="form-select" aria-label="Default select example" name="Diskon_Pesanan">
-                                                <option>--</option>
+                                                <option>0</option>
                                                 <option>5</option>
                                                 <option>10</option>
                                                 <option>15</option>

@@ -53,20 +53,18 @@ require 'AdminFunction.php';
                                  <td scope="row"><?php echo $pecah['Tgl_Kirim']; ?></td>
                                  <td scope="row">
                                     <?php
-                                    $bayar = $pecah['status_Pembayaran'];
                                     $status = $pecah['status'];
                                     if ($status == "Menunggu Pembayaran") {
-                                       echo "<span class='badge bg-danger'> <h6><b> $status </b></h6> </span>";
+                                       echo "<span class='badge bg-primary'> $status </span> &ensp;";
                                     } elseif ($status == "Menunggu Konfirmasi Pembayaran") {
-                                       echo "<span class='badge bg-danger'> <h6><b> $status </b></h6> </span>";
+                                       echo "<span class='badge bg-danger'> $status </span> &ensp;";
                                     } elseif ($status == "Diproses") {
-                                       echo "<span class='badge bg-warning'> <h6><b> $status </b></h6> </span>";
+                                       echo "<span class='badge bg-warning'> $status </span> &ensp;";
+                                    } elseif ($status == "Dikirim") {
+                                       echo "<span class='badge bg-warning'> $status </span> &ensp;";
                                     } elseif ($status == "Pesanan Selesai") {
-                                       echo "<span class='badge bg-success'> <h6><b> $status </b></h6> </span>";
-                                    } else {
-                                       echo "<span class='badge bg-info'> <h6><b> $status </b></h6> </span>";
-                                    }
-                                    ?></td>
+                                       echo "<span class='badge bg-primary'> $status </span> &ensp;";
+                                    } ?></td>
                                  <td scope="row">
                                     <?php
                                     $bayar = $pecah['status_Pembayaran'];
@@ -81,7 +79,7 @@ require 'AdminFunction.php';
                                     }
                                     ?>
                                  </td>
-                                 <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_pesanan'], 2, ',', '.'); ?></td>
+                                 <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_pesanan'] + $pecah['ID_Pesanan'], 2, ',', '.'); ?></td>
                                  <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Ongkir'], 2, ',', '.'); ?></td>
                                  <td>
                                     <a class="btn btn-info" href="PesananDetail.php?id=<?= $pecah['ID_Pesanan']; ?>">Detail</a>

@@ -290,25 +290,22 @@ function ubahPesanan($pesanan)
     $Tgl_Kirim = htmlspecialchars($pesanan["Tgl_Kirim"]);
     $Tgl_Pesan = htmlspecialchars($pesanan["Tgl_Pesan"]);
     $Catatan = htmlspecialchars($pesanan["Catatan"]);
-    $Status = htmlspecialchars($pesanan["status"]);
-    $Biaya_pengiriman = htmlspecialchars($pesanan["Biaya_pengiriman"]);
     $Total_pesanan = htmlspecialchars($pesanan["Total_pesanan"]);
     $Diskon_Pesanan = htmlspecialchars($pesanan["Diskon_Pesanan"]);
     $Diskon = $Total_pesanan * $Diskon_Pesanan / 100;
-    $Total_order = ($Total_pesanan - $Diskon) + $Biaya_pengiriman;
+    $Total_order = $Total_pesanan - $Diskon;
     //query ubah data
     $ubahproduk = "UPDATE pesanan SET
                     Tgl_Kirim = '$Tgl_Kirim',
                     Tgl_Pesan = '$Tgl_Pesan',
                     Catatan = '$Catatan', 
                     Diskon_Pesanan = '$Diskon_Pesanan', 
-                    status = '$Status',
-                    Biaya_pengiriman = '$Biaya_pengiriman', 
+                    status = 'Dikirim',
                     Total_Order = '$Total_order'
                     WHERE  ID_Pesanan = $ID_Pesanan";
     mysqli_query($conn, $ubahproduk);
     $ubahbayar = "UPDATE pembayaran SET
-                    status = '$Status',
+                    status = 'Dikirim',
                     Total_Order = '$Total_order'
                     WHERE  ID_Pesanan = $ID_Pesanan";
     mysqli_query($conn, $ubahbayar);

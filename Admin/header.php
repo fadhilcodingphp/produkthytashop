@@ -33,8 +33,11 @@ if (!isset($_SESSION['roleadmin'])) {
                 <a href="Kategori.php" class="nav-item nav-link">Kategori</a>
                 <a href="Produk.php" class="nav-item nav-link">Produk</a>
                 <a href="Pesanan.php" class="nav-item nav-link">Pesanan</a>
-                <?php $get1 = mysqli_query($conn, "SELECT*FROM Pesanan");
+                <?php $get1 = mysqli_query($conn, "SELECT*FROM Pesanan WHERE status = 'Menunggu Pembayaran'");
                 $count1 = mysqli_num_rows($get1);
+                ?>
+                <?php $get2 = mysqli_query($conn, "SELECT*FROM Pesanan WHERE status = 'Diproses'");
+                $count2 = mysqli_num_rows($get2);
                 ?>
                 <b class="btn btn-danger" style="
                            border-radius: 40px; 
@@ -42,7 +45,7 @@ if (!isset($_SESSION['roleadmin'])) {
                            margin-left: -35px;
                            margin-top: 35px;
                            margin-bottom : 20px;
-                           "><?= $count1; ?></b>
+                           "><?= $count1 + $count2; ?></b>
                 <a href="Pembayaran.php" class="nav-item nav-link" style="padding-left: 20px;">Pembayaran</a>
                 <a href="Rekening.php" class="nav-item nav-link">Rekening</a>
                 <a href="Laporan.php" class="nav-item nav-link">Laporan</a>
