@@ -29,6 +29,7 @@ if (!isset($_SESSION['rolepemilik'])) {
         <div class="collapse navbar-collapse py-4 " id="navbarCollapse">
             <a href="Dashboard.php" class="nav-item nav-link">Dashboard</a>
             <a href="Laporan.php" class="nav-item nav-link">Laporan</a>
+            <a href="Testimoni.php" class="nav-item nav-link">Testimoni</a>
             <div class="navbar-nav ms-auto">
                 <a href="PemilikLogout.php" class="btn btn-outline-primary mx-2">Logout</a>
             </div>

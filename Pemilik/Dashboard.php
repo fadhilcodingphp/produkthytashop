@@ -148,7 +148,7 @@ $total_Menu = mysqli_num_rows($get_Menu);
                                        ?>
                                     </td>
                                     <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Total_pesanan'], 2, ',', '.'); ?></td>
-                                    <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Biaya_pengiriman'], 2, ',', '.'); ?></td>
+                                    <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Ongkir'], 2, ',', '.'); ?></td>
                                  </tr>
                                  <?php $i++; ?>
                               <?php } ?>

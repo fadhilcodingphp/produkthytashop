@@ -164,7 +164,6 @@ function TambahPesanan($tambahPesanan)
                                            $total, 
                                            '', 
                                            'Menunggu Pembayaran',
-                                           '',
                                            '' )";
     mysqli_query($conn, $input);
 
