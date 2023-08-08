@@ -1,5 +1,9 @@
 <?php
 require "custFunction.php";
+//ambil data di URL
+$id = $_GET["id"];
+// query data mhs berdasarkan id
+$ubahProduk = query("SELECT * FROM kategori_produk WHERE ID_Kategori = '$id'")[0];
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +32,7 @@ require "custFunction.php";
       <div class="row">
         <div class="col-6 mb-6">
           <h3 class=" mb-4">
-            Produk Baju <span class="text-danger">Thytashop</span>
+            Produk <?= $ubahProduk['Nama_Kategori']; ?> <span class="text-danger">Thytashop</span>
           </h3>
         </div>
         <div class="col-5">
@@ -45,7 +49,7 @@ require "custFunction.php";
           $keyword = $_POST["keyword"];
           $ambil = mysqli_query($conn, "SELECT * FROM produk INNER JOIN kategori_produk ON produk.ID_Kategori = kategori_produk.ID_Kategori WHERE produk.Nama_produk LIKE '%$keyword%' OR kategori_produk.Nama_Kategori LIKE '%$keyword%' ORDER BY produk.Nama_Produk ASC");
         } else {
-          $ambil = mysqli_query($conn, "SELECT * FROM produk WHERE produk.ID_Kategori = 'THY001'");
+          $ambil = mysqli_query($conn, "SELECT * FROM produk WHERE produk.ID_Kategori = '$id'");
         }
         ?>
         <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
