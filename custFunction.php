@@ -270,7 +270,7 @@ function BeriNilai($data)
     if (!$Gambar) {
         return false;
     }
-    $input = "INSERT INTO penilaian VALUES ('$Nama_Penerima', '$Gambar', '$Testimoni', $Rating)";
+    $input = "INSERT INTO penilaian VALUES ('$Nama_Penerima', '$Gambar', '$Testimoni', '$Rating')";
     mysqli_query($conn, $input);
 
     $inputPembayaran = "UPDATE pembayaran SET
@@ -280,8 +280,7 @@ function BeriNilai($data)
     mysqli_query($conn, $inputPembayaran);
 
     $StatusPesan = "UPDATE pesanan SET
-                    status = 'Pesanan Selesai',
-                    Testimoni = '$Testimoni'
+                    status = 'Pesanan Selesai'
                     WHERE ID_Pesanan= '$ID_Pesanan'";
     mysqli_query($conn, $StatusPesan);
     return mysqli_affected_rows($conn);
