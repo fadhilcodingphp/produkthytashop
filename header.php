@@ -80,10 +80,10 @@
                             <a href="#" class="nav-item nav-link">Produk</a>
                         </a>
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                            <a href="tbaju.php" class="dropdown-item">Baju</a>
-                            <a href="tgamis.php" class="dropdown-item">Gamis</a>
-                            <a href="tsarung.php" class="dropdown-item">Sarung</a>
-                            <a href="tsepuk.php" class="dropdown-item">Sepuk</a>
+                            <?php $ambil = mysqli_query($conn, "SELECT * FROM kategori_produk"); ?>
+                            <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
+                                <a href="produk.php?id=<?= $pecah['ID_Kategori']; ?>" class="dropdown-item"><?= $pecah['Nama_Kategori']; ?></a>
+                            <?php } ?>
                         </div>
                     </div>
                     <a href="Homepage.php#caraPesan" class="nav-item nav-link">Panduan Pemesanan</a>
