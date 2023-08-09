@@ -7,7 +7,7 @@ if (!isset($_SESSION['roleadmin'])) {
 $sqlPeriode = $_GET['sqlPeriode'];
 
 //script print excel
-header("Content-type: application/vnd-ms-excel");
+header("Content-type: application/vnd.ms-excel");
 header("Content-Disposition: attachment; filename=Laporan Penjualan Thytashop.xls");
 ?>
 <html lang="en">
