@@ -126,31 +126,41 @@ if (!isset($_SESSION["login"]) && !isset($_SESSION["ID_Pelanggan"])) {
         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="membership-item position-relative" style="background: white; border-style: solid; border-color: #295c33;">
             <h1 class=" text-black">01</h1>
-            <h3 class="text-black mb-12">Pesan Menu</h3>
+            <h3 class="text-black mb-12">Pilih Menu</h3>
             <p style="color: black;">
-              Check out menu pilihan yang sudah ada di keranjang belanja dengan menekan "Pesan Sekarang" dan tunggu tagihan anda muncul.
+              Kamu dapat memilih menu dengan masuk ke pilihan menu. Pilih menu yang kamu mau lalu masukkan menu tersebut ke keranjang belanja.
             </p>
-            <a class="btn btn-outline-primary px-4 mt-3" href="Keranjang.php">Pesan Menu</a>
+            <a class="btn btn-outline-primary px-4 mt-3" href="produk.php?id=THY001">Pilih Produk</a>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="membership-item position-relative" style="background: white; border-style: solid; border-color: #295c33;">
             <h1 class=" text-black">02</h1>
-            <h3 class="text-black mb-12">Bayar Pesanan</h3>
+            <h3 class="text-black mb-12">Pesan Menu</h3>
             <p style="color: black;">
-              Bayar tagihan anda dengan cara masuk ke menu tagihan. Pilih tagihan yang akan dibayar dan isi detail tagihan pada form yang muncul.
+              Check out menu pilihan yang sudah ada di keranjang belanja dengan menekan "Pesan Sekarang" dan tunggu tagihan anda muncul.
             </p>
-            <a class="btn btn-outline-primary px-4 mt-3" href="TagihanBayar.php">Bayar Tagihan</a>
+            <a class="btn btn-outline-primary px-4 mt-3" href="Keranjang.php">Pesan Produk</a>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="membership-item position-relative" style="background: white; border-style: solid; border-color: #295c33;">
             <h1 class=" text-black">03</h1>
+            <h3 class="text-black mb-12">Bayar Pesanan</h3>
+            <p style="color: black;">
+              Bayar tagihan anda dengan cara masuk ke menu tagihan. Pilih tagihan yang akan dibayar dan isi detail tagihan pada form yang muncul.
+            </p>
+            <a class="btn btn-outline-primary px-4 mt-3" href="TagihanSaya.php">Bayar Tagihan</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="membership-item position-relative" style="background: white; border-style: solid; border-color: #295c33;">
+            <h1 class=" text-black">04</h1>
             <h3 class="text-black mb-12">Selesai</h3>
             <p style="color: black;">
               Bila pembayaran kamu telah dikonfirmasi, maka tunggu pesanan kamu sampai di tujuan sesuai dengan pesanan yang sudah disepakati.
             </p>
-            <a class="btn btn-outline-primary px-4 mt-3" href="">Pesanan Kamu</a>
+            <a class="btn btn-outline-primary px-4 mt-3" href="PesananSaya.php">Pesanan Kamu</a>
           </div>
         </div>
       </div>
@@ -164,29 +174,26 @@ if (!isset($_SESSION["login"]) && !isset($_SESSION["ID_Pelanggan"])) {
       <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
         Testimoni
       </h1>
-      <?php
-      $ambil = mysqli_query($conn, "SELECT * FROM penilaian");
-      ?>
-      <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
-        <div class="card mb-3" style="max-width: 1200px; max-height: 200px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="assets/img/<?php echo $pecah['Gambar']; ?>" style="max-height:50%;" alt="Grocery Ecommerce Template" class="mb-3 img-fluid"></a>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo $pecah['Nama_Penerima']; ?></h5>
-                <p class="card-text"><?php echo $pecah['Testimoni']; ?></a></p>
-                <p class="card-text"><small class="text-body-secondary">Rate : <?php echo $pecah['rating']; ?> Poin</small></p>
-              </div>
+      <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+
+        <?php
+        $ambil = mysqli_query($conn, "SELECT * FROM penilaian");
+        ?>
+        <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
+          <div class="testimonial-item text-center">
+            <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width: 100px; height: 100px" />
+            <div class="testimonial-text rounded text-center p-4">
+              <p>
+                <?php echo $pecah['Testimoni']; ?></a>
+              </p>
+              <h5 class="mb-1"><?php echo $pecah['Nama_Penerima']; ?></a></h5>
             </div>
           </div>
-        </div>
-      <?php } ?>
+        <?php } ?>
+      </div>
     </div>
   </div>
   <!-- Testimonial End -->
-
   <?php
   include 'footer.php';
   ?>

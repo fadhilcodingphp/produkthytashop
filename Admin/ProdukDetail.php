@@ -64,10 +64,6 @@ $ubahProduk = query("SELECT * FROM produk, kategori_produk WHERE ID_Produk = '$i
                               <div class="col-lg-9 col-md-8"><?= 'Rp. ' . number_format($ubahProduk['Harga'], 2, ',', '.'); ?></div>
                            </div>
                            <div class="row">
-                              <div class="col-lg-3 col-md-4 label">Ukuran Produk</div>
-                              <div class="col-lg-9 col-md-8"><?= $ubahProduk['Ukuran'] ?></div>
-                           </div>
-                           <div class="row">
                               <div class="col-lg-3 col-md-4 label">Jenis Kain</div>
                               <div class="col-lg-9 col-md-8"><?= $ubahProduk['Jenis_Kain'] ?></div>
                            </div>

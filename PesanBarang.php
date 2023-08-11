@@ -116,20 +116,20 @@ if (isset($_POST["submit"])) {
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
                   <label for="Nama_Penerima" class="text-black mb-1">Nama Penerima Pesanan<span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="Nama_Penerima" name="Nama_Penerima">
+                  <input type="text" class="form-control" id="Nama_Penerima" name="Nama_Penerima" required>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
                   <label for="NoTelp_Penerima" class="text-black mb-1">Nomor Telepon Penerima<span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="NoTelp_Penerima" name="NoTelp_Penerima">
+                  <input type="text" class="form-control" id="NoTelp_Penerima" name="NoTelp_Penerima" required>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
                   <label for="Provinsi" class="text-black mb-1">Provinsi<span class="text-danger">*</span></label>
                   <div type="text" id="Provinsi">
-                    <select name="provinsi" class="form-select">
+                    <select name="provinsi" class="form-select" required>
 
                     </select>
                   </div>
@@ -139,7 +139,7 @@ if (isset($_POST["submit"])) {
                 <div class="col-md-12 mb-3">
                   <label for="distrik" class="text-black mb-1">Kabupaten<span class="text-danger">*</span></label>
                   <div type="text" id="distrik">
-                    <select name="distrik" class="form-select">
+                    <select name="distrik" class="form-select" required>
 
                     </select>
                   </div>
@@ -148,14 +148,14 @@ if (isset($_POST["submit"])) {
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
                   <label for="Alamat" class="text-black mb-1">Alamat (Nama Jalan/Gedung/Sekolah/dll)<span class="text-danger">*</span></label>
-                  <textarea name="Alamat" id="Alamat" cols="30" rows="7" class="form-control"></textarea>
+                  <textarea name="Alamat" id="Alamat" cols="30" rows="7" class="form-control" required></textarea>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
                   <label for="ekspedisi" class="text-black mb-1">Ekspedisi<span class="text-danger">*</span></label>
                   <div type="text" id="ekspedisi">
-                    <select name="ekspedisi" class="form-select">
+                    <select name="ekspedisi" class="form-select" required>
 
                     </select>
                   </div>
@@ -165,7 +165,7 @@ if (isset($_POST["submit"])) {
                 <div class="col-md-12 mb-3">
                   <label for="paket" class="text-black mb-1">Paket<span class="text-danger">*</span></label>
                   <div type="text" id="paket">
-                    <select name="paket" class="form-select">
+                    <select name="paket" class="form-select" required>
 
                     </select>
                   </div>
@@ -186,13 +186,13 @@ if (isset($_POST["submit"])) {
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
                   <label for="Catatan" class="text-black mb-1">Link Maps</label>
-                  <input type="text" class="form-control" id="link_lokasi" name="link_Lokasi">
+                  <input type="text" class="form-control" id="link_lokasi" name="link_Lokasi" required>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
                   <label for="Catatan" class="text-black mb-1">Catatan</label>
-                  <input type="text" class="form-control" id="Catatan" name="Catatan" placeholder="Masukkan catatan seperti ukuran pakaian (M/L/XL/XXL)">
+                  <input type="text" class="form-control" id="Catatan" name="Catatan" placeholder="Masukkan catatan seperti ukuran pakaian (M/L/XL/XXL)" required>
                 </div>
               </div>
               <div class="form-group row">
