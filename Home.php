@@ -123,16 +123,6 @@ require 'custFunction.php';
         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="membership-item position-relative" style="background: white; border-style: solid; border-color: #295c33;">
             <h1 class=" text-black">01</h1>
-            <h3 class="text-black mb-12">Pilih Menu</h3>
-            <p style="color: black;">
-              Kamu dapat memilih menu dengan masuk ke pilihan menu. Pilih menu yang kamu mau lalu masukkan menu tersebut ke keranjang belanja.
-            </p>
-            <a class="btn btn-outline-primary px-4 mt-3" href="Menu.php">Pilih Menu</a>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-          <div class="membership-item position-relative" style="background: white; border-style: solid; border-color: #295c33;">
-            <h1 class=" text-black">02</h1>
             <h3 class="text-black mb-12">Pesan Menu</h3>
             <p style="color: black;">
               Check out menu pilihan yang sudah ada di keranjang belanja dengan menekan "Pesan Sekarang" dan tunggu tagihan anda muncul.
@@ -142,7 +132,7 @@ require 'custFunction.php';
         </div>
         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="membership-item position-relative" style="background: white; border-style: solid; border-color: #295c33;">
-            <h1 class=" text-black">03</h1>
+            <h1 class=" text-black">02</h1>
             <h3 class="text-black mb-12">Bayar Pesanan</h3>
             <p style="color: black;">
               Bayar tagihan anda dengan cara masuk ke menu tagihan. Pilih tagihan yang akan dibayar dan isi detail tagihan pada form yang muncul.
@@ -152,7 +142,7 @@ require 'custFunction.php';
         </div>
         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="membership-item position-relative" style="background: white; border-style: solid; border-color: #295c33;">
-            <h1 class=" text-black">04</h1>
+            <h1 class=" text-black">03</h1>
             <h3 class="text-black mb-12">Selesai</h3>
             <p style="color: black;">
               Bila pembayaran kamu telah dikonfirmasi, maka tunggu pesanan kamu sampai di tujuan sesuai dengan pesanan yang sudah disepakati.
