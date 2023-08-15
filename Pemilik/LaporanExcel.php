@@ -6,7 +6,7 @@ if (!isset($_SESSION['rolepemilik'])) {
 }
 $sqlPeriode = $_GET['sqlPeriode'];
 
-//script print excel
+// //script print excel
 // header("Content-type: application/vnd.ms-excel");
 // header("Content-Disposition: attachment; filename=Laporan Penjualan Thytashop.xls");
 require '../admin/fpdf186/fpdf.php';

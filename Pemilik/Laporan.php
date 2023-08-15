@@ -60,7 +60,7 @@ if (isset($_POST['btnTampil'])) {
                         </div>
                   </div>
                   </form>
-                  <a class="btn btn-primary col-2 mt-3" href="LaporanExcelDikirim.php" target="_blank" alt="Edit Data">Cetak Laporan</a>
+                  <a class="btn btn-primary col-2 mt-3" href="LaporanExcel.php?sqlPeriode=<?= $sqlPeriode; ?>" target="_blank" alt="Edit Data">Cetak Laporan</a>
                   <table class="table datatable">
                      <thead>
                         <tr>
