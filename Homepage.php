@@ -181,13 +181,13 @@ if (!isset($_SESSION["login"]) && !isset($_SESSION["ID_Pelanggan"])) {
         ?>
         <?php while ($pecah = mysqli_fetch_assoc($ambil)) { ?>
           <div class="testimonial-item text-center">
-            <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width: 100px; height: 100px" />
             <div class="testimonial-text rounded text-center p-4">
+              <h5 class="mb-1"><?php echo $pecah['Nama_Penerima']; ?></a></h5>
               <p>
                 <?php echo $pecah['Testimoni']; ?></a>
               </p>
-              <h5 class="mb-1"><?php echo $pecah['Nama_Penerima']; ?></a></h5>
             </div>
+            <img class="img-fluid rounded-circle p-2 mx-auto mb-4" src="assets/img/<?php echo $pecah['Gambar']; ?>" style="width: 100px; height: 100px" />
           </div>
         <?php } ?>
       </div>
