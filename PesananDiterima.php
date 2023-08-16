@@ -63,7 +63,7 @@ if (isset($_POST["submit"])) {
                                             <label for="Testimoni" class="text-black mb-1">Testimoni<span class="text-danger">*</span></label>
                                             <input type="text" name="Testimoni" class="form-control" id="Testimoni" required>
                                             <label for="Gambar" class="text-black mb-1">Foto Produk<span class="text-danger">*</span></label>
-                                            <input type="file" name="Gambar" id="Gambar" class="form-control">
+                                            <input type="file" name="Gambar" id="Gambar" class="form-control" required>
                                         </div>
                                         <div class="text-center">
                                             <button type="submit" name="submit" class="btn btn-primary">Kirim Penilaian</button>

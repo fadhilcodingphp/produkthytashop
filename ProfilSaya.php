@@ -64,10 +64,6 @@ $custProfile = query("SELECT * FROM pelanggan WHERE ID_Pelanggan = '$ID_Pelangga
                       <div class="col-lg-3 col-md-4 label">Email</div>
                       <div class="col-lg-9 col-md-8"><?= $custProfile['Email'] ?></div>
                     </div>
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Institusi</div>
-                      <div class="col-lg-9 col-md-8"><?= $custProfile['Institusi'] ?></div>
-                    </div>
                   </div>
                 </div>
               </div>
