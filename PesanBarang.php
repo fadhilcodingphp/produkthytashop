@@ -204,7 +204,10 @@ if (isset($_POST["submit"])) {
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
                   <label for="estimasi" class="text-black mb-1">Estimasi Pengiriman<span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="estimasi" name="estimasi">
+                  <div class="input-group" style="width: 11%;">
+                    <input type="text" class="form-control" id="estimasi" name="estimasi">
+                    <span class="input-group-text" id="basic-addon2">hari</span>
+                  </div>
                 </div>
               </div>
               <div class="form-group row">

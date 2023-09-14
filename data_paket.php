@@ -47,7 +47,7 @@ if ($err) {
         >";
         echo $value["service"] . " ";
         echo number_format($value["cost"]["0"]["value"]) . " ";
-        echo $value["cost"]["0"]["etd"] . " ";
+        echo $value["cost"]["0"]["etd"] . " " . "Hari";
         echo "</option>";
     }
 }
