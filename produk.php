@@ -63,18 +63,25 @@ $ubahProduk = query("SELECT * FROM kategori_produk WHERE ID_Kategori = '$id'")[0
                 <h3 class="fs-5">
                   <a href="MenuDetail.php?id=<?= $pecah['ID_Produk']; ?>" class="text-inherit text-primary text-decoration-none"><?php echo $pecah['Nama_Produk']; ?></a>
                 </h3>
+                <div class="d-flex justify-content-between align-items-center mt-2 mb-1" style="font-size: 14px;">
+                  <div><span class="text-dark">Stok : <?php echo $pecah['Stok']; ?></span>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-2 mb-1" style="font-size: 14px;">
+                  <div><span class="text-dark">Deskripsi : <?php echo $pecah['Keterangan']; ?></span>
+                  </div>
+                </div>
                 <div class="d-flex justify-content-between align-items-center mt-2 mb-1">
                   <div><span class="text-dark"><?php echo 'Rp. ' . number_format($pecah['Harga'], 2, ',', '.'); ?></span>
                   </div>
                 </div>
-                <div>
-                  <a href="MenuDetail.php?id=<?= $pecah['ID_Produk']; ?>" class="btn btn-primary btn-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                      <line x1="12" y1="5" x2="12" y2="19"></line>
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                    </svg>Tambah Ke Keranjang</a>
-                </div>
-
+              </div>
+              <div class="p-3">
+                <a href="MenuDetail.php?id=<?= $pecah['ID_Produk']; ?>" class="btn btn-primary btn-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>Tambah Ke Keranjang</a>
               </div>
             </div>
           </div>

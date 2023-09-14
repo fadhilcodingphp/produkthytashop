@@ -80,34 +80,38 @@ function daftar($daftar)
 
 function tambahKeranjang()
 {
-    global $conn;
-    $id_Produk = $_GET["id"];
-    $ID_Pelanggan = $_SESSION["ID_Pelanggan"];
-    $Jumlah_Barang = $_POST["Jumlah_Barang"];
-    $Ukuran = $_POST["Ukuran"];
-
-    $result = mysqli_query($conn, "SELECT * FROM keranjang WHERE keranjang.ukuran=$id_Produk");
-    if ($pecah = mysqli_fetch_assoc($result)) {
-        $Jumlah_Barang = $pecah['Jumlah_Barang'] + $Jumlah_Barang;
-        //query insert data
-        $queryDelete = "DELETE FROM keranjang WHERE keranjang.ukuran=$id_Produk";
-        mysqli_query($conn, $queryDelete);
-
-        $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$Ukuran', '$ID_Pelanggan', '$Jumlah_Barang' )";
-        mysqli_query($conn, $queryinput);
-    } elseif ($Jumlah_Barang > 0) {
-        $Jumlah_Barang = $Jumlah_Barang;
-        //query insert data
-        $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$Ukuran', '$ID_Pelanggan', '$Jumlah_Barang' )";
-        mysqli_query($conn, $queryinput);
+    if (!isset($_SESSION["login"])) {
+        header("Location: login.php");
+        exit;
     } else {
-        //query insert data
-        $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$Ukuran', '$ID_Pelanggan', '1' )";
-        mysqli_query($conn, $queryinput);
-    }
-    return mysqli_affected_rows($conn);
-}
+        global $conn;
+        $id_Produk = $_GET["id"];
+        $ID_Pelanggan = $_SESSION["ID_Pelanggan"];
+        $Jumlah_Barang = $_POST["Jumlah_Barang"];
+        $Ukuran = $_POST["Ukuran"];
 
+        $result = mysqli_query($conn, "SELECT * FROM keranjang WHERE keranjang.ukuran=$id_Produk");
+        if ($pecah = mysqli_fetch_assoc($result)) {
+            $Jumlah_Barang = $pecah['Jumlah_Barang'] + $Jumlah_Barang;
+            //query insert data
+            $queryDelete = "DELETE FROM keranjang WHERE keranjang.ukuran=$id_Produk";
+            mysqli_query($conn, $queryDelete);
+
+            $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$Ukuran', '$ID_Pelanggan', '$Jumlah_Barang' )";
+            mysqli_query($conn, $queryinput);
+        } elseif ($Jumlah_Barang > 0) {
+            $Jumlah_Barang = $Jumlah_Barang;
+            //query insert data
+            $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$Ukuran', '$ID_Pelanggan', '$Jumlah_Barang' )";
+            mysqli_query($conn, $queryinput);
+        } else {
+            //query insert data
+            $queryinput = "INSERT INTO keranjang VALUES ('', '$id_Produk', '$Ukuran', '$ID_Pelanggan', '1' )";
+            mysqli_query($conn, $queryinput);
+        }
+        return mysqli_affected_rows($conn);
+    }
+}
 function KeranjangUbah($data)
 {
     global $conn;
@@ -136,6 +140,7 @@ function TambahPesanan($tambahPesanan)
 
     //ambil data dari tiap elemen form
     $ID_Pelanggan = htmlspecialchars($tambahPesanan["ID_Pelanggan"]);
+    $Invoice = htmlspecialchars($tambahPesanan["Invoice"]);
     $Nama_Penerima = htmlspecialchars($tambahPesanan["Nama_Penerima"]);
     $NoTelp_Penerima = htmlspecialchars($tambahPesanan["NoTelp_Penerima"]);
     $Provinsi = htmlspecialchars($tambahPesanan["provinsi"]);
@@ -147,7 +152,8 @@ function TambahPesanan($tambahPesanan)
     $link_Lokasi = htmlspecialchars($tambahPesanan["link_Lokasi"]);
     $Catatan = htmlspecialchars($tambahPesanan["Catatan"]);
     //query insert data
-    $input = "INSERT INTO pesanan VALUES ( '', 
+    $input = "INSERT INTO pesanan VALUES ( '',
+                                           '$Invoice', 
                                            '$ID_Pelanggan', 
                                            NOW(), 
                                            NOW(), 
@@ -176,13 +182,19 @@ function TambahPesanan($tambahPesanan)
         $Nama_Produk = $prodit["Nama_Produk"];
         $Ukuran = $prodit["Ukuran"];
         $Gambar = $prodit["Gambar"];
+        $Stok = $prodit["Stok"];
         $Jumlah_Barang = $prodit["Jumlah_Barang"];
         $Harga = $prodit["Harga"];
         $Total_Prodit = $Harga * $Jumlah_Barang;
+        $Jumlah = $Stok - $Jumlah_Barang;
 
         $input = "INSERT INTO produk_item VALUES ( '', '$ID_Pesanan', '$ID_Produk', '$Nama_Produk', '$Ukuran', '$Gambar', $Jumlah_Barang, $Total_Prodit)";
         mysqli_query($conn, $input);
     }
+
+    $update = "UPDATE produk SET Stok = '$Jumlah'  WHERE ID_Produk = $ID_Produk";
+    mysqli_query($conn, $update);
+
 
     $input = "INSERT INTO pembayaran VALUES ( '', '$ID_Pesanan', 'Menunggu Pembayaran', 'Belum Bayar','' ,'','','','','')";
     mysqli_query($conn, $input);

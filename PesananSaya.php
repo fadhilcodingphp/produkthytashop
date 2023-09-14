@@ -67,7 +67,6 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                         echo "<span class='badge bg-primary'> $status </span> &ensp;";
                       } ?>
                     </span>
-                    <span class="d-block text h6">Tanggal: <?php echo $pecah['Tgl_Pesan']; ?></span>
                   </div>
                   <hr style="border-top: 1px solid #8c8b8b;">
                   <?php
@@ -93,9 +92,10 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
                     </div>
                   <?php } ?>
                 </div>
-
                 <hr style="border-top: 1px solid #8c8b8b;">
-
+                <span class="d-block text h6">Tanggal Pemesanan : <?php echo $pecah['Tgl_Pesan']; ?></span>
+                <span class="d-block text h6">Nomor Invoice : <?php echo $pecah['Invoice']; ?></span>
+                <hr style="border-top: 1px solid #8c8b8b;">
                 <div class="col-md-4 mt-3 mb-3">
                   <p class="d-block text-primary mb-1">Kontak Penerima</p>
                   <p class="d-block text mb-0">Penerima : <?php echo $pecah['Nama_Penerima']; ?></p>

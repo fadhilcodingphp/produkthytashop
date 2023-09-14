@@ -50,6 +50,10 @@ if (isset($_POST["tambahProduk"])) {
                      <input type="text" name="Nama_Produk" class="form-control" id="Nama_Produk" required>
                   </div>
                   <div class="col-12">
+                     <label for="Stok" class="form-label">Stok Produk</label>
+                     <input type="text" name="Stok" class="form-control" id="Stok" required>
+                  </div>
+                  <div class="col-12">
                      <label class="form-label">Kategori Produk</label>
                      <div class="col-12">
                         <select class="form-select" aria-label="Default select example" name="ID_Kategori">

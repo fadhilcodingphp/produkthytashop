@@ -83,8 +83,6 @@ require 'AdminFunction.php';
                                  <td scope="row"><?php echo 'Rp. ' . number_format($pecah['Ongkir'], 2, ',', '.'); ?></td>
                                  <td>
                                     <a class="btn btn-info" href="PesananDetail.php?id=<?= $pecah['ID_Pesanan']; ?>">Detail</a>
-                                    <a class="btn btn-warning" href="PesananUbah.php?id=<?= $pecah['ID_Pesanan']; ?>">Edit</a>
-                                    <a class="btn btn-danger" href="PesananHapus.php?id=<?= $pecah['ID_Pesanan']; ?>" onclick="return confirm('Yakin ingin menghapus?')">Delete</a>
                                  </td>
                               </tr>
                               <?php $i++; ?>

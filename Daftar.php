@@ -40,22 +40,43 @@ if (isset($_POST["daftar"])) {
           <form method="POST" id="signup-form" class="signup-form">
             <h2 class="form-title">Registrasi</h2>
             <div class="form-group">
-              <input type="text" class="form-input" name="Nama_Pelanggan" id="Nama_Pelanggan" placeholder="Nama Pelanggan" />
+              <input type="text" class="form-input" name="Nama_Pelanggan" id="Nama_Pelanggan" placeholder="Nama Pelanggan" required />
             </div>
             <div class="form-group">
-              <input type="text" class="form-input" name="ID_Pelanggan" id="ID_Pelanggan" placeholder="Username" />
+              <input type="text" class="form-input" name="ID_Pelanggan" id="ID_Pelanggan" placeholder="Username" required />
             </div>
             <div class="form-group">
-              <input type="text" class="form-input" name="Telepon" id="Telepon" placeholder="Nomor Telepon" />
+              <input type="tel" onkeydown="phoneNumberFormatter()" class="form-input" id="Telepon" name="Telepon" placeholder="Nomor Telepon" required />
+              <script>
+                function formatPhoneNumber(value) {
+                  if (!value) return value;
+                  const phoneNumber = value.replace(/[^\d]/g, '');
+                  const phoneNumberLength = phoneNumber.length;
+                  if (phoneNumberLength < 4) return phoneNumber;
+                  if (phoneNumberLength < 7) {
+                    return `(${phoneNumber.slice(0,3)}) ${phoneNumber.slice(3)}`;
+                  }
+                  return `(${phoneNumber.slice(0,3)}) ${phoneNumber.slice(
+                      3,
+                      6,
+                      )}-${phoneNumber.slice(6,13)}`;
+                }
+
+                function phoneNumberFormatter() {
+                  const inputField = document.getElementById('Telepon');
+                  const formattedInputValue = formatPhoneNumber(inputField.value);
+                  inputField.value = formattedInputValue;
+                }
+              </script>
             </div>
             <div class="form-group">
-              <input type="email" class="form-input" name="Email" id="Email" placeholder="Email" />
+              <input type="email" class="form-input" name="Email" id="Email" placeholder="Email" required />
             </div>
             <div class="form-group">
-              <input type="password" class="form-input" name="Password" id="Password" placeholder="Password" />
+              <input type="password" class="form-input" name="Password" id="Password" placeholder="Password" required />
             </div>
             <div class="form-group">
-              <input type="password" class="form-input" name="Password2" id="Password2" placeholder="Confirm Password" />
+              <input type="password" class="form-input" name="Password2" id="Password2" placeholder="Confirm Password" required />
             </div>
             <div class="form-group">
               <input type="submit" name="daftar" id="submit" class="form-submit" value="Daftar" />

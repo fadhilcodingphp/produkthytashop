@@ -107,6 +107,9 @@ if (isset($_POST["submit"])) {
               <input type="hidden" class="form-control" id="Jumlah_Barang" name="Jumlah_Barang" value="<?php echo $pecah['Jumlah_Barang']; ?>">
               <input type="hidden" class="form-control" id="Ukuran" name="Ukuran" value="<?php echo $pecah['Ukuran']; ?>">
             <?php } ?>
+            <input type="hidden" name="Invoice" value="<?php
+                                                        date_default_timezone_set('Asia/Makassar');
+                                                        echo "THY" . date('ymdHis'); ?>">
             <div class="p-3 p-lg-5 border">
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
@@ -122,7 +125,28 @@ if (isset($_POST["submit"])) {
               <div class="form-group row">
                 <div class="col-md-12 mb-3">
                   <label for="NoTelp_Penerima" class="text-black mb-1">Nomor Telepon Penerima<span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="NoTelp_Penerima" name="NoTelp_Penerima" required>
+                  <input type="tel" onkeydown="phoneNumberFormatter()" class="form-control" id="NoTelp_Penerima" name="NoTelp_Penerima" required>
+                  <script>
+                    function formatPhoneNumber(value) {
+                      if (!value) return value;
+                      const phoneNumber = value.replace(/[^\d]/g, '');
+                      const phoneNumberLength = phoneNumber.length;
+                      if (phoneNumberLength < 4) return phoneNumber;
+                      if (phoneNumberLength < 7) {
+                        return `(${phoneNumber.slice(0,3)}) ${phoneNumber.slice(3)}`;
+                      }
+                      return `(${phoneNumber.slice(0,3)}) ${phoneNumber.slice(
+                      3,
+                      6,
+                      )}-${phoneNumber.slice(6,13)}`;
+                    }
+
+                    function phoneNumberFormatter() {
+                      const inputField = document.getElementById('NoTelp_Penerima');
+                      const formattedInputValue = formatPhoneNumber(inputField.value);
+                      inputField.value = formattedInputValue;
+                    }
+                  </script>
                 </div>
               </div>
               <div class="form-group row">

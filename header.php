@@ -37,7 +37,7 @@
     <!-- Navbar Start -->
     <?php
     if (!isset($_SESSION["login"])) { ?>
-        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="Home.php" class="navbar-brand p-0">
                 <h1 class="m-0 text-danger">Thytashop</h1>
             </a>
@@ -48,8 +48,8 @@
                 <div class="navbar-nav ms-auto">
                     <a href="Home.php#home" class="nav-item nav-link">Home</a>
                     <div class="nav-item dropdown">
-                        <a href="#" data-bs-toggle="dropdown">
-                            <a href="#" class="nav-item nav-link">Produk</a>
+                        <a href="#">
+                            <a href=" #" class="nav-item nav-link dropdown-toogle" data-bs-toggle="dropdown">Produk</a>
                         </a>
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                             <?php $ambil = mysqli_query($conn, "SELECT * FROM kategori_produk"); ?>
@@ -65,7 +65,7 @@
             </div>
         </nav>
     <?php } else { ?>
-        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-3 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-lg-0 px-3 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="Home.php" class="navbar-brand p-0">
                 <h1 class="m-0 text-primary">Thytashop</h1>
             </a>
@@ -76,8 +76,8 @@
                 <div class="navbar-nav ms-auto">
                     <a href="Homepage.php#home" class="nav-item nav-link">Home</a>
                     <div class="nav-item dropdown">
-                        <a href="#" data-bs-toggle="dropdown">
-                            <a href="#" class="nav-item nav-link">Produk</a>
+                        <a href="#">
+                            <a href=" #" class="nav-item nav-link dropdown-toogle" data-bs-toggle="dropdown">Produk</a>
                         </a>
                         <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                             <?php $ambil = mysqli_query($conn, "SELECT * FROM kategori_produk"); ?>
@@ -96,7 +96,7 @@
                         $count1 = mysqli_num_rows($get1);
                         ?>
                         <?= $count1; ?>
-                    </a>
+                    </a>&nbsp;
                     <div class="nav-item dropdown">
                         <a href="#" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-user" aria-hidden="true" style="width: 10px; height: 10px"></i>
@@ -106,7 +106,7 @@
                             <a href="PesananSaya.php" class="dropdown-item">Pesanan Saya</a>
                             <a href="TagihanSaya.php" class="dropdown-item">Tagihan Saya</a>
                         </div>
-                    </div>
+                    </div>&nbsp;
                     <a href="Logout.php" class="btn btn-outline-primary mx-2">Keluar<i class="fa fa-arrow-right ms-3"></i></a>
                 </div>
             </div>

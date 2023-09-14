@@ -87,6 +87,10 @@ $ubahProduk = query("SELECT * FROM produk, kategori_produk WHERE ID_Produk = '$I
                               <div class="col-md-8 col-lg-9"> <input name="Nama_Produk" type="text" class="form-control" id="Nama_Produk" value="<?= $ubahProduk['Nama_Produk'] ?>"></div>
                            </div>
                            <div class="row mb-3">
+                              <label for="Stok" class="col-md-4 col-lg-3 col-form-label">Stok Produk</label>
+                              <div class="col-md-8 col-lg-9"> <input name="Stok" type="text" class="form-control" id="Stok" value="<?= $ubahProduk['Stok'] ?>"></div>
+                           </div>
+                           <div class="row mb-3">
                               <label for="Harga" class="col-md-4 col-lg-3 col-form-label">Ketahanan Produk</label>
                               <div class="col-md-8 col-lg-9"> <input name="Harga" type="text" class="form-control" id="Harga" value="<?= $ubahProduk['Harga'] ?>"></div>
                            </div>
@@ -95,7 +99,7 @@ $ubahProduk = query("SELECT * FROM produk, kategori_produk WHERE ID_Produk = '$I
                               <div class="col-md-8 col-lg-9"> <input name="Jenis_Kain" type="text" class="form-control" id="Jenis_Kain" value="<?= $ubahProduk['Jenis_Kain'] ?>"></div>
                            </div>
                            <div class="row mb-3">
-                              <label for="Keterangan" class="col-md-4 col-lg-3 col-form-label">Jenis Kain Produk</label>
+                              <label for="Keterangan" class="col-md-4 col-lg-3 col-form-label">Deskripsi Produk</label>
                               <div class="col-md-8 col-lg-9"> <input name="Keterangan" type="text" class="form-control" id="Keterangan" value="<?= $ubahProduk['Keterangan'] ?>"></div>
                            </div>
                            <div class="row mb-3">

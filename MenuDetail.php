@@ -56,8 +56,8 @@ if (isset($_POST["submit"])) {
             <form action="" method="post">
               <div class="fs-5 mt-3 mb-3">
                 <span>Ukuran
-                  <select name="Ukuran" id="Ukuran">
-                    <option value="disable">--Pilih--</option>
+                  <select required name="Ukuran" id="Ukuran">
+                    <option></option>
                     <option value="M">M</option>
                     <option value="L">L</option>
                     <option value="XL">XL</option>
